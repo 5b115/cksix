@@ -25,14 +25,15 @@
         <property name="password" value="${jdbc.password}"></property>
     </bean>
     <!-- SqlSessionFactory -->
-    <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="configLocation" value="classpath:mybatis.xml"></property>
         <property name="dataSource" ref="dataSource"></property>
         <property name="typeAliasesPackage" value="com.zut.wl.pojo"></property>
     </bean>
     <!-- 扫描器 -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.zut.wl.mapper"></property>
-        <property name="sqlSessionFactoryBeanName" value="factory"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
     <!-- 事务管理器 -->
     <bean id="txManage" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
