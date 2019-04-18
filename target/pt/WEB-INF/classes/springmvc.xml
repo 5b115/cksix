@@ -14,16 +14,23 @@
     <context:component-scan base-package="com.zut.wl.controller"></context:component-scan>
     <!-- 注解驱动 -->
     <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:default-servlet-handler></mvc:default-servlet-handler>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/view/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
     <!-- 静态资源 -->
     <!--上哪里去找  -->         <!-- url中请求的格式 -->
-    <!--<mvc:resources location="/js/"             mapping="/js/**"></mvc:resources>-->
-    <!--<mvc:resources location="/css/"             mapping="/css/**"></mvc:resources>-->
-    <!--<mvc:resources location="/images/"             mapping="/images/**"></mvc:resources>-->
+    <mvc:resources location="/js/"             mapping="/pt/js/**"></mvc:resources>
+    <mvc:resources location="/css/"             mapping="/pt/css/**"></mvc:resources>
+    <mvc:resources location="/images/"             mapping="/pt/images/**"></mvc:resources>
     <!--<mvc:resources location="/files/"             mapping="/files/**"></mvc:resources>-->
     <!--<mvc:resources location="/main/"             mapping="/main/**"></mvc:resources>-->
     <!--<mvc:resources location="/themes/"             mapping="/themes/**"></mvc:resources>-->
     <!--<mvc:resources location="/user/"             mapping="/user/**"></mvc:resources>-->
-    <!--<mvc:resources location="/editor/"             mapping="/editor/**"></mvc:resources>-->
+    <mvc:resources location="/editor/"             mapping="/pt/editor/**"></mvc:resources>
     <!--<mvc:resources location="/lay/"             mapping="/lay/**"></mvc:resources>-->
     <!--<mvc:resources location="/font/"             mapping="/font/**"></mvc:resources>-->
 
