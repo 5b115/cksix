@@ -17,4 +17,5 @@ public class Other {
     private double avgGrade;//平均成绩
     private double sumGpa;//总学分绩点
     private double avgGpa;//平均学分绩点
+    private String stuId;//学号
 }

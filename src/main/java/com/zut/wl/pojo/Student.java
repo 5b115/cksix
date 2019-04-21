@@ -15,8 +15,8 @@ public class Student {
     private String stuId;//学号
     private String stuName;//学生姓名
     private int gradeId;//成绩
-    private int other_grade;//其他成绩
+    private int otherGrade;//其他成绩
     private int volunteerId;//填报的志愿
     private int lastMajor; //最终专业
-    private int stu_status;//是否已经填报
+    private int stuStatus;//是否已经填报
 }

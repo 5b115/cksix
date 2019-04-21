@@ -21,6 +21,8 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+
     <!-- 静态资源 -->
     <!--上哪里去找  -->         <!-- url中请求的格式 -->
     <mvc:resources location="/js/"             mapping="/pt/js/**"></mvc:resources>

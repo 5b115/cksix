@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zut.wl.mapper.OtherMapper">
+    <insert id="insertOtherList" parameterType="java.util.List">
+        insert into other values
+        <trim suffixOverrides=",">
+            <foreach collection="list" item="other">
+                (default ,#{other.sumGrade},#{other.avgGrade},#{other.sumGpa},#{other.avgGpa},#{other.stuId}),
+            </foreach>
+        </trim>
+    </insert>
+</mapper>

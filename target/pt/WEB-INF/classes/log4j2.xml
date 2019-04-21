@@ -21,12 +21,13 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-
         <Root level="info">
             <!-- 输入到文件-->
-            <AppenderRef ref="running-log"/>
+            <!--<AppenderRef ref="running-log"/>-->
             <!-- 输入到控制台-->
             <AppenderRef ref="Console"/>
         </Root>
+        <logger name="com.zut.wl.mapper" level="DEBUG"></logger>
+        <logger name="org.mybatis" level="DEBUG"></logger>
     </Loggers>
 </Configuration>

@@ -11,7 +11,8 @@
 	<typeAliases>
 		<package name="com.zut.wl.pojo"/><!-- 给包起别名 -->
 	</typeAliases>
-	
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+	</plugins>
 
-	
 </configuration>

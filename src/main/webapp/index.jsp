@@ -47,7 +47,7 @@
         <form action="/pt/checkUserLogin" method="post" onsubmit="return checkInput(this);">
         <ul>
             <li><input name="username" type="text" class="loginuser" value="账号" onclick="JavaScript:this.value=''"/></li>
-            <li><input name="password" type="password" class="loginpwd" value="密码" onclick="JavaScript:this.value=''"/></li>
+            <li><input name="password" type="password" class="loginpwd" value="" onclick="JavaScript:this.value=''"/></li>
             <li><input name="" type="submit" class="loginbtn" value="登录" /><label><a href="#">忘记密码？</a></label></li>
         </ul>
         </form>

@@ -62,12 +62,12 @@ $(function(){
         <dd>
         	<div>
                 <li style="background-color: #FFEFD5"><cite></cite><a href="/pt/view/dataInput.jsp" target="rightFrame">数据导入</a><i></i></li>
-                <li><cite></cite><a href="/pt/view/specialty.jsp" target="rightFrame">专业设置</a><i></i></li>
+                <li><cite></cite><a href="/pt/view/specialty.jsp" target="rightFrame">分流设置</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/selall_student.jsp" target="rightFrame">异常处理</a><i></i></li>
                 <li><cite></cite><a href="/pt/view/selAllDivide.jsp" target="rightFrame">分流结果</a><i></i></li>
             </div>
         </dd>
-         <li><cite></cite><a href="/pt/view/selall_user.jsp" target="rightFrame">人员设置</a><i></i></li>
-        </ul>    
+        </ul>
     </dd>
   
 	   <dd>

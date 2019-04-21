@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zut.wl.mapper.StudentMapper">
+    <insert id="insertStudentList" parameterType="java.util.List">
+        insert into student values
+        <trim suffixOverrides=",">
+            <foreach collection="list" item="stu">
+                (#{stu.stuId},#{stu.stuName},#{stu.gradeId},#{stu.otherGrade},#{stu.volunteerId},#{stu.lastMajor},#{stu.stuStatus}),
+            </foreach>
+        </trim>
+    </insert>
+    <insert id="insOne" parameterType="student">
+        insert into student value (#{stuId},#{stuName},default ,default,default ,default ,default)
+    </insert>
+</mapper>
