@@ -132,6 +132,13 @@
             </tbody>
         </table>
     </div>
+    <div class="row">
+        <div class="col-md-6" id="page_stu_info">
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
 
     <div class="row">
         <div>
@@ -145,6 +152,7 @@
       var pages = 1;
       $(function () {
           getCourseList(1);
+          getStudentList(1);
       })
       function getCourseList(pn) {
           $.ajax({
@@ -159,6 +167,22 @@
                   build_Course_table(result);
                   //2、解析并显示分页信息
                   build_Course_info(result);
+              }
+          });
+      }
+      function getStudentList(pn) {
+          $.ajax({
+              url:"/pt/getStudents",
+              data: "pn="+pn,
+              type:"GET",
+              success:function(result){
+                  // pageNum = result.pageNum;
+                  // pages = result.pages;
+                  //console.log(result);
+                  //1、解析并显示学生信息
+                  build_stu_table(result);
+                  //2、解析并显示分页信息
+                  build_stu_info(result);
               }
           });
       }
@@ -184,6 +208,25 @@
           $("#page_info").append("当前是第"+result.pageNum+"页,总"+
               result.pages+"页,总"+
               result.total+"门课程");
+      }
+      function build_stu_table(result) {
+          $("#stu-table").empty();
+          var stuList = result.list;
+          $.each(stuList,function (index,item) {
+              var stuId = $("<td></td>").append(item.stuId);
+              var stuName = $("<td></td>").append(item.stuName);
+              var checkBoxTd = $("<td><input name='' type='checkbox' style='height:18px;width: 18px;'/></td>");
+              $("<tr></tr>").append(stuId)
+                  .append(stuName)
+                  .append(checkBoxTd)
+                  .appendTo("#stu-table");
+          });
+      }
+      function build_stu_info(result) {
+          $("#page_stu_info").empty();
+          $("#page_stu_info").append("当前是第"+result.pageNum+"页,总"+
+              result.pages+"页,总共"+
+              result.total+"学生");
       }
       function pageUp() {
           if (pageNum<=1){

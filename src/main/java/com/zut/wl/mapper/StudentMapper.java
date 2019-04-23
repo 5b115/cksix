@@ -1,6 +1,7 @@
 package com.zut.wl.mapper;
 
 import com.zut.wl.pojo.Student;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -11,4 +12,8 @@ import java.util.List;
 public interface StudentMapper {
     void insertStudentList(List<Student> studentList);
     int insOne(Student student);
+
+    @Select("select * from student")
+    List<Student> selectAllStudent();
+
 }
