@@ -1,11 +1,14 @@
 import com.zut.wl.mapper.CourseMapper;
 import com.zut.wl.mapper.StudentMapper;
+import com.zut.wl.pojo.Course;
 import com.zut.wl.pojo.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.List;
 
 /**
  * @Author xiumu
@@ -31,6 +34,9 @@ public class TestMapper {
 
     @Test
     public void selectTest(){
-        System.out.println(courseMapper.selectAllCourse());
+        List<Course> courses = courseMapper.selectAllCourse();
+        for (Course course : courses) {
+            System.out.println(course);
+        }
     }
 }
