@@ -55,21 +55,38 @@ $(function(){
     
     <dd>
     <div class="title">
-    <span><img src="/pt/images/leftico01.png" /></span>设置
+    <span><img src="/pt/images/leftico01.png" /></span>分流设置
     </div>
     	<ul class="menuson">
             <li><i></i></li>
         <dd>
         	<div>
                 <li style="background-color: #FFEFD5"><cite></cite><a href="/pt/view/dataInput.jsp" target="rightFrame">数据导入</a><i></i></li>
-                <li><cite></cite><a href="/pt/view/specialty.jsp" target="rightFrame">分流设置</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/selall_student.jsp" target="rightFrame">异常处理</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/specialty00.jsp" target="rightFrame">专业及人数设置</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/specialty01.jsp" target="rightFrame">异常处理</a><i></i></li>
                 <li><cite></cite><a href="/pt/view/selAllDivide.jsp" target="rightFrame">分流结果</a><i></i></li>
             </div>
         </dd>
         </ul>
     </dd>
-  
+		<dd>
+			<div class="title">
+				<span><img src="/pt/images/leftico01.png" /></span>分流设置
+			</div>
+			<ul class="menuson">
+				<li><i></i></li>
+		<dd>
+			<div>
+				<li style="background-color: #FFEFD5"><cite></cite><a href="/pt/view/dataInput.jsp" target="rightFrame">数据导入</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/specialty.jsp" target="rightFrame">分流设置</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/selall_student.jsp" target="rightFrame">异常处理</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/selAllDivide.jsp" target="rightFrame">分流结果</a><i></i></li>
+			</div>
+		</dd>
+		</ul>
+		</dd>
+
+
 	   <dd>
 	    <div class="title">
 	    <span><img src="/pt/images/leftico01.png" /></span>管理

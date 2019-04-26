@@ -1,6 +1,8 @@
 import com.zut.wl.mapper.CourseMapper;
+import com.zut.wl.mapper.MajorMapper;
 import com.zut.wl.mapper.StudentMapper;
 import com.zut.wl.pojo.Course;
+import com.zut.wl.pojo.Major;
 import com.zut.wl.pojo.Student;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +26,9 @@ public class TestMapper {
     @Autowired
     private CourseMapper courseMapper;
 
+    @Autowired
+    private MajorMapper majorMapper;
+
     @Test
     public void insertTest(){
         Student student = new Student();
@@ -37,6 +42,14 @@ public class TestMapper {
         List<Course> courses = courseMapper.selectAllCourse();
         for (Course course : courses) {
             System.out.println(course);
+        }
+    }
+
+    @Test
+    public void selectMajor(){
+        List<Major> majorList = majorMapper.getMajorByStatus();
+        for (Major major : majorList) {
+            System.out.println(major);
         }
     }
 }

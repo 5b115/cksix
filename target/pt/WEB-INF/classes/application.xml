@@ -18,7 +18,7 @@
     <!-- 加载属性文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 数据源 -->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="${jdbc.driver}"></property>
         <property name="jdbcUrl" value="${jdbc.url}"></property>
         <property name="user" value="${jdbc.username}"></property>
@@ -27,6 +27,8 @@
         <property name="maxPoolSize" value="20"/>
         <!--关闭连接时，是否提交未提交的事务，默认为false，即关闭连接，回滚未提交的事务 -->
         <property name="autoCommitOnClose" value="false"></property>
+        <!--每60秒检查所有连接池中的空闲连接。默认值: 0，不检查 -->
+        <property name="idleConnectionTestPeriod" value="60"></property>
     </bean>
     <!-- SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

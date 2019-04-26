@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @Date 2019/4/20 7:53
  */
 @Service
-public class ExcelResolveService implements com.zut.wl.service.ExcelResolveService {
+public class ExcelResolveServiceImpl implements com.zut.wl.service.ExcelResolveService {
     @Autowired
     private StudentMapper studentMapper;
     @Autowired

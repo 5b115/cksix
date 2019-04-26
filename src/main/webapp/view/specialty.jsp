@@ -45,12 +45,12 @@
 <div class="container">
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-12 col-md-offset-4">
-            <h2>请设置专业分流规则：</h2>
+            <h2>专业分流规则设置</h2>
         </div>
     </div>
     <div class="row" style="margin-top: 8px;">
         <div class="col-md-4">
-            <p class="span2">计算机专业如下：</p>
+            <p class="span2">计算机专业及人数设置</p>
         </div>
         <div class="col-md-4">
             <button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span>新增</button>
