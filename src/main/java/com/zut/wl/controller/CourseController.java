@@ -7,6 +7,7 @@ import com.zut.wl.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -29,4 +30,24 @@ public class CourseController {
         PageInfo pageInfo = new PageInfo(courseList,2);
         return pageInfo;
     }
+
+    @ResponseBody
+    @GetMapping("/getCourseList")
+    public List<Course> getAllCourse(){
+        return courseService.selAllCourse();
+    }
+
+    @ResponseBody
+    @PostMapping("/setPermission")
+    public List<Course> setCoursePermission(String[] courseIdList,Integer[] coursePermissions){
+        courseService.updateCoursePermissionList(courseIdList,coursePermissions);
+        return courseService.selAllCourseByPermission();
+    }
+
+    @ResponseBody
+    @GetMapping("/getCourses")
+    public List<Course> getAllCourses(){
+        return courseService.selAllCourseByPermission();
+    }
+
 }

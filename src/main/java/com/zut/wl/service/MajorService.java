@@ -21,4 +21,17 @@ public interface MajorService {
      * @param majorName 专业名字
      */
     void insertOneMajor(String majorName);
+
+    /**
+     * 通过ID来修改专业
+     * @param id
+     */
+    void updateOneMajor(Integer id);
+
+    /**
+     * 批量更新专业信息
+     * @param majorId
+     * @param majorLimit
+     */
+    void updateMajorBatch(Integer[] majorId, Integer[] majorLimit);
 }

@@ -23,4 +23,16 @@ public class CourseServiceImpl implements CourseService {
         List<Course> list = courseMapper.selectAllCourse();
         return list;
     }
+
+    @Override
+    public void updateCoursePermissionList(String[] courseIdList,Integer[] permissions) {
+        for (int i = 0; i < courseIdList.length; i++) {
+            courseMapper.updateCoursePermission(courseIdList[i],permissions[i]);
+        }
+    }
+
+    @Override
+    public List<Course> selAllCourseByPermission() {
+        return courseMapper.selectCourseByPermission();
+    }
 }

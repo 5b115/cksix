@@ -2,7 +2,9 @@ package com.zut.wl.mapper;
 
 import com.zut.wl.pojo.Major;
 import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -25,4 +27,14 @@ public interface MajorMapper {
      */
     @Insert("insert into major value(default,#{majorName},default,default,default)")
     void insertOneMajor(String majorName);
+
+    /**
+     * 通过id来“删除”major
+     * @param id
+     */
+    @Update("update major set major_status = 0 where major_id = #{id}")
+    void updateMajorById(Integer id);
+
+    @Update("update major set major_limit = #{majorLimit} where major_id = #{majorId}")
+    void updateMajorLimit(@Param("majorId") Integer id, @Param("majorLimit") int majorLimit);
 }

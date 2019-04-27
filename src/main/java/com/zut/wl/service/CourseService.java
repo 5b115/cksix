@@ -10,4 +10,16 @@ import java.util.List;
  */
 public interface CourseService {
     List<Course> selAllCourse();
+
+    /**
+     * 批量更改课程权限
+     * @param courseIdList 存放课程id的数组
+     */
+    void updateCoursePermissionList(String[] courseIdList,Integer[] permissions);
+
+    /**
+     * 获取所有有权限的课程信息
+     * @return
+     */
+    List<Course> selAllCourseByPermission();
 }

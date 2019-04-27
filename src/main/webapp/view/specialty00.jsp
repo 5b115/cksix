@@ -101,20 +101,32 @@
 		</table>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-3">
-            <input type="button" class="form-control btn btn-primary" value="确认"/>
+        <div class="col-md-4 col-md-offset-6">
+            <input type="button" onclick="setMajorLimit();" class="form-control btn btn-primary" value="确认"/>
         </div>
     </div>
     <div class="row">
-        <div id="major_info" hidden="hidden">
-            <h2></h2>
+        <h3>专业人数设置结果</h3>
+        <div>
+            <dl class="dl-horizontal" id="major_info">
+                <dt>专业</dt>
+                <dd>人数</dd>
+            </dl>
         </div>
     </div>
 </div>
  </body>
   <script type="text/javascript">
       $(function () {
-          getMajorList()
+          getMajorList();
+          $.ajax({
+              url:"/pt/getMajorLimit/",
+              data: "",
+              type:"GET",
+              success:function(result){
+                  build_major_info(result);
+              }
+          });
       })
       function getMajorList() {
           $.ajax({
@@ -133,26 +145,14 @@
           $("#major_table_body").empty();
           $.each(result,function (index,item) {
               var majorNameTd = $("<td></td>").append(item.majorName);
-              var checkBoxTd = $("<td><input class='col-md-4' type='number' name='sum' placeholder='人数'/></td>");
+              var checkBoxTd = $("<td><input class='col-md-4 majorLimit' type='number' name='sum' placeholder='人数'/></td>");
               var buttonTd = $("<button type='button' class='btn btn-danger btn-sm btn-delete'><span class='glyphicon glyphicon-trash'></span>删除</button>")
+              buttonTd.attr("major-id",item.majorId);
+              checkBoxTd.attr("major-id",item.majorId);
               $("<tr></tr>").append(majorNameTd)
                   .append(checkBoxTd)
                   .append(buttonTd)
                   .appendTo("#major_table_body");
-          });
-          $(".btn-delete").
-          $(".btn-delete").click(function (id) {
-              $.ajax({
-                  url:"/pt/deleteMajor/"+id,
-                  data: "",
-                  type:"GET",
-                  success:function(result){
-                      //1、解析并显示专业信息
-                      build_major_table(result);
-                      //2、解析并显示分页信息
-                      //build_Course_info(result);
-                  }
-              });
           });
       }
       
@@ -161,5 +161,43 @@
               backdrop:"static"
           })
       }
+      $(document).on("click",".btn-delete",function () {
+          var major = $(this).attr("major-id");
+          $.ajax({
+              url:"/pt/deleteMajor/"+major,
+              data: "",
+              async: false,
+              type:"GET",
+              success:function(){
+              }
+          });
+          getMajorList();
+      });
+      function setMajorLimit() {
+          var majorId = new Array();
+          var majorLimit = new Array();
+          $(".majorLimit").each(function () {
+              majorId.push($(this).parent().attr("major-id"));
+              majorLimit.push($(this).val());
+          })
+          $.ajax({
+              url:"/pt/addMajorLimit/",
+              data: "majorId="+majorId+"&majorLimit="+majorLimit,
+              type:"POST",
+              success:function(result){
+                  build_major_info(result);
+              }
+          });
+      }
+      
+      function build_major_info(result) {
+          $("#major_info").empty();
+          $.each(result,function (index,item) {
+            var majorNameDt = $("<dt></dt>").append(item.majorName);
+            var majorLimitDd = $("<dd></dd>").append(item.majorLimit+"人");
+            $("#major_info").append(majorNameDt).append(majorLimitDd);
+          })
+      }
+
   </script>
 </html>

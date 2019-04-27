@@ -27,4 +27,16 @@ public class MajorServiceImpl implements MajorService {
     public void insertOneMajor(String majorName) {
         majorMapper.insertOneMajor(majorName);
     }
+
+    @Override
+    public void updateOneMajor(Integer id) {
+        majorMapper.updateMajorById(id);
+    }
+
+    @Override
+    public void updateMajorBatch(Integer[] majorId, Integer[] majorLimit) {
+        for (int i = 0; i < majorId.length; i++) {
+            majorMapper.updateMajorLimit(majorId[i],majorLimit[i]);
+        }
+    }
 }
