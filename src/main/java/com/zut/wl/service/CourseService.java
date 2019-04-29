@@ -22,4 +22,10 @@ public interface CourseService {
      * @return
      */
     List<Course> selAllCourseByPermission();
+
+    /**
+     * 获取所有选中的课程
+     * @return
+     */
+    List<Course> selectOnCourse();
 }

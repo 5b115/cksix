@@ -35,4 +35,9 @@ public class CourseServiceImpl implements CourseService {
     public List<Course> selAllCourseByPermission() {
         return courseMapper.selectCourseByPermission();
     }
+
+    @Override
+    public List<Course> selectOnCourse() {
+        return courseMapper.selectCourseByPermission();
+    }
 }

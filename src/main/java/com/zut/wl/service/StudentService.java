@@ -1,6 +1,9 @@
 package com.zut.wl.service;
 
 import com.github.pagehelper.PageInfo;
+import com.zut.wl.pojo.Student;
+
+import java.util.List;
 
 /**
  * @Author xiumu
@@ -13,5 +16,24 @@ public interface StudentService {
      * @param pn 第几页
      * @return
      */
-    PageInfo getStudentPageInfo(int pn);
+    PageInfo selStudentPageInfo(int pn);
+
+    /**
+     * 查询当前学年留级的学生
+     * @return
+     */
+    List<Student> selectRepeatStudentByGrade();
+
+    /**
+     * 获取转专业的学生信息
+     * @return
+     */
+    List<Student> selectStudentNotMajor();
+
+    /**
+     * 根据id获取学生信息
+     * @param id
+     * @return
+     */
+    Student selectStudentById(String id);
 }

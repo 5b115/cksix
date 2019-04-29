@@ -50,11 +50,12 @@
     <div class="row" id="final-course" style="margin-top: 8px;">
         <div class="span2">还没有选择课程</div>
     </div>
+    <br/>
     <div class="row span2">
         <div class="col-md-6" id="final-credit">
         </div>
     </div>
-
+    <br/>
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <table class="table table-striped">
             <thead>
@@ -80,12 +81,6 @@
     <div class="row">
         <div class="col-md-6" id="page_info">
         </div>
-    <!-- <div class="col-md-4 col-md-offset-2">
-            <ul class="pagination">
-                <li id="pageUp" onclick="pageUp()"><a href="javascript:void(0);">&laquo;上一页</a></li>
-                <li  id="pageDown" onclick="pageDown()"><a href="javascript:void(0);">下一页&raquo;</a></li>
-            </ul>
-        </div> -->
     </div>
     <div class="row">
 
@@ -177,7 +172,6 @@
           //     });
           //     obj.innerHTML="全选";
           // }
-
       }
       
       function setCourses() {

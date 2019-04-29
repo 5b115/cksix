@@ -21,10 +21,26 @@ public class StudentServiceImpl implements StudentService {
     private StudentMapper studentMapper;
 
     @Override
-    public PageInfo getStudentPageInfo(int pn) {
+    public PageInfo selStudentPageInfo(int pn) {
         PageHelper.startPage(pn,10);
         List<Student> students = studentMapper.selectAllStudent();
         PageInfo studentPageInfo = new PageInfo(students);
         return studentPageInfo;
+    }
+
+    @Override
+    public List<Student> selectRepeatStudentByGrade() {
+//        String currentGrade = TimeUtils.currentGrade();
+        return studentMapper.selectRepeatStudent("2017");
+    }
+
+    @Override
+    public List<Student> selectStudentNotMajor() {
+        return studentMapper.selectNotMajorStudent();
+    }
+
+    @Override
+    public Student selectStudentById(String id) {
+        return studentMapper.selectOneById(id);
     }
 }

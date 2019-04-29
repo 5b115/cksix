@@ -23,4 +23,9 @@ public class TimeUtils {
         String todayString = todayYear+"-"+todayMonth+"-"+day+"-"+hour+"-"+minute+"-"+second;
         return todayString;
     }
+
+    public static String currentGrade(){
+        Calendar today = Calendar.getInstance();
+        return (today.get(Calendar.YEAR)-1)+"";
+    }
 }

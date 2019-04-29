@@ -16,4 +16,25 @@ public interface StudentMapper {
     @Select("select * from student")
     List<Student> selectAllStudent();
 
+    /**
+     * 查询留级的所有学生
+     * @return
+     */
+    @Select("select * from student where stu_id not like CONCAT(#{gradeLevel},'%')")
+    List<Student> selectRepeatStudent(String gradeLevel);
+
+    /**
+     * 查询转专业过来的学生
+     * @return
+     */
+    @Select("select * from student where stu_id not like '%0802%' ")
+    List<Student> selectNotMajorStudent();
+
+    /**
+     * 根据id获取学生信息
+     * @param id
+     * @return
+     */
+    @Select("select * from student where stu_id = #{id}")
+    Student selectOneById(String id);
 }

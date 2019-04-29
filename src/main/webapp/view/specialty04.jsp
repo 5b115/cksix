@@ -36,10 +36,6 @@
               font-size: 22px;
               font-weight: bold;
           }
-          .span3{
-              margin-bottom: 5px;
-              color: green;
-          }
       </style>
 
   </head>
@@ -49,36 +45,75 @@
 <div class="container">
     <div class="row" style="border-bottom: 1px solid #9D9D9D;">
         <div class="col-md-12 col-md-offset-4">
-            <h2>专业分流规则设置结果</h2>
+            <h2>专业分流规则设置</h2>
         </div>
     </div>
     <div class="row" style="margin-top: 8px;">
         <div class="col-md-4">
-            <p class="span2">专业及人数</p>
+            <p class="span2">计算机专业及人数设置</p>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span>新增</button>
+            <button type="button" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span>删除</button>
         </div>
     </div>
-    <div class="row" style="padding-top: 5px;">
-        <div class="col-md-5 col-md-offset-1">
-            <ul class="list-group" id="majorlist">
-                <li class="list-group-item">
-                    <span class="badge">14</span>
-                    Cras justo odio
-                </li>
+    <div class="row" style="border-bottom: 1px solid #9D9D9D;padding-top: 5px;">
+		<table class="table table-striped" >
+			<thead>
+				<tr>
+					<th>软件工程</th>
+					<th>人工智能</th>
+					<th>网络工程</th>
+					<th>计算机科学与技术</th>
+				</tr>
+			</thead>
+            <tbody>
+            <tr>
+                <td><input class="form-control" type="number" name="sum" placeholder="人数"/></td>
+                <td><input class="form-control" type="number" name="sum" placeholder="人数"/></td>
+                <td><input class="form-control" type="number" name="sum" placeholder="人数"/></td>
+                <td><input class="form-control" type="number" name="sum" placeholder="人数"/></td>
+            </tr>
+            </tbody>
+		</table>
+    </div>
+    <div class="row" style="margin-top: 8px;">
+        <p class="span2">请选择计算学分的必修课程（所有的课程如下）：</p>
+    </div>
+    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>课程号</th>
+                    <th>课程名</th>
+                    <th>学分</th>
+                    <th>学时</th>
+                </tr>
+            </thead>
+            <tbody id="course-table">
+                <tr>
+                    <td>[DB0102001]</td>
+                    <td>高等数学A(上)</td>
+                    <td>5</td>
+                    <td>45</td>
+                    <td><input name="" type="checkbox" style="height:18px;width: 18px;"/></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-6" id="page_info">
+        </div>
+        <div class="col-md-6">
+            <ul class="pagination">
+                <li id="pageUp" onclick="pageUp()"><a href="javascript:void(0);">&laquo;上一页</a></li>
+                <li  id="pageDown" onclick="pageDown()"><a href="javascript:void(0);">下一页&raquo;</a></li>
             </ul>
         </div>
     </div>
-    <div class="row" style="margin-top: 8px;">
-        <p class="span2 col-md-4">计算学分的课程</p>
-    </div>
-    <div class="row" id="courseList">
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-md-4 span2 col-md-offset-4" id="total-credit"></div>
-    </div>
 
     <div class="row" style="margin-top: 8px;">
-        <p class="span2 col-md-5">已经指定专业的学生</p>
+        <p class="span2">请选择能够参与填报志愿的学生：</p>
     </div>
     <div class="row">
         <table class="table table-striped" >
@@ -86,47 +121,13 @@
             <tr>
                 <th>学号</th>
                 <th>姓名</th>
-                <th>年级</th>
-                <th>班级</th>
             </tr>
             </thead>
             <tbody id="stu-table">
             <tr>
                 <td>201608040122</td>
                 <td>朽木</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>201608040122</td>
-                <td>朽木</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row" style="margin-top: 8px;">
-        <p class="span2 col-md-5">取消填报资格的学生</p>
-    </div>
-    <div class="row">
-        <table class="table table-striped" >
-            <thead>
-            <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>年级</th>
-                <th>班级</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>201608040122</td>
-                <td>亚索</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>201608040122</td>
-                <td>亚索</td>
-                <td></td>
+                <td><input name="" type="checkbox" style="height:18px;width: 18px;"/></td>
             </tr>
             </tbody>
         </table>
@@ -147,28 +148,25 @@
 </div>
  </body>
   <script type="text/javascript">
+      var pageNum = 1;
+      var pages = 1;
       $(function () {
-          getMajorList();
-          getCourseList();
-          // getStudentList(1);
+          getCourseList(1);
+          getStudentList(1);
       })
-      function getCourseList() {
+      function getCourseList(pn) {
           $.ajax({
-              url:"/pt/getSelectedCourse",
-              data: "",
+              url:"/pt/getCourseInfo",
+              data: "pn="+pn,
               type:"GET",
               success:function(result){
-                  build_course_list(result);
-              }
-          });
-      }
-      function getMajorList() {
-          $.ajax({
-              url:"/pt/getMajorLimit",
-              data: "",
-              type:"GET",
-              success:function(result){
-                  build_majorlist(result);
+                  pageNum = result.pageNum;
+                  pages = result.pages;
+                  //console.log(result);
+                  //1、解析并显示课程信息
+                  build_Course_table(result);
+                  //2、解析并显示分页信息
+                  build_Course_info(result);
               }
           });
       }
@@ -188,25 +186,28 @@
               }
           });
       }
-      function build_majorlist(result) {
-          $("#majorlist").empty();
-          var majorList = result;
-          $.each(majorList,function (index,item) {
-              var majorLimit = $("<span class='badge'></span>").append(item.majorLimit+"人");
-              var majorNameli = $("<li class='list-group-item'></li>").append(item.majorName).append(majorLimit);
-              $("#majorlist").append(majorNameli);
+      function build_Course_table(result) {
+          $("#course-table").empty();
+          var courseList = result.list;
+          $.each(courseList,function (index,item) {
+              var courseId = $("<td></td>").append(item.courseId);
+              var courseName = $("<td></td>").append(item.courseName);
+              var credit = $("<td></td>").append(item.credit);
+              var period = $("<td></td>").append(item.period);
+              var checkBoxTd = $("<td><input name='' type='checkbox' style='height:18px;width: 18px;'/></td>");
+              $("<tr></tr>").append(courseId)
+                  .append(courseName)
+                  .append(credit)
+                  .append(period)
+                  .append(checkBoxTd)
+                  .appendTo("#course-table");
           });
       }
-      function build_course_list(result) {
-          $("#courseList").empty();
-          var credits = 0;
-          $.each(result,function (index, item) {
-              credits = credits + item.credit;
-              var courseName = $("<span class='span1 span3 col-md-4'></span>").append(item.courseName);
-              var creditBadge = $("<span class='badge'></span>").append(item.credit+"学分");
-              courseName.append(creditBadge).appendTo("#courseList");
-          })
-          $("#total-credit").append("总学分为"+credits);
+      function build_Course_info(result) {
+          $("#page_info").empty();
+          $("#page_info").append("当前是第"+result.pageNum+"页,总"+
+              result.pages+"页,总"+
+              result.total+"门课程");
       }
       function build_stu_table(result) {
           $("#stu-table").empty();

@@ -19,4 +19,6 @@ public class Student {
     private int volunteerId;//填报的志愿
     private int lastMajor; //最终专业
     private int stuStatus;//是否已经填报
+    private String gradeLevel;//年级
+    private String clazz;//班级
 }

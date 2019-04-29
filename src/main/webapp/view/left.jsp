@@ -53,61 +53,31 @@ $(function(){
     
     <dl class="leftmenu">
     
-    <dd>
-    <div class="title">
-    <span><img src="/pt/images/leftico01.png" /></span>分流设置
-    </div>
-    	<ul class="menuson">
-            <li><i></i></li>
-        <dd>
-        	<div>
-                <li style="background-color: #FFEFD5"><cite></cite><a href="/pt/view/dataInput.jsp" target="rightFrame">数据导入</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/specialty00.jsp" target="rightFrame">专业及人数设置</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/specialty01.jsp" target="rightFrame">课程设置</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/specialty02.jsp" target="rightFrame">异常处理</a><i></i></li>
-                <li><cite></cite><a href="/pt/view/selAllDivide.jsp" target="rightFrame">分流结果</a><i></i></li>
-            </div>
-        </dd>
-        </ul>
-    </dd>
 		<dd>
-			<div class="title">
-				<span><img src="/pt/images/leftico01.png" /></span>分流设置
-			</div>
+		<div class="title">
+		<span><img src="/pt/images/leftico01.png" /></span>分流设置
+		</div>
 			<ul class="menuson">
 				<li><i></i></li>
+			<dd>
+				<div>
+					<li style="background-color: #FFEFD5"><cite></cite><a href="/pt/view/dataInput.jsp" target="rightFrame">数据导入</a><i></i></li>
+					<li><cite></cite><a href="/pt/view/specialty00.jsp" target="rightFrame">专业及人数设置</a><i></i></li>
+					<li><cite></cite><a href="/pt/view/specialty01.jsp" target="rightFrame">课程设置</a><i></i></li>
+					<li><cite></cite><a href="/pt/view/specialty02.jsp" target="rightFrame">异常学生处理</a><i></i></li>
+				</div>
+			</dd>
+			</ul>
+		</dd>
 		<dd>
-			<div>
-				<li style="background-color: #FFEFD5"><cite></cite><a href="/pt/view/dataInput.jsp" target="rightFrame">数据导入</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/specialty.jsp" target="rightFrame">分流设置</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/selall_student.jsp" target="rightFrame">异常处理</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/selAllDivide.jsp" target="rightFrame">分流结果</a><i></i></li>
+			<div class="title">
+				<span><img src="/pt/images/leftico01.png" /></span>查看
 			</div>
+			<ul class="menuson">
+				<li><cite></cite><a href="/pt/view/specialty03.jsp" target="rightFrame">分流设置结果</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/specialty04.jsp" target="rightFrame">志愿填报情况</a><i></i></li>
+			</ul>
 		</dd>
-		</ul>
-		</dd>
-
-
-	   <dd>
-	    <div class="title">
-	    <span><img src="/pt/images/leftico01.png" /></span>管理
-	    </div>
-	    	<ul class="menuson">
-	         <li><cite></cite><a href="/pt/view/selall_course.jsp" target="rightFrame">课程管理</a><i></i></li>
-	          <li><cite></cite><a href="/pt/view/selall_student.jsp" target="rightFrame">学生管理</a><i></i></li>
-	        </ul>    
-
-	    </dd>
-	    
-	    <dd>
-	    <div class="title">
-	    <span><img src="/pt/images/leftico01.png" /></span>查看
-	    </div>
-	    	<ul class="menuson">
-	        <li><cite></cite><a href="#" target="rightFrame">查看成绩信息</a><i></i></li>
-	        <li><cite></cite><a href="#" target="rightFrame">查看志愿信息</a><i></i></li>
-	        </ul>    	        	       
-	    </dd>
     </dl>
 </body>
 </html>

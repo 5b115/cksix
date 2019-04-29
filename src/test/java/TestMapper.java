@@ -4,6 +4,7 @@ import com.zut.wl.mapper.StudentMapper;
 import com.zut.wl.pojo.Course;
 import com.zut.wl.pojo.Major;
 import com.zut.wl.pojo.Student;
+import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,33 @@ public class TestMapper {
         for (Major major : majorList) {
             System.out.println(major);
         }
+    }
+    @Test
+    public void selectStudent(){
+        List<Student> students = studentMapper.selectAllStudent();
+        for (Student student : students) {
+            System.out.println(student);
+        }
+        System.out.println(studentMapper.selectOneById("201711044604"));
+    }
+    @Test
+    public void selectRepeatStudent(){
+        List<Student> students = studentMapper.selectRepeatStudent("2017");
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    @Test
+    public void selectNotMajortStudent(){
+        List<Student> students = studentMapper.selectNotMajorStudent();
+        for (Student student : students) {
+            System.out.println(student);
+        }
+    }
+
+    @Test
+    public void testTimeUtils(){
+        System.out.println(TimeUtils.currentGrade());
     }
 }

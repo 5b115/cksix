@@ -50,4 +50,10 @@ public class CourseController {
         return courseService.selAllCourseByPermission();
     }
 
+    @ResponseBody
+    @GetMapping("/getSelectedCourse")
+    public List<Course> getSelectedCourses(){
+        return courseService.selectOnCourse();
+    }
+
 }
