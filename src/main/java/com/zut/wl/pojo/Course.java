@@ -14,7 +14,7 @@ import lombok.ToString;
 public class Course {
     private String courseId;//课程号
     private String courseName;//课程名
-    private int credit;//学分
+    private double credit;//学分
     private int period;//学时
     private String courseType;//课程类型
     private int permission;//权限（是否被选中）

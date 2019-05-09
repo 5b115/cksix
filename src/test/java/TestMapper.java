@@ -1,4 +1,5 @@
 import com.zut.wl.mapper.CourseMapper;
+import com.zut.wl.mapper.LogInfoMapper;
 import com.zut.wl.mapper.MajorMapper;
 import com.zut.wl.mapper.StudentMapper;
 import com.zut.wl.pojo.Course;
@@ -30,6 +31,9 @@ public class TestMapper {
     @Autowired
     private MajorMapper majorMapper;
 
+    @Autowired
+    private LogInfoMapper logInfoMapper;
+
     @Test
     public void insertTest(){
         Student student = new Student();
@@ -55,7 +59,7 @@ public class TestMapper {
     }
     @Test
     public void selectStudent(){
-        List<Student> students = studentMapper.selectAllStudent();
+        List<Student> students = studentMapper.selectStudentWithMajor();
         for (Student student : students) {
             System.out.println(student);
         }
@@ -80,5 +84,10 @@ public class TestMapper {
     @Test
     public void testTimeUtils(){
         System.out.println(TimeUtils.currentGrade());
+    }
+
+    @Test
+    public void testLogInfoMapper(){
+        System.out.println(logInfoMapper.selectLastLogInfo());
     }
 }

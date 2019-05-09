@@ -37,4 +37,12 @@ public interface MajorMapper {
 
     @Update("update major set major_limit = #{majorLimit} where major_id = #{majorId}")
     void updateMajorLimit(@Param("majorId") Integer id, @Param("majorLimit") int majorLimit);
+
+    /**
+     * 根据专业名字来查找专业信息
+     * @param majorName 专业名字
+     * @return
+     */
+    @Select("select * from major where major_name = #{majorName}")
+    Major selectMajorByMajorName(String majorName);
 }

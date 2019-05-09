@@ -9,7 +9,7 @@ import java.util.Calendar;
 public class TimeUtils {
 
     /**
-     * 获取当前时间（格式如2019-4-19-17-52-31）
+     * 获取当前时间（格式如2019-4-19 17:52）
      * @return
      */
     public static String currentTime(){
@@ -20,10 +20,14 @@ public class TimeUtils {
         int hour = today.get(Calendar.HOUR_OF_DAY);
         int minute = today.get(Calendar.MINUTE);
         int second  = today.get(Calendar.SECOND);
-        String todayString = todayYear+"-"+todayMonth+"-"+day+"-"+hour+"-"+minute+"-"+second;
+        String todayString = todayYear+"-"+todayMonth+"-"+day+" "+hour+":"+minute;
         return todayString;
     }
 
+    /**
+     * 获取当前学年
+     * @return
+     */
     public static String currentGrade(){
         Calendar today = Calendar.getInstance();
         return (today.get(Calendar.YEAR)-1)+"";

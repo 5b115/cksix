@@ -178,10 +178,7 @@
               data: "pn="+pn,
               type:"GET",
               success:function(result){
-                  // pageNum = result.pageNum;
-                  // pages = result.pages;
-                  //console.log(result);
-                  //1、解析并显示学生信息
+
                   build_stu_table(result);
                   //2、解析并显示分页信息
                   build_stu_info(result);

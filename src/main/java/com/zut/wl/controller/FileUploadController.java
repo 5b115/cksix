@@ -1,18 +1,9 @@
 package com.zut.wl.controller;
 
-import com.zut.wl.bean.Admin;
 import com.zut.wl.service.ExcelResolveService;
-import com.zut.wl.utils.ExcelResolve;
-import com.zut.wl.utils.ReadExcel;
-import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.io.File;
-import java.io.IOException;
-import java.util.Map;
+import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @Author xiumu
@@ -24,6 +15,20 @@ public class FileUploadController {
     @Autowired
     private ExcelResolveService excelResolveService;
 
+    @GetMapping("/upload")
+    public String updateData(){
+
+        return "success";
+    }
+
+
+
+
+
+
+
+
+    /*
     @PostMapping("/upload")
     public String uploadGradeFile(MultipartFile file, Map map){
         String originalFilename = file.getOriginalFilename();
@@ -44,5 +49,5 @@ public class FileUploadController {
         ExcelResolve excelResolve = new ExcelResolve(readExcel.readExcelTitle(),readExcel.readExcelContent());
 //        excelResolveService.insertData(excelResolve);
         return "success";
-    }
+    }  */
 }

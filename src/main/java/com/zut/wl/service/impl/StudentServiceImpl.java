@@ -2,6 +2,7 @@ package com.zut.wl.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zut.wl.mapper.MajorMapper;
 import com.zut.wl.mapper.StudentMapper;
 import com.zut.wl.pojo.Student;
 import com.zut.wl.service.StudentService;
@@ -19,6 +20,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentMapper studentMapper;
+
+    @Autowired
+    private MajorMapper majorMapper;
 
     @Override
     public PageInfo selStudentPageInfo(int pn) {
@@ -42,5 +46,20 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student selectStudentById(String id) {
         return studentMapper.selectOneById(id);
+    }
+
+    @Override
+    public void updateStudentMajor(String stuId, String majorName, int allowed) {
+        Student student = new Student();
+        student.setStuId(stuId);
+        if(majorName!=null&&majorName!=""){
+            student.setLastMajor(majorMapper.selectMajorByMajorName(majorName).getMajorId());
+            student.setAllowed(allowed);
+        }else {
+            System.out.println(majorName);
+            student.setLastMajor(0);
+            student.setAllowed(allowed);
+        }
+        studentMapper.updateStudentByStuId(student);
     }
 }

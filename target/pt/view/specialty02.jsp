@@ -33,7 +33,8 @@
                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                  <h4 class="modal-title" id="myModalLabel">异常学生的处理</h4>
              </div>
-             <form method="post" action="/pt/">
+             <form method="post" action="/pt/updateStuMajor">
+                 <input id="stuId" type="text" name="stuId" value="" hidden="hidden"/>
                  <div class="modal-body">
                      <div class="row">
                          <table class="table table-striped">
@@ -59,10 +60,10 @@
                          <div class="col-md-4 span1">是否允许填报志愿</div>
                          <div class="col-md-3">
                              <label class="radio-inline">
-                                 <input style="font-size: 15px;" type="radio" checked="checked" name="inlineRadioOptions" value="1"> 是
+                                 <input style="font-size: 15px;" type="radio" checked="checked" name="allowed1" id="inlineRadio1" value="1"> 是
                              </label>
                              <label class="radio-inline">
-                                 <input style="width: 12px;height: 12px;" type="radio" name="inlineRadioOptions" value="0"> 否
+                                 <input style="font-size: 15px;" type="radio" name="allowed1" id="inlineRadio2" value="0"> 否
                              </label>
                          </div>
                      </div>
@@ -72,8 +73,8 @@
                              <p class="span1">指定专业</p>
                          </div>
                          <div class="col-md-4">
-                             <select class="form-control major-list">
-                                 <option>1</option>
+                             <select name="majorName" class="form-control major-list">
+                                 <option selected="selected">1</option>
                                  <option>2</option>
                                  <option>3</option>
                                  <option>4</option>
@@ -219,8 +220,18 @@
               var stuId = $("<td></td>").append(item.stuId);
               var stuName = $("<td></td>").append(item.stuName);
               var clazz = $("<td></td>").append(item.clazz);
-              var permission = $("<td></td>").append("无");
-              var finalMajor = $("<td></td>").append("未分配");
+              var permission = $("<td></td>").append("");
+              var finalMajor = $("<td></td>").append("");
+              if (item.allowed==0){
+                  permission.append("无");
+              }else {
+                  permission.append("有");
+              }
+              if (item.major!=null){
+                  finalMajor.append(item.major.majorName);
+              }else {
+                  finalMajor.append("未分配");
+              }
               var buttonTd = $("<button type='button' class='edit-btn btn btn-primary btn-sm'><span class='glyphicon glyphicon-pencil'></span>编辑</button>");
               buttonTd.attr("stu-id",item.stuId);
               $("<tr></tr>").append(stuId)
@@ -239,8 +250,18 @@
               var stuId = $("<td></td>").append(item.stuId);
               var stuName = $("<td></td>").append(item.stuName);
               var clazz = $("<td></td>").append(item.clazz);
-              var permission = $("<td></td>").append("无");
-              var finalMajor = $("<td></td>").append("未分配");
+              var permission = $("<td></td>").append("");
+              var finalMajor = $("<td></td>").append("");
+              if (item.allowed==0){
+                  permission.append("无");
+              }else {
+                  permission.append("有");
+              }
+              if (item.major!=null){
+                  finalMajor.append(item.major.majorName);
+              }else {
+                  finalMajor.append("未分配");
+              }
               var buttonTd = $("<button type='button' class='edit-btn btn btn-primary btn-sm'><span class='glyphicon glyphicon-pencil'></span>编辑</button>");
               buttonTd.attr("stu-id",item.stuId);
               $("<tr></tr>").append(stuId)
@@ -276,7 +297,7 @@
               type:"GET",
               success:function(result){
                   $(".major-list").empty();
-                  $("<option></option>").append("").appendTo(".major-list");
+                  $("<option selected='selected'></option>").append(" ").appendTo(".major-list");
                   $.each(result,function (index, item) {
                       $("<option></option>").append(item.majorName).appendTo(".major-list");
                   })
@@ -284,6 +305,7 @@
           });
       }
       function set_edit_body(id) {
+          $("#stuId").val(id);
           $.ajax({
               url:"/pt/getOneStu",
               data: "id="+id,

@@ -5,11 +5,52 @@
         insert into student values
         <trim suffixOverrides=",">
             <foreach collection="list" item="stu">
-                (#{stu.stuId},#{stu.stuName},#{stu.gradeId},#{stu.otherGrade},#{stu.volunteerId},#{stu.lastMajor},#{stu.stuStatus}),
+                (#{stu.stuId},#{stu.stuName},#{stu.gradeId},#{stu.otherGrade},#{stu.volunteerId},#{stu.lastMajor},#{stu.stuStatus}),#{stu.gradeLevel},#{stu.clazz},#{stu.allowed},
             </foreach>
         </trim>
+        on duplicate key update stu_status=values (stu_status),grade_level=values (grade_level),clazz=values (clazz)
     </insert>
     <insert id="insOne" parameterType="student">
         insert into student value (#{stuId},#{stuName},default ,default,default ,default ,default)
     </insert>
+    <update id="updateStudentByStuId" parameterType="Student">
+        update student set last_major = #{lastMajor},stu_status = #{stuStatus},allowed = #{allowed} where stu_id = #{stuId}
+    </update>
+    <resultMap id="studentWithMajor" type="com.zut.wl.pojo.Student">
+        <id column="stu_id" jdbcType="VARCHAR" property="stuId"></id>
+        <result column="stu_name" property="stuName" jdbcType="VARCHAR"></result>
+        <result column="grade_id" property="gradeId" jdbcType="INTEGER"></result>
+        <result column="other_grade" property="otherGrade" jdbcType="INTEGER"></result>
+        <result column="volunteer_id" property="volunteerId" jdbcType="INTEGER"></result>
+        <result column="last_major" property="lastMajor" jdbcType="INTEGER"></result>
+        <result column="stu_status" property="stuStatus" jdbcType="INTEGER"></result>
+        <result column="grade_level" property="gradeLevel" jdbcType="VARCHAR"></result>
+        <result column="clazz" property="clazz" jdbcType="VARCHAR"></result>
+        <result column="allowed" property="allowed" jdbcType="INTEGER"></result>
+        <association property="major" javaType="com.zut.wl.pojo.Major">
+        <id column="major_id" property="majorId"></id>
+        <result column="major_name" property="majorName" jdbcType="VARCHAR"></result>
+        <result column="department_id" property="departmentId"></result>
+        <result column="major_limit" property="majorLimit"></result>
+        <result column="major_status" property="majorStatus"></result>
+    </association>
+    </resultMap>
+    <sql id="studentWithMajor">
+        s.stu_id,s.stu_name,s.grade_id,s.other_grade,s.volunteer_id,s.last_major,s.stu_status,s.grade_level,s.clazz,s.allowed,
+        m.major_id,m.major_name,m.department_id,m.major_limit,m.major_status
+    </sql>
+    <select id="selectStudentWithMajor" resultMap="studentWithMajor">
+        select <include refid="studentWithMajor"/>
+        from student s left join major m on s.last_major=m.major_id
+    </select>
+    <select id="selectRepeatStudent" resultMap="studentWithMajor">
+        select <include refid="studentWithMajor"/>
+        from student s left join major m on s.last_major=m.major_id
+        where stu_id not like CONCAT(#{gradeLevel},'%')
+    </select>
+    <select id="selectNotMajorStudent" resultMap="studentWithMajor">
+        select <include refid="studentWithMajor"/>
+        from student s left join major m on s.last_major=m.major_id
+        where stu_id not like '%0802%'
+    </select>
 </mapper>

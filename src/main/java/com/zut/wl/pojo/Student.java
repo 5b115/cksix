@@ -21,4 +21,6 @@ public class Student {
     private int stuStatus;//是否已经填报
     private String gradeLevel;//年级
     private String clazz;//班级
+    private int allowed;//是否允许填报志愿
+    private Major major;
 }

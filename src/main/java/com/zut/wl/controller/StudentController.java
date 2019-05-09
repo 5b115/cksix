@@ -46,4 +46,10 @@ public class StudentController {
         return studentService.selectStudentById(id);
     }
 
+    @PostMapping("/updateStuMajor")
+    public String updateStudentMajorAndAllowed(String stuId,@RequestParam(value = "majorName",required = false) String majorName, Integer allowed1){
+        studentService.updateStudentMajor(stuId,majorName,allowed1);
+        return "specialty02";
+    }
+
 }

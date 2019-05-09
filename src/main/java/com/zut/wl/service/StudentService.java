@@ -36,4 +36,12 @@ public interface StudentService {
      * @return
      */
     Student selectStudentById(String id);
+
+    /**
+     * 更改学生的最终专业以及填报权限
+     * @param stuId
+     * @param majorName
+     * @param allowed
+     */
+    void updateStudentMajor(String stuId,String majorName,int allowed);
 }
