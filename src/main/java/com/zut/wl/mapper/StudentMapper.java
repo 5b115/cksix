@@ -10,11 +10,23 @@ import java.util.List;
  * @Date 2019/4/20 7:44
  */
 public interface StudentMapper {
+    /**
+     * 批量插入学生信息
+     * @param studentList
+     */
     void insertStudentList(List<Student> studentList);
+
     int insOne(Student student);
 
-    @Select("select * from student")
-    List<Student> selectAllStudent();
+    /**
+     * 获取所有还未填报志愿的计算机类的学生
+     * @return
+     */
+    @Select("select * from student where clazz LIKE '计算机类%' and volunteer_id = 0")
+    List<Student> selectAllStudentByVolunteer();
+
+
+
 
     /**
      * 查询留级的所有学生
@@ -26,7 +38,7 @@ public interface StudentMapper {
      * 查询转专业过来的学生
      * @return
      */
-    List<Student> selectNotMajorStudent();
+    List<Student> selectNotMajorStudent(String gradeLevel);
 
     /**
      * 根据id获取学生信息
@@ -47,4 +59,48 @@ public interface StudentMapper {
      * @return
      */
     List<Student> selectStudentWithMajor();
+
+    /**
+     * 查询当前学年一个新生的学号
+     * @param gradeLevel 当前学年
+     * @return
+     */
+    @Select("SELECT stu_id from student where clazz LIKE '计算机类%' and stu_id LIKE #{gradeLevel} LIMIT 1")
+    String selectStuId(String gradeLevel);
+
+    /**
+     * 查询计算机类的所有学生
+     * @return
+     */
+    @Select("SELECT * from student where clazz LIKE '计算机类%'")
+    List<Student> selectStudentByClazz();
+
+    /**
+     * 查询已经分配专业的学生
+     * @return
+     */
+    List<Student> selectStudentMajor();
+
+    /**
+     * 查询计算机类没有填报资格的学生
+     * @return
+     */
+    @Select("select * from student where allowed=0 and clazz LIKE '计算机类%'")
+    List<Student> selectStudentNoPermission();
+
+    /**
+     * 已经完成志愿填报的学生数量
+     * @param gradeLevel 当前学年
+     * @return
+     */
+    @Select("SELECT count(*) from student WHERE volunteer_id = 0 AND grade_level = #{gradeLevel}")
+    int selectCountFilled(String gradeLevel);
+
+    /**
+     * 还没有完成志愿填报的学生数量
+     * @param gradeLevel 当前学年
+     * @return
+     */
+    @Select("SELECT count(*) from student WHERE volunteer_id != 0 AND grade_level = #{gradeLevel}")
+    int selectCountUnfilled(String gradeLevel);
 }

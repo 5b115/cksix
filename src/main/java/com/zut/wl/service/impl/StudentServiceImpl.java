@@ -6,10 +6,13 @@ import com.zut.wl.mapper.MajorMapper;
 import com.zut.wl.mapper.StudentMapper;
 import com.zut.wl.pojo.Student;
 import com.zut.wl.service.StudentService;
+import com.zut.wl.utils.TimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author xiumu
@@ -27,7 +30,7 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public PageInfo selStudentPageInfo(int pn) {
         PageHelper.startPage(pn,10);
-        List<Student> students = studentMapper.selectAllStudent();
+        List<Student> students = studentMapper.selectAllStudentByVolunteer();
         PageInfo studentPageInfo = new PageInfo(students);
         return studentPageInfo;
     }
@@ -35,12 +38,12 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public List<Student> selectRepeatStudentByGrade() {
 //        String currentGrade = TimeUtils.currentGrade();
-        return studentMapper.selectRepeatStudent("2017");
+        return studentMapper.selectRepeatStudent(TimeUtils.currentGrade());
     }
 
     @Override
     public List<Student> selectStudentNotMajor() {
-        return studentMapper.selectNotMajorStudent();
+        return studentMapper.selectNotMajorStudent(TimeUtils.currentGrade());
     }
 
     @Override
@@ -61,5 +64,34 @@ public class StudentServiceImpl implements StudentService {
             student.setAllowed(allowed);
         }
         studentMapper.updateStudentByStuId(student);
+    }
+
+
+    @Override
+    public void insertOne(){
+        Student student = new Student();
+        student.setStuId("201608040122");
+        student.setStuName("朽木");
+        studentMapper.insOne(student);
+        System.out.println(studentMapper.selectOneById("201608040122"));
+    }
+
+    @Override
+    public List<Student> selectStudentMajor() {
+        return studentMapper.selectStudentMajor();
+    }
+
+    @Override
+    public List<Student> selectStudentNotAllowed() {
+        return studentMapper.selectStudentNoPermission();
+    }
+
+    @Override
+    public Map<String, Object> selectVolunteerInfo() {
+        Map<String,Object> map = new HashMap<>();
+        map.put("currentTime",TimeUtils.currentTime());
+        map.put("filledNumber",studentMapper.selectCountFilled(TimeUtils.currentGrade()));
+        map.put("unfilledNumber",studentMapper.selectCountUnfilled(TimeUtils.currentGrade()));
+        return map;
     }
 }

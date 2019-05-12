@@ -16,4 +16,7 @@ public class Grade {
     private String stuId;//学号
     private String courseId;//课程号
     private double gradeScore;//成绩得分
+    private double gradePoint;//绩点
+    private String examType;//重修或初修
+    private double gradeCredit;//学分
 }

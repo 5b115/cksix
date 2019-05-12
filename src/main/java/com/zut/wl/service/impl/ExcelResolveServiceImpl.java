@@ -4,7 +4,7 @@ import com.zut.wl.mapper.CourseMapper;
 import com.zut.wl.mapper.GradeMapper;
 import com.zut.wl.mapper.OtherMapper;
 import com.zut.wl.mapper.StudentMapper;
-import com.zut.wl.utils.ExcelResolve;
+import com.zut.wl.utils.excel.ExcelResolve;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

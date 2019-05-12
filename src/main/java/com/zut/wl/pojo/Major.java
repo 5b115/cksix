@@ -14,7 +14,7 @@ import lombok.ToString;
 public class Major {
     private int majorId;//主键自增
     private String majorName;//专业名字
-    private int departmentId;//所属专业
+    private int departmentId;//所属学院
     private int majorLimit;//专业人数限制
     private int majorStatus;//专业是否存在
 }

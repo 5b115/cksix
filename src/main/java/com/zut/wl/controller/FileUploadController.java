@@ -17,7 +17,6 @@ public class FileUploadController {
 
     @GetMapping("/upload")
     public String updateData(){
-
         return "success";
     }
 

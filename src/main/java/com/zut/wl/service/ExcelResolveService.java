@@ -1,6 +1,6 @@
 package com.zut.wl.service;
 
-import com.zut.wl.utils.ExcelResolve;
+import com.zut.wl.utils.excel.ExcelResolve;
 
 /**
  * @Author xiumu

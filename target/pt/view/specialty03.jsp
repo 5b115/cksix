@@ -14,20 +14,6 @@
       <script src="/pt/js/jquery-3.3.1.min.js" type="text/javascript"></script>
       <script src="/pt/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
-      <script type="text/javascript">
-	$(document).ready(function(){
-    $('select').change(function(e){
-        var oldvalue=$(this).attr('old');
-        var currentvalue=$(this).val();
-        if(oldvalue){
-            $('select option[value='+oldvalue+']').show();
-        }
- 
-        $('select option[value='+currentvalue+']').hide();
-        $(this).attr('old',currentvalue);
-    });
-});
-</script>
       <style type="text/css">
           .span1{
               font-size: 18px;
@@ -80,17 +66,18 @@
     <div class="row" style="margin-top: 8px;">
         <p class="span2 col-md-5">已经指定专业的学生</p>
     </div>
-    <div class="row">
-        <table class="table table-striped" >
+    <div class="row" >
+        <table class="table table-striped majorStuTable" >
             <thead>
             <tr>
                 <th>学号</th>
                 <th>姓名</th>
                 <th>年级</th>
                 <th>班级</th>
+                <th>专业</th>
             </tr>
             </thead>
-            <tbody id="stu-table">
+            <tbody id="stu-major-table">
             <tr>
                 <td>201608040122</td>
                 <td>朽木</td>
@@ -108,7 +95,7 @@
         <p class="span2 col-md-5">取消填报资格的学生</p>
     </div>
     <div class="row">
-        <table class="table table-striped" >
+        <table class="table table-striped stuNotAllowed" >
             <thead>
             <tr>
                 <th>学号</th>
@@ -117,7 +104,7 @@
                 <th>班级</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="stu-not-allowed">
             <tr>
                 <td>201608040122</td>
                 <td>亚索</td>
@@ -150,7 +137,8 @@
       $(function () {
           getMajorList();
           getCourseList();
-          // getStudentList(1);
+          getStuMajor();
+          getStuNotAllowed();
       })
       function getCourseList() {
           $.ajax({
@@ -172,18 +160,34 @@
               }
           });
       }
-      function getStudentList(pn) {
+      function getStuMajor() {
           $.ajax({
-              url:"/pt/getStudents",
-              data: "pn="+pn,
+              url:"/pt/getMajorStu",
+              data: "",
               type:"GET",
               success:function(result){
-
-                  build_stu_table(result);
-                  //2、解析并显示分页信息
-                  build_stu_info(result);
+                  build_stu_Major(result);
               }
           });
+      }
+      
+      function build_stu_Major(result) {
+          if (result==null||result==""){
+              $(".majorStuTable").empty();
+              $(".majorStuTable").append($("<h2></h2>").append("还没有已经指定专业的学生"));
+          }else {
+              $("#stu-major-table").empty();
+              $.each(result,function (index,item) {
+                  var stuIdTd = $("<td></td>").append(item.stuId);
+                  var stuNameTd = $("<td></td>").append(item.stuName);
+                  var gradeLevelTd = $("<td></td>").append(item.gradeLevel);
+                  var clazzTd = $("<td></td>").append(item.clazz);
+                  var majorTd = $("<td></td>").append(item.major.majorName);
+                  $("<tr></tr>").append(stuIdTd).append(stuNameTd)
+                      .append(gradeLevelTd).append(clazzTd).append(majorTd)
+                      .appendTo("#stu-major-table");
+              });
+          }
       }
       function build_majorlist(result) {
           $("#majorlist").empty();
@@ -205,38 +209,36 @@
           })
           $("#total-credit").append("总学分为"+credits);
       }
-      function build_stu_table(result) {
-          $("#stu-table").empty();
-          var stuList = result.list;
-          $.each(stuList,function (index,item) {
-              var stuId = $("<td></td>").append(item.stuId);
-              var stuName = $("<td></td>").append(item.stuName);
-              var checkBoxTd = $("<td><input name='' type='checkbox' style='height:18px;width: 18px;'/></td>");
-              $("<tr></tr>").append(stuId)
-                  .append(stuName)
-                  .append(checkBoxTd)
-                  .appendTo("#stu-table");
+
+
+      function getStuNotAllowed() {
+          $.ajax({
+              url:"/pt/getNotAllowed",
+              data: "",
+              type:"GET",
+              success:function(result){
+                  build_stu_not_allowed(result);
+              }
           });
       }
-      function build_stu_info(result) {
-          $("#page_stu_info").empty();
-          $("#page_stu_info").append("当前是第"+result.pageNum+"页,总"+
-              result.pages+"页,总共"+
-              result.total+"学生");
-      }
-      function pageUp() {
-          if (pageNum<=1){
-              alert("这是第一页");
+
+      function build_stu_not_allowed(result) {
+          if (result==null||result==""){
+              $(".stuNotAllowed").empty();
+              $(".stuNotAllowed").append($("<h2></h2>").append("还没有取消填报资格的学生"));
           }else {
-              getCourseList(pageNum-1);
+              $("#stu-not-allowed").empty();
+              $.each(result,function (index,item) {
+                  var stuIdTd = $("<td></td>").append(item.stuId);
+                  var stuNameTd = $("<td></td>").append(item.stuName);
+                  var gradeLevelTd = $("<td></td>").append(item.gradeLevel);
+                  var clazzTd = $("<td></td>").append(item.clazz);
+                  $("<tr></tr>").append(stuIdTd).append(stuNameTd)
+                      .append(gradeLevelTd).append(clazzTd)
+                      .appendTo("#stu-not-allowed");
+              });
           }
       }
-      function pageDown() {
-          if (pageNum>=pages){
-              alert("这是最后一页");
-          }else {
-              getCourseList(pageNum+1);
-          }
-      }
+
   </script>
 </html>

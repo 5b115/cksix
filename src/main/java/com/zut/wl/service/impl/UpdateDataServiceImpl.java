@@ -6,6 +6,7 @@ import com.zut.wl.mapper.StudentMapper;
 import com.zut.wl.service.UpdateDataService;
 import com.zut.wl.utils.ResolveJsonResponse;
 import com.zut.wl.utils.TimeUtils;
+import com.zut.wl.utils.client.ClientUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,7 +38,7 @@ public class UpdateDataServiceImpl implements UpdateDataService {
      * @param page 当前页数
      */
     private void updateStudent(String gradeLevel, int page){
-        ResolveJsonResponse jsonResponse = new ResolveJsonResponse();
+        ResolveJsonResponse jsonResponse = new ResolveJsonResponse(new ClientUtil());
         jsonResponse.getStudentInfo(gradeLevel,page);
         int maxPage = jsonResponse.getMaxPage();
         for (int i = 0; i < maxPage; i++) {

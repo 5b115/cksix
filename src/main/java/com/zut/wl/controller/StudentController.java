@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author xiumu
@@ -22,10 +23,16 @@ public class StudentController {
     private StudentService studentService;
 
     @ResponseBody
-    @GetMapping("/getStudents")
+    @GetMapping("/getStuNotFilled")
     public PageInfo getStudentInfo(@RequestParam(value="pn",defaultValue = "1") int pn){
         PageInfo studentPageInfo = studentService.selStudentPageInfo(pn);
         return studentPageInfo;
+    }
+
+    @ResponseBody
+    @GetMapping("/getVolunteerInfo")
+    public Map<String,Object> getVolunteerInfo(){
+        return studentService.selectVolunteerInfo();
     }
 
     @ResponseBody
@@ -51,5 +58,19 @@ public class StudentController {
         studentService.updateStudentMajor(stuId,majorName,allowed1);
         return "specialty02";
     }
+
+
+    @ResponseBody
+    @GetMapping("/getMajorStu")
+    public List<Student> getStudentMajor(){
+        return studentService.selectStudentMajor();
+    }
+
+    @ResponseBody
+    @GetMapping("/getNotAllowed")
+    public List<Student> getStudentNotAllowed(){
+        return studentService.selectStudentNotAllowed();
+    }
+
 
 }

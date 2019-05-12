@@ -22,7 +22,7 @@
     </div>
     <div class="row" id="data-not-null">
         <div class="page-header">
-            <h1 id="input-title">当前数据最新为<span id="current-year"></span>级学生</h1>
+            <h1 id="input-title">当前最新数据为<span id="current-year"></span>级学生</h1>
         </div>
     </div>
     <div class="row" id="data-null">
@@ -51,7 +51,7 @@
     </div>
     <div class="row" id="point" hidden="hidden">
         <hr/>
-        <h2>正在初始化数据，请稍后.......</h2>
+        <h2>正在初始化数据，请稍后.......此过程可能需要5到10分钟</h2>
     </div>
 </div>
 <!-- <form  id="inputFile" class="form-horizontal" action="/pt/upload" onsubmit="return changePage(this);" method="post" enctype="multipart/form-data" role="form">

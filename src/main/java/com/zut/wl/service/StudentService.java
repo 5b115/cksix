@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.zut.wl.pojo.Student;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author xiumu
@@ -12,7 +13,7 @@ import java.util.List;
 public interface StudentService {
 
     /**
-     * 获取学生信息的分页数据
+     * 分页获取还未填报志愿的学生
      * @param pn 第几页
      * @return
      */
@@ -44,4 +45,24 @@ public interface StudentService {
      * @param allowed
      */
     void updateStudentMajor(String stuId,String majorName,int allowed);
+
+    void insertOne();
+
+    /**
+     * 查询已经分配专业的学生
+     * @return
+     */
+    List<Student> selectStudentMajor();
+
+    /**
+     * 查询没有填报资格的学生
+     * @return
+     */
+    List<Student> selectStudentNotAllowed();
+
+    /**
+     * 获取目前学生的填报情况
+     * @return
+     */
+    Map<String,Object> selectVolunteerInfo();
 }

@@ -18,4 +18,6 @@ public class Course {
     private int period;//学时
     private String courseType;//课程类型
     private int permission;//权限（是否被选中）
+    private String startYear;//开课学年
+    private String clazzType;//开课班级
 }

@@ -25,7 +25,7 @@ public class TimeUtils {
     }
 
     /**
-     * 获取当前学年
+     * 获取一年级新生的年级
      * @return
      */
     public static String currentGrade(){

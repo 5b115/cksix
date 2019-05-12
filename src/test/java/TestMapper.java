@@ -1,10 +1,8 @@
-import com.zut.wl.mapper.CourseMapper;
-import com.zut.wl.mapper.LogInfoMapper;
-import com.zut.wl.mapper.MajorMapper;
-import com.zut.wl.mapper.StudentMapper;
-import com.zut.wl.pojo.Course;
+import com.zut.wl.mapper.*;
+import com.zut.wl.pojo.Grade;
 import com.zut.wl.pojo.Major;
 import com.zut.wl.pojo.Student;
+import com.zut.wl.service.StudentService;
 import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,6 +32,12 @@ public class TestMapper {
     @Autowired
     private LogInfoMapper logInfoMapper;
 
+    @Autowired
+    private GradeMapper gradeMapper;
+
+    @Autowired
+    private StudentService studentService;
+
     @Test
     public void insertTest(){
         Student student = new Student();
@@ -44,10 +48,7 @@ public class TestMapper {
 
     @Test
     public void selectTest(){
-        List<Course> courses = courseMapper.selectAllCourse();
-        for (Course course : courses) {
-            System.out.println(course);
-        }
+        System.out.println(studentMapper.selectStudentMajor());
     }
 
     @Test
@@ -59,11 +60,8 @@ public class TestMapper {
     }
     @Test
     public void selectStudent(){
-        List<Student> students = studentMapper.selectStudentWithMajor();
-        for (Student student : students) {
-            System.out.println(student);
-        }
-        System.out.println(studentMapper.selectOneById("201711044604"));
+        String stuId = studentMapper.selectStuId(TimeUtils.currentGrade()+"%");
+        System.out.println(stuId);
     }
     @Test
     public void selectRepeatStudent(){
@@ -75,7 +73,7 @@ public class TestMapper {
 
     @Test
     public void selectNotMajortStudent(){
-        List<Student> students = studentMapper.selectNotMajorStudent();
+        List<Student> students = studentMapper.selectNotMajorStudent(TimeUtils.currentGrade());
         for (Student student : students) {
             System.out.println(student);
         }
@@ -90,4 +88,13 @@ public class TestMapper {
     public void testLogInfoMapper(){
         System.out.println(logInfoMapper.selectLastLogInfo());
     }
+
+
+    @Test
+    public void testGradeMapper(){
+        for (Grade grade : gradeMapper.selectAll()) {
+            System.out.println(grade);
+        }
+    }
+
 }

@@ -12,6 +12,10 @@ import java.util.List;
  * @Date 2019/4/20 7:44
  */
 public interface CourseMapper {
+    /**
+     * 批量插入
+     * @param courseList
+     */
     void insertCourseList(List<Course> courseList);
 
     @Select("select * from Course")

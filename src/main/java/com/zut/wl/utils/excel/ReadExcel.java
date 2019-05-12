@@ -1,4 +1,4 @@
-package com.zut.wl.utils;
+package com.zut.wl.utils.excel;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
@@ -25,6 +25,7 @@ public class ReadExcel {
     private String absoluteFilePath;  //文件的绝对路径
     private Workbook workbook;        //excel的工作薄
     private Sheet sheet;              //工作簿中的第一个表格
+
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }

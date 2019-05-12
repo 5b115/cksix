@@ -5,13 +5,13 @@
         insert into student values
         <trim suffixOverrides=",">
             <foreach collection="list" item="stu">
-                (#{stu.stuId},#{stu.stuName},#{stu.gradeId},#{stu.otherGrade},#{stu.volunteerId},#{stu.lastMajor},#{stu.stuStatus}),#{stu.gradeLevel},#{stu.clazz},#{stu.allowed},
+                (#{stu.stuId},#{stu.stuName},default ,default,default,default,default,#{stu.gradeLevel},#{stu.clazz},default),
             </foreach>
         </trim>
         on duplicate key update stu_status=values (stu_status),grade_level=values (grade_level),clazz=values (clazz)
     </insert>
     <insert id="insOne" parameterType="student">
-        insert into student value (#{stuId},#{stuName},default ,default,default ,default ,default)
+        insert into student value (#{stuId},#{stuName},default ,default,default ,default ,default ,default,default ,default)
     </insert>
     <update id="updateStudentByStuId" parameterType="Student">
         update student set last_major = #{lastMajor},stu_status = #{stuStatus},allowed = #{allowed} where stu_id = #{stuId}
@@ -42,15 +42,23 @@
     <select id="selectStudentWithMajor" resultMap="studentWithMajor">
         select <include refid="studentWithMajor"/>
         from student s left join major m on s.last_major=m.major_id
+        where clazz LIKE '计算机类%'
     </select>
     <select id="selectRepeatStudent" resultMap="studentWithMajor">
         select <include refid="studentWithMajor"/>
         from student s left join major m on s.last_major=m.major_id
-        where stu_id not like CONCAT(#{gradeLevel},'%')
+        where stu_id like '____08%' and stu_id not like CONCAT(#{gradeLevel},'%') and grade_level = #{gradeLevel}
     </select>
     <select id="selectNotMajorStudent" resultMap="studentWithMajor">
         select <include refid="studentWithMajor"/>
         from student s left join major m on s.last_major=m.major_id
-        where stu_id not like '%0802%'
+        where grade_level = #{gradeLevel} AND clazz LIKE '计算机类%' AND stu_id NOT LIKE '____08%'
     </select>
+
+    <select id="selectStudentMajor" resultMap="studentWithMajor">
+        select <include refid="studentWithMajor"/>
+        from student s left join major m on s.last_major=m.major_id
+        where s.last_major != 0
+    </select>
+
 </mapper>

@@ -5,8 +5,9 @@
         insert into grade values
         <trim suffixOverrides=",">
             <foreach collection="list" item="g">
-                (default ,#{g.stuId},#{g.courseId},#{g.gradeScore}),
+                (default ,#{g.stuId},#{g.courseId},#{g.gradeScore},#{gradePoint},#{examType},#{gradeCredit}),
             </foreach>
         </trim>
+        on duplicate key update grade_score=values (grade_score),grade_point=values (grade_point),exam_type=values (exam_type),grade_credit=values (grade_credit)
     </insert>
 </mapper>

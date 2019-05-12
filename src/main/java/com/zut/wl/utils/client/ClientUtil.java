@@ -1,4 +1,4 @@
-package com.zut.wl.utils;
+package com.zut.wl.utils.client;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

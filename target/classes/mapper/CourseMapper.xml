@@ -5,8 +5,9 @@
         insert into Course values
         <trim suffixOverrides=",">
             <foreach collection="list" item="c">
-                (#{c.courseId},#{c.courseName},#{c.credit},#{c.period},#{c.courseType}),
+                (#{c.courseId},#{c.courseName},#{c.credit},#{c.period},#{c.courseType},default ,#{c.startYear},#{c.clazzType}),
             </foreach>
         </trim>
+        on duplicate key update credit=values (credit),period=values (period),course_type=values (course_type),start_year=value (start_year),clazz_type=values (clazz_type)
     </insert>
 </mapper>

@@ -289,18 +289,22 @@
               setMajorList();
           });
       }
-      
+
       function setMajorList() {
           $.ajax({
               url:"/pt/getMajorLimit",
               data: "",
               type:"GET",
               success:function(result){
-                  $(".major-list").empty();
-                  $("<option selected='selected'></option>").append(" ").appendTo(".major-list");
-                  $.each(result,function (index, item) {
-                      $("<option></option>").append(item.majorName).appendTo(".major-list");
-                  })
+                  if (result!=null||result!=''){
+
+                      $(".major-list").empty();
+
+                      $("<option selected='selected'></option>").append(" ").appendTo(".major-list");
+                      $.each(result,function (index, item) {
+                          $("<option></option>").append(item.majorName).appendTo(".major-list");
+                      })
+                  }
               }
           });
       }
