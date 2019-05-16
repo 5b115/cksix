@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="DEBUG" monitorInterval="1800">
     <properties>
-        <property name="LOG_HOME">/WEB-INF/logs</property>
+        <property name="LOG_HOME">WEB-INF/logs</property>
         <property name="FILE_NAME">pt-log</property>
     </properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <RollingFile name="running-log" fileName="${LOG_HOME}/${FILE_NAME}.log"
+        <RollingFile name="ApplicationLog" fileName="${web:rootDir}/${LOG_HOME}/${FILE_NAME}.log"
                      filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd}-%i.log.gz"
                      immediateFlush="true">
             <PatternLayout
@@ -23,7 +23,7 @@
     <Loggers>
         <Root level="info">
             <!-- 输入到文件-->
-            <!--<AppenderRef ref="running-log"/>-->
+            <AppenderRef ref="ApplicationLog"/>
             <!-- 输入到控制台-->
             <AppenderRef ref="Console"/>
         </Root>

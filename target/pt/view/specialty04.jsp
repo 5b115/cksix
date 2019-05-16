@@ -117,7 +117,7 @@
       })
       function getStudentList(pn) {
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getStuNotFilled",
+              url:"/pt/getStuNotFilled",
               data: "pn="+pn,
               type:"GET",
               success:function(result){
@@ -166,7 +166,7 @@
 
       function setVolunteerInfo() {
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getVolunteerInfo",
+              url:"/pt/getVolunteerInfo",
               data: "",
               type:"GET",
               success:function(result){

@@ -79,7 +79,7 @@
 
     function checkIsGetData() {
         $.ajax({
-            url:"http://39.97.115.241:8080/pt/getLog",
+            url:"/pt/getLog",
             data: "",
             type:"GET",
             success:function(result){

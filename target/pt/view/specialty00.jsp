@@ -120,7 +120,7 @@
       $(function () {
           getMajorList();
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getMajorLimit/",
+              url:"/pt/getMajorLimit/",
               data: "",
               type:"GET",
               success:function(result){
@@ -130,7 +130,7 @@
       })
       function getMajorList() {
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getMajorList",
+              url:"/pt/getMajorList",
               data: "",
               type:"GET",
               success:function(result){
@@ -164,7 +164,7 @@
       $(document).on("click",".btn-delete",function () {
           var major = $(this).attr("major-id");
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/deleteMajor/"+major,
+              url:"/pt/deleteMajor/"+major,
               data: "",
               async: false,
               type:"GET",
@@ -181,7 +181,7 @@
               majorLimit.push($(this).val());
           })
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/addMajorLimit/",
+              url:"/pt/addMajorLimit/",
               data: "majorId="+majorId+"&majorLimit="+majorLimit,
               type:"POST",
               success:function(result){

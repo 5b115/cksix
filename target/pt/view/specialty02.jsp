@@ -189,7 +189,7 @@
       })
       function getRepeatStudent() {
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getRepeatStu",
+              url:"/pt/getRepeatStu",
               data: "",
               type:"GET",
               success:function(result){
@@ -202,7 +202,7 @@
       }
       function getStuNotMajor() {
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getStuNotMajor",
+              url:"/pt/getStuNotMajor",
               data: "",
               type:"GET",
               success:function(result){
@@ -292,7 +292,7 @@
 
       function setMajorList() {
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getMajorLimit",
+              url:"/pt/getMajorLimit",
               data: "",
               type:"GET",
               success:function(result){
@@ -311,7 +311,7 @@
       function set_edit_body(id) {
           $("#stuId").val(id);
           $.ajax({
-              url:"http://39.97.115.241:8080/pt/getOneStu",
+              url:"/pt/getOneStu",
               data: "id="+id,
               type:"POST",
               success:function(result){
