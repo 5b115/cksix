@@ -2,7 +2,7 @@ import com.zut.wl.mapper.*;
 import com.zut.wl.pojo.Grade;
 import com.zut.wl.pojo.Major;
 import com.zut.wl.pojo.Student;
-import com.zut.wl.service.StudentService;
+import com.zut.wl.service.LogInfoService;
 import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,19 +36,18 @@ public class TestMapper {
     private GradeMapper gradeMapper;
 
     @Autowired
-    private StudentService studentService;
+    private LogInfoService logInfoService;
 
     @Test
     public void insertTest(){
-        Student student = new Student();
-        student.setStuId("201608040122");
-        student.setStuName("朽木");
-        studentMapper.insOne(student);
+
     }
 
     @Test
     public void selectTest(){
-        System.out.println(studentMapper.selectStudentMajor());
+        for (Student student : studentMapper.selectStudentByClazz(TimeUtils.currentGrade())) {
+            System.out.println(student);
+        }
     }
 
     @Test
@@ -97,4 +96,9 @@ public class TestMapper {
         }
     }
 
+
+    @Test
+    public void testLogInfoService(){
+        //logInfoService.insertGrades();
+    }
 }

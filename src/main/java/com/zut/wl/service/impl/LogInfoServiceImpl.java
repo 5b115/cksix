@@ -41,7 +41,6 @@ public class LogInfoServiceImpl implements LogInfoService {
 
     @Override
     public void insertLastLogInfo() {
-        insertStudentList();
         insertLogInfo();
     }
 
@@ -58,7 +57,8 @@ public class LogInfoServiceImpl implements LogInfoService {
     /**
      * 更新学生信息
      */
-    private void insertStudentList(){
+    @Override
+    public void insertStudentList(){
         ResolveJsonResponse jsonResponse = new ResolveJsonResponse(new ClientUtil());
         String grade = TimeUtils.currentGrade();
         jsonResponse.getStudentInfo(grade,1);
@@ -73,13 +73,17 @@ public class LogInfoServiceImpl implements LogInfoService {
     /**
      * 更新课程信息
      */
-    private void insertCourses(){
+    @Override
+    public void insertCourses(){
         ResolveJsonResponse jsonResponse = new ResolveJsonResponse(new ClientUtil());
         String clazzType = studentMapper.selectStuId(TimeUtils.currentGrade()+"%");
-        jsonResponse.getCourseList(clazzType);
+        StringBuffer clazzTypeBuffer = new StringBuffer(clazzType);
+        clazzTypeBuffer.setCharAt(8,'0');
+        clazzType = clazzTypeBuffer.toString();
+        jsonResponse.getCourseList(clazzType,1);
         int maxPage = jsonResponse.getMaxPage();
         for (int i = 0; i < maxPage; i++) {
-            jsonResponse.getCourseList(clazzType);
+            jsonResponse.getCourseList(clazzType,i+1);
             courseMapper.insertCourseList(jsonResponse.getCourses());
         }
     }
@@ -87,18 +91,21 @@ public class LogInfoServiceImpl implements LogInfoService {
     /**
      * 更新成绩信息
      */
-    private void insertGrades(){
+    @Override
+    public void insertGrades(){
         ResolveJsonResponse jsonResponse = new ResolveJsonResponse(new ClientUtil());
-        List<Student> students = studentMapper.selectStudentByClazz();
-        int maxPage = 0;
+        List<Student> students = studentMapper.selectStudentByClazz(TimeUtils.currentGrade());
+        int maxPage;
         for (int i = 0; i < students.size(); i++) {
             String stuId = students.get(i).getStuId();
-            jsonResponse.getGradeList(stuId);
+            jsonResponse.getGradeList(stuId,1);
             maxPage = jsonResponse.getMaxPage();
+            System.out.println("这是最大页数"+maxPage);
             for (int i1 = 0; i1 < maxPage; i1++) {
-                jsonResponse.getGradeList(stuId);
+                jsonResponse.getGradeList(stuId,i1+1);
                 gradeMapper.insertGradeList(jsonResponse.getGrades());
             }
+            System.out.println("这是学号"+stuId);
         }
 
     }

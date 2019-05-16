@@ -18,17 +18,11 @@
     <!-- 加载属性文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 数据源 -->
-    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.driver}"></property>
-        <property name="jdbcUrl" value="${jdbc.url}"></property>
-        <property name="user" value="${jdbc.username}"></property>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
         <property name="password" value="${jdbc.password}"></property>
-        <!--连接池中保留的最大连接数。默认值: 15 -->
-        <property name="maxPoolSize" value="20"/>
-        <!--关闭连接时，是否提交未提交的事务，默认为false，即关闭连接，回滚未提交的事务 -->
-        <property name="autoCommitOnClose" value="false"></property>
-        <!--每60秒检查所有连接池中的空闲连接。默认值: 0，不检查 -->
-        <property name="idleConnectionTestPeriod" value="60"></property>
     </bean>
     <!-- SqlSessionFactory -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -42,10 +36,12 @@
         <property name="basePackage" value="com.zut.wl.mapper"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
     </bean>
-    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+   <!-- <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
         <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
         <constructor-arg name="executorType" value="BATCH"></constructor-arg>
     </bean>
+    配置sqlSession用来批量新增
+    -->
     <!-- 事务管理器 -->
     <bean id="txManage" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>

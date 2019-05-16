@@ -142,7 +142,7 @@
       })
       function getCourseList() {
           $.ajax({
-              url:"/pt/getSelectedCourse",
+              url:"http://39.97.115.241:8080/pt/getSelectedCourse",
               data: "",
               type:"GET",
               success:function(result){
@@ -152,7 +152,7 @@
       }
       function getMajorList() {
           $.ajax({
-              url:"/pt/getMajorLimit",
+              url:"http://39.97.115.241:8080/pt/getMajorLimit",
               data: "",
               type:"GET",
               success:function(result){
@@ -162,7 +162,7 @@
       }
       function getStuMajor() {
           $.ajax({
-              url:"/pt/getMajorStu",
+              url:"http://39.97.115.241:8080/pt/getMajorStu",
               data: "",
               type:"GET",
               success:function(result){
@@ -213,7 +213,7 @@
 
       function getStuNotAllowed() {
           $.ajax({
-              url:"/pt/getNotAllowed",
+              url:"http://39.97.115.241:8080/pt/getNotAllowed",
               data: "",
               type:"GET",
               success:function(result){

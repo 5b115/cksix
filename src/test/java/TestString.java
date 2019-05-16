@@ -8,7 +8,8 @@ public class TestString {
 
     @Test
     public void testSub(){
-        String stuId = "201608040122";
-        System.out.println(stuId.substring(0, 10));
+        StringBuffer stuId = new StringBuffer("201808064122");
+        stuId.setCharAt(8,'0');
+        System.out.println(stuId.toString());
     }
 }

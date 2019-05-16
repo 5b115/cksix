@@ -113,7 +113,7 @@
       var pages = 1;
       $(function () {
           getStudentList(1);
-          setVolunteerInfo(); 
+          setVolunteerInfo();
       })
       function getStudentList(pn) {
           $.ajax({

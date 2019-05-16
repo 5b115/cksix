@@ -69,11 +69,11 @@ public interface StudentMapper {
     String selectStuId(String gradeLevel);
 
     /**
-     * 查询计算机类的所有学生
+     * 查询当前学年计算机类的所有学生
      * @return
      */
-    @Select("SELECT * from student where clazz LIKE '计算机类%'")
-    List<Student> selectStudentByClazz();
+    @Select("SELECT * from student where clazz LIKE '计算机类%' and grade_level=#{gradeLevel} ")
+    List<Student> selectStudentByClazz(String gradeLevel);
 
     /**
      * 查询已经分配专业的学生
@@ -89,11 +89,11 @@ public interface StudentMapper {
     List<Student> selectStudentNoPermission();
 
     /**
-     * 已经完成志愿填报的学生数量
+     * 计算机类已经完成志愿填报的学生数量
      * @param gradeLevel 当前学年
      * @return
      */
-    @Select("SELECT count(*) from student WHERE volunteer_id = 0 AND grade_level = #{gradeLevel}")
+    @Select("SELECT count(*) from student WHERE volunteer_id != 0 AND clazz like '计算机类%' AND grade_level = #{gradeLevel}")
     int selectCountFilled(String gradeLevel);
 
     /**
@@ -101,6 +101,6 @@ public interface StudentMapper {
      * @param gradeLevel 当前学年
      * @return
      */
-    @Select("SELECT count(*) from student WHERE volunteer_id != 0 AND grade_level = #{gradeLevel}")
+    @Select("SELECT count(*) from student WHERE volunteer_id = 0 AND clazz like '计算机类%' AND grade_level = #{gradeLevel}")
     int selectCountUnfilled(String gradeLevel);
 }

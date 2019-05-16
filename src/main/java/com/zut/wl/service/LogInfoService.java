@@ -18,4 +18,11 @@ public interface LogInfoService {
      * 记录下每次的更新数据操作
      */
     void insertLastLogInfo();
+
+
+    void insertCourses();
+
+    void insertGrades();
+
+    void insertStudentList();
 }

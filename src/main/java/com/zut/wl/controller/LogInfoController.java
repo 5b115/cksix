@@ -26,6 +26,9 @@ public class LogInfoController {
 
     @GetMapping("/updateData")
     public String updateData(){
+        logInfoService.insertStudentList();
+        logInfoService.insertCourses();
+        logInfoService.insertGrades();
         logInfoService.insertLastLogInfo();
         return "dataInput";
     }

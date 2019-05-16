@@ -62,9 +62,9 @@ public class ResolveJsonResponse {
      * 获取课程信息，需要传入开课班级(学号的前十位)
      * @param clazzType 开课班级
      */
-    public void getCourseList(String clazzType){
+    public void getCourseList(String clazzType ,int page){
         clazzType = clazzType.substring(0,10);
-        String url = "?access_token="+clientUtil.getAccessToken()+"&BJDM="+clazzType;
+        String url = "http://10.10.31.140:5009/open_api/customization/view_bravo/full?access_token="+clientUtil.getAccessToken()+"&BJDM="+clazzType+"&KCLBDM=01"+"&KKXN="+TimeUtils.currentGrade()+"&page="+page;
         String stringEntity = clientUtil.executeGet(url);
         try {
             jsonNode = objectMapper.readValue(stringEntity,JsonNode.class);
@@ -72,29 +72,31 @@ public class ResolveJsonResponse {
             e.printStackTrace();
         }
         JsonNode resultJsonNode = jsonNode.get("result");
-        maxPage = resultJsonNode.get("max_page").asInt();
-        per = resultJsonNode.get("per").asInt();
-        Iterator<JsonNode> elements = resultJsonNode.get("data").elements();
-        Course course = null;
-        while (elements.hasNext()){
-            JsonNode element = elements.next();
-            course = new Course();
-            course.setCourseId(element.get("KCDM").asText());
-            course.setCourseName(element.get("KCMC").asText());
-            course.setCredit(element.get("XF").asDouble());
-            course.setPeriod(element.get("XS").asInt());
-            course.setCourseType(element.get("KCLBDM").asText());
-            course.setStartYear(element.get("KKXN").asText());
-            course.setClazzType(element.get("BJDM").asText());
-            courses.add(course);
+        if (resultJsonNode!=null){
+            maxPage = resultJsonNode.get("max_page").asInt();
+            per = resultJsonNode.get("per").asInt();
+            Iterator<JsonNode> elements = resultJsonNode.get("data").elements();
+            Course course = null;
+            while (elements.hasNext()){
+                JsonNode element = elements.next();
+                course = new Course();
+                course.setCourseId(element.get("KCDM").asText());
+                course.setCourseName(element.get("KCMC").asText());
+                course.setCredit(element.get("XF").asDouble());
+                course.setPeriod(element.get("XS").asInt());
+                course.setCourseType(element.get("KCLBDM").asText());
+                course.setStartYear(element.get("KKXN").asText());
+                course.setClazzType(element.get("BJDM").asText());
+                courses.add(course);
+            }
         }
     }
     /**
      * 获取学生成绩信息，需要传入学号
      * @param stuId 开课班级
      */
-    public void getGradeList(String stuId){
-        String url = "?access_token="+clientUtil.getAccessToken()+"&XH="+stuId;
+    public void getGradeList(String stuId,int page){
+        String url = "http://10.10.31.140:5009/open_api/customization/tbzkskscj/full?access_token="+clientUtil.getAccessToken()+"&XH="+stuId+"&page="+page;
         String stringEntity = clientUtil.executeGet(url);
         try {
             jsonNode = objectMapper.readValue(stringEntity,JsonNode.class);

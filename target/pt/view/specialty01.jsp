@@ -100,7 +100,7 @@
       })
       function getCourseList() {
           $.ajax({
-              url:"/pt/getCourseList",
+              url:"http://39.97.115.241:8080/pt/getCourseList",
               data: "",
               type:"GET",
               success:function(result){
@@ -163,15 +163,7 @@
           $(".selected-course").each(function () {
               $(this).prop("checked",true);
           });
-          // if (obj.innerHTML=="全选"){
-             // obj.innerHTML="不全选";
-          // }
-          // else {
-          //     $(".selected-course").each(function () {
-          //         $(this).prop("checked",false);
-          //     });
-          //     obj.innerHTML="全选";
-          // }
+
       }
       
       function setCourses() {
@@ -190,7 +182,7 @@
       }
       function setCoursePermission(obj1,obj2) {
           $.ajax({
-              url:"/pt/setPermission",
+              url:"http://39.97.115.241:8080/pt/setPermission",
               data: "courseIdList="+obj1+"&coursePermissions="+obj2,
               type:"POST",
               success:function(result){
@@ -201,7 +193,7 @@
 
       function getCourses() {
           $.ajax({
-              url:"/pt/getCourses",
+              url:"http://39.97.115.241:8080/pt/getCourses",
               data: "",
               type:"GET",
               success:function(result){

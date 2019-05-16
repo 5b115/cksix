@@ -34,7 +34,7 @@
         </div>
         <div class="col-md-4 col-md-offset-2" >
             <form action="/pt/updateData" method="get" onsubmit="return changePage(this);">
-                <button type="submit" class="btn btn-primary btn-lg">一键更新数据</button>
+                <button disabled="disabled" type="submit" class="btn btn-primary btn-lg">一键更新数据</button>
             </form>
         </div>
     </div>
@@ -79,7 +79,7 @@
 
     function checkIsGetData() {
         $.ajax({
-            url:"/pt/getLog",
+            url:"http://39.97.115.241:8080/pt/getLog",
             data: "",
             type:"GET",
             success:function(result){
