@@ -35,4 +35,12 @@ public interface CourseMapper {
      */
     @Select("select * from course where permission = 1")
     List<Course> selectCourseByPermission();
+
+    /**
+     * 根据课程Id查询已经被选中的课程信息
+     * @param courseId 课程号
+     * @return
+     */
+    @Select("select * from course where course_id = #{courseId} and permission = 1 ")
+    Course selectByCourseId(String courseId);
 }

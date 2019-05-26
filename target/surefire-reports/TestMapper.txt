@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestMapper
 -------------------------------------------------------------------------------
-Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.455 s - in TestMapper
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.725 s - in TestMapper

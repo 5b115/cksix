@@ -32,4 +32,10 @@ public class LogInfoController {
         logInfoService.insertLastLogInfo();
         return "dataInput";
     }
+
+    @GetMapping("/depart")
+    public String departMajor(){
+
+        return null;
+    }
 }

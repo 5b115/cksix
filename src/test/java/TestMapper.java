@@ -1,16 +1,10 @@
 import com.zut.wl.mapper.*;
-import com.zut.wl.pojo.Grade;
-import com.zut.wl.pojo.Major;
-import com.zut.wl.pojo.Student;
 import com.zut.wl.service.LogInfoService;
-import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.List;
 
 /**
  * @Author xiumu
@@ -40,9 +34,9 @@ public class TestMapper {
 
     @Test
     public void insertTest(){
-
+        System.out.println(100000);
     }
-
+/*
     @Test
     public void selectTest(){
         for (Student student : studentMapper.selectStudentByClazz(TimeUtils.currentGrade())) {
@@ -100,5 +94,5 @@ public class TestMapper {
     @Test
     public void testLogInfoService(){
         //logInfoService.insertGrades();
-    }
+    }*/
 }

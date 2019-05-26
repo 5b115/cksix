@@ -22,4 +22,12 @@ public interface GradeMapper {
      */
     @Select("select * from grade")
     List<Grade> selectAll();
+
+    /**
+     * 根据学号查询成绩
+     * @param stuId 学号
+     * @return
+     */
+    @Select("select * from grade where stu_id = #{stuId}")
+    List<Grade> selectByStuId(String stuId);
 }

@@ -2,14 +2,20 @@ package com.zut.wl.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zut.wl.mapper.CourseMapper;
+import com.zut.wl.mapper.GradeMapper;
 import com.zut.wl.mapper.MajorMapper;
 import com.zut.wl.mapper.StudentMapper;
+import com.zut.wl.pojo.Course;
+import com.zut.wl.pojo.Grade;
 import com.zut.wl.pojo.Student;
 import com.zut.wl.service.StudentService;
+import com.zut.wl.utils.GradeUtil;
 import com.zut.wl.utils.TimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +32,12 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private MajorMapper majorMapper;
+
+    @Autowired
+    private CourseMapper courseMapper;
+
+    @Autowired
+    private GradeMapper gradeMapper;
 
     @Override
     public PageInfo selStudentPageInfo(int pn) {
@@ -92,6 +104,30 @@ public class StudentServiceImpl implements StudentService {
         map.put("currentTime",TimeUtils.currentTime());
         map.put("filledNumber",studentMapper.selectCountFilled(TimeUtils.currentGrade()));
         map.put("unfilledNumber",studentMapper.selectCountUnfilled(TimeUtils.currentGrade()));
+        return map;
+    }
+
+    @Override
+    public Map<String, Object> selectStuWithCG(String stuId) {
+        Map<String,Object> map = new HashMap<>();
+        Student student = studentMapper.selectOneById(stuId);
+        map.put("student" ,student);
+        List<Double> list = new ArrayList<>();
+        List<Grade> gradeList = gradeMapper.selectByStuId(stuId);
+        List<Grade> grades = new ArrayList<>();
+        List<Course> courses = new ArrayList<>();
+        for (Grade grade : gradeList) {
+            Course course = courseMapper.selectByCourseId(grade.getCourseId());
+            if (course != null) {
+                courses.add(course);
+                grades.add(grade);
+                list.add(grade.getGradeScore());
+            }
+        }
+        map.put("courses",courses);
+        map.put("grades",grades);
+        map.put("sumGrade",GradeUtil.sumGrade(list));
+        map.put("avgGrade",GradeUtil.avgGrade(list));
         return map;
     }
 }

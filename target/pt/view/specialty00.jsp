@@ -179,7 +179,7 @@
           $(".majorLimit").each(function () {
               majorId.push($(this).parent().attr("major-id"));
               majorLimit.push($(this).val());
-          })
+          });
           $.ajax({
               url:"/pt/addMajorLimit/",
               data: "majorId="+majorId+"&majorLimit="+majorLimit,

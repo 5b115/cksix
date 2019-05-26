@@ -65,4 +65,10 @@ public interface StudentService {
      * @return
      */
     Map<String,Object> selectVolunteerInfo();
+
+    /**
+     * 查询学生信息包括成绩和课程
+     * @return
+     */
+    Map<String,Object> selectStuWithCG(String stuId);
 }

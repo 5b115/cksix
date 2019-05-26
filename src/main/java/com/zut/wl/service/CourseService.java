@@ -16,7 +16,6 @@ public interface CourseService {
      * @param courseIdList 存放课程id的数组
      */
     void updateCoursePermissionList(String[] courseIdList,Integer[] permissions);
-
     /**
      * 获取所有有权限的课程信息
      * @return

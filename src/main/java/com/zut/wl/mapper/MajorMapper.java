@@ -36,7 +36,7 @@ public interface MajorMapper {
     void updateMajorById(Integer id);
 
     @Update("update major set major_limit = #{majorLimit} where major_id = #{majorId}")
-    void updateMajorLimit(@Param("majorId") Integer id, @Param("majorLimit") int majorLimit);
+    void    updateMajorLimit(@Param("majorId") Integer id, @Param("majorLimit") int majorLimit);
 
     /**
      * 根据专业名字来查找专业信息

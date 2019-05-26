@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zut.wl.mapper.VolunteerMapper">
+    <insert id="insertVolunteerList" parameterType="java.util.List">
+        insert into volunteer values
+        <trim suffixOverrides=",">
+            <foreach collection="list" item="v">
+                (default ,#{v.volunteerId},#{v.stuId},#{v.majorId},#{v.ranking}),
+            </foreach>
+        </trim>
+        on duplicate key update ranking=values (ranking)
+    </insert>
+</mapper>

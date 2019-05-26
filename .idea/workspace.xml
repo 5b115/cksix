@@ -7,17 +7,66 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e55e89-0c0d-4c47-97ee-abfdc7190217" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/VolunteerMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/GradeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/VolunteerMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/dataInput.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/dataInput.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/LogInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/LogInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/MajorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/MajorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/MajorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/MajorMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/CourseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/CourseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view/specialty00.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/specialty00.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestClientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestClientUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/LogInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/LogInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/MajorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/MajorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/mapper/CourseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/mapper/CourseMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/mapper/GradeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/mapper/GradeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/pojo/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/pojo/Grade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/service/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/service/impl/LogInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/service/impl/LogInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/service/impl/StudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/service/impl/StudentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/ResolveJsonResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/ResolveJsonResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/client/ClientUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/client/ClientUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ExcelResolve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ExcelResolve.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ReadExcel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ReadExcel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ReadExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ReadExcel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/LogInfoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/LogInfoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/MajorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/MajorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/mapper/CourseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/mapper/CourseMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/mapper/GradeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/mapper/GradeMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/pojo/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/pojo/Grade.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/StudentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/impl/LogInfoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/impl/LogInfoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/impl/StudentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/impl/StudentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/ResolveJsonResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/ResolveJsonResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/client/ClientUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/client/ClientUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ExcelResolve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ExcelResolve.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ReadExcel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ReadExcel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ReadExcel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ReadExcel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/lib/c3p0-0.9.5.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/lib/mchange-commons-java-0.2.11.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/logs/pt-log.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/pt/view/specialty00.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/view/specialty00.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/view/specialty01.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/view/specialty01.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/view/specialty02.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/view/specialty02.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/view/specialty03.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/view/specialty03.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/view/specialty04.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/view/specialty04.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestClientUtil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestClientUtil.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestString.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestString.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestClientUtil.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestClientUtil.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestMapper.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestMapper.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestClientUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestClientUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestMapper.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,65 +98,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="specialty04.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty04.jsp">
+      <file leaf-file-name="StudentCrossOriginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2882">
-              <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
+            <state relative-caret-position="296">
+              <caret line="38" column="45" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#987#988#0" expanded="true" />
+                <element signature="e#1047#1048#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="specialty00.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty00.jsp">
+      <file leaf-file-name="StudentService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2684">
-              <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
+            <state relative-caret-position="1496">
+              <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="specialty01.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp">
+      <file leaf-file-name="StudentServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2244">
-              <caret line="102" column="19" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="specialty02.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty02.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6468">
-              <caret line="294" column="19" selection-start-line="294" selection-start-column="19" selection-end-line="294" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="specialty03.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty03.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="463">
-              <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dataInput.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/dataInput.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-254">
-              <caret line="81" column="29" lean-forward="true" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+            <state relative-caret-position="216">
+              <caret line="126" column="35" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -115,20 +133,64 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+            <state relative-caret-position="4092">
+              <caret line="186" column="17" selection-start-line="186" selection-start-column="17" selection-end-line="186" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="right.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/right.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="selall_course.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/view/selall_course.jsp">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="Grade.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Course.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Course.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GradeUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/GradeUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1144">
+              <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CourseMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="858">
+              <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GradeMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -157,6 +219,7 @@
       <find>INTEGERo</find>
       <find>course</find>
       <find>Log4jServletFilter</find>
+      <find>javax</find>
     </findStrings>
     <replaceStrings>
       <replace>../js</replace>
@@ -173,18 +236,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/view/specialty.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/MajorService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/MajorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/MajorController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/view/left.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/CourseService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/CourseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/MajorMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/LogInfoMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/LogInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/LogInfoMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/UpdateDataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/bean/PageInfoHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/ClientUtil.java" />
@@ -192,38 +244,49 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/excel/ReadExcel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/UpdateDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/TimeUtils.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestClientUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/FileUploadController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Course.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Major.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Student.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/application.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/ResolveJsonResponse.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestString.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CourseMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/LogInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/StudentMapper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TestMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/LogInfoController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/LogInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/specialty04.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/view/specialty00.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/specialty02.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/specialty03.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/dataInput.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/LogInfoMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/ResolveJsonResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/client/ClientUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/excel/ExcelResolve.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/depart_major/DepartMajor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/LogInfoController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/VolunteerMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/VolunteerMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/MajorMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/specialty00.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/MajorController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/TestClientUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TestMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/CourseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/GradeUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -287,7 +350,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds">
     <option name="x" value="225" />
     <option name="width" value="1121" />
     <option name="height" value="745" />
@@ -300,9 +363,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,131 +386,7 @@
               <item name="pt" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-              <item name="wl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-              <item name="wl" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-              <item name="wl" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-              <item name="wl" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-              <item name="wl" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-              <item name="wl" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="zut" type="462c0819:PsiDirectoryNode" />
-              <item name="wl" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pt" type="b2602c69:ProjectViewProjectNode" />
@@ -460,28 +396,13 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pt" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pt" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -489,28 +410,28 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL&#10;DB2 (LUW)" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="last_opened_file_path" value="D:/javacode/Javademo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ideaCode\pt\src\main\resources\mapper" />
-      <recent name="D:\ideaCode\pt\src\main\webapp\view" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaCode\pt\src\main\webapp\WEB-INF" />
       <recent name="D:\ideaCode\pt\src\main\webapp" />
-      <recent name="D:\ideaCode\pt\src\main\webapp\js" />
       <recent name="D:\ideaCode\pt\src\main\webapp\WEB-INF\view" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zut.wl.utils" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ideaCode\pt\src\main\webapp\WEB-INF" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaCode\pt\src\main\resources\mapper" />
+      <recent name="D:\ideaCode\pt\src\main\webapp\view" />
       <recent name="D:\ideaCode\pt\src\main\webapp" />
+      <recent name="D:\ideaCode\pt\src\main\webapp\js" />
       <recent name="D:\ideaCode\pt\src\main\webapp\WEB-INF\view" />
     </key>
   </component>
@@ -529,6 +450,34 @@
   <component name="RunManager" selected="Tomcat Server.train">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="Deploy to Host" type="DEPLOY_HOST_RUN_CONFIGURATION" factoryName="Deploy to Host">
+      <option name="address" value="39.97.115.241" />
+      <option name="alreadyReset" value="true" />
+      <option name="autoOpen" value="false" />
+      <option name="command" value="sh /usr/java/tomcat/apache-tomcat-8.5.40/bin/restart-tomcat.sh" />
+      <option name="defaultTabIdx" value="0" />
+      <option name="ecsInstance">
+        <EcsInstance>
+          <option name="instanceId" />
+          <option name="instanceName" />
+          <option name="netType" />
+          <option name="privateIps" />
+          <option name="publicIps" />
+          <option name="regionId" />
+          <option name="tags" />
+        </EcsInstance>
+      </option>
+      <option name="hostTagId" value="0" />
+      <option name="location" value="/usr/java/tomcat/apache-tomcat-8.5.40/webapps" />
+      <option name="pathOrUrl" value="D:\ideaCode\pt\target\pt.war" />
+      <option name="tagId" value="0" />
+      <option name="terminalCommand" />
+      <option name="type" value="HOST" />
+      <option name="uploadType" value="MAVEN" />
+      <method>
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/../pt\pom.xml" goal="clean install" />
+      </method>
     </configuration>
     <configuration name="TestClientUtil.testGetAccessToken" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="pt" />
@@ -794,6 +743,7 @@
     <list>
       <item itemvalue="JUnit.TestClientUtil.testGetAccessToken" />
       <item itemvalue="Tomcat Server.train" />
+      <item itemvalue="Deploy to Host.Deploy to Host" />
       <item itemvalue="JUnit.TestMapper.testGradeMapper" />
       <item itemvalue="JUnit.TestMapper.selectStudent" />
       <item itemvalue="JUnit.TestString.testSub" />
@@ -812,6 +762,9 @@
   </component>
   <component name="SpringBeansView">
     <option name="beanDetailsProportion" value="0.3" />
+  </component>
+  <component name="SshConsoleOptionsProvider">
+    <option name="myEncoding" value="UTF-8" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -855,7 +808,23 @@
       <workItem from="1557470839816" duration="38810000" />
       <workItem from="1557667269948" duration="33000" />
       <workItem from="1557748421993" duration="26636000" />
-      <workItem from="1557983030800" duration="2254000" />
+      <workItem from="1557983030800" duration="2877000" />
+      <workItem from="1558064959901" duration="46000" />
+      <workItem from="1558175189352" duration="251000" />
+      <workItem from="1558175538592" duration="4116000" />
+      <workItem from="1558264814856" duration="260000" />
+      <workItem from="1558266902269" duration="2842000" />
+      <workItem from="1558338784690" duration="7643000" />
+      <workItem from="1558419280261" duration="1312000" />
+      <workItem from="1558427103188" duration="7204000" />
+      <workItem from="1558513433183" duration="7310000" />
+      <workItem from="1558602941581" duration="9000" />
+      <workItem from="1558603398986" duration="678000" />
+      <workItem from="1558607917687" duration="622000" />
+      <workItem from="1558615326514" duration="2050000" />
+      <workItem from="1558621941999" duration="6000" />
+      <workItem from="1558683379354" duration="204000" />
+      <workItem from="1558700574334" duration="2687000" />
     </task>
     <servers />
   </component>
@@ -892,7 +861,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345021000" />
+    <option name="totallyTimeSpent" value="382884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,8 +873,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
-    <editor active="true" />
+    <frame x="225" y="0" width="1121" height="745" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50114244" side_tool="true" weight="0.3298969" />
@@ -914,24 +882,26 @@
       <window_info anchor="bottom" id="Database Changes" order="5" show_stripe_button="false" />
       <window_info id="Capture Tool" order="8" />
       <window_info id="Designer" order="0" />
-      <window_info anchor="right" id="Database" order="2" weight="0.27418128" />
+      <window_info anchor="right" id="Database" order="2" weight="0.27382752" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="bottom" id="Debug" order="14" weight="0.5395189" />
-      <window_info anchor="bottom" id="TODO" order="17" weight="0.3298969" />
-      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.4988576" weight="0.33333334" />
+      <window_info anchor="bottom" id="TODO" order="17" weight="0.3282572" />
+      <window_info anchor="bottom" id="Messages" order="0" sideWeight="0.4988576" weight="0.5076142" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.3282572" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.3298969" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.87309647" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.95600677" />
       <window_info anchor="bottom" id="Spring" order="1" weight="0.3298969" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.3298969" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.4974271" visible="true" weight="0.18910742" />
+      <window_info anchor="bottom" id="Terminal" order="3" weight="0.857868" />
       <window_info anchor="bottom" id="Problems" order="4" weight="0.32994923" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" sideWeight="0.4974271" visible="true" weight="0.2139491" />
       <window_info id="Web" order="5" sideWeight="0.500846" side_tool="true" weight="0.22087745" />
+      <window_info anchor="bottom" id="Alibaba Cloud View" order="18" weight="0.82910323" />
+      <window_info id="Alibaba Cloud Explorer" order="9" weight="0.32980332" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="JRebel Executor" order="11" sideWeight="0.4996192" weight="0.9433962" />
@@ -959,24 +929,330 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="uml://JAVA/com.zut.wl.controller.LogInfoController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.zut.wl.controller.LogInfoController</OriginalElement>
+          <nodes>
+            <node x="" y="">org.springframework.stereotype.Controller</node>
+            <node x="" y="">com.zut.wl.controller.LogInfoController</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="121.0" y="102.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.zut.wl.controller.StudentController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.zut.wl.controller.StudentController</OriginalElement>
+          <nodes>
+            <node x="" y="">com.zut.wl.controller.StudentController</node>
+            <node x="" y="">org.springframework.stereotype.Controller</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="214.0" y="171.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.zut.wl.utils.ResolveJsonResponse">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.zut.wl.utils.ResolveJsonResponse</OriginalElement>
+          <nodes>
+            <node x="" y="">com.zut.wl.utils.ResolveJsonResponse</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="130.0" y="166.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JAVA/com.zut.wl.controller.MajorController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement>com.zut.wl.controller.MajorController</OriginalElement>
+          <nodes>
+            <node x="" y="">com.zut.wl.controller.MajorController</node>
+            <node x="" y="">org.springframework.stereotype.Controller</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="172.0" y="137.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Constructors</Category>
+            <Category>Methods</Category>
+            <Category>Properties</Category>
+            <Category>Inner Classes</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/CourseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="54" column="44" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/LogInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Major.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="18" column="27" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Other.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/StudentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="104" column="46" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/ResolveJsonResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="95" column="24" selection-start-line="95" selection-start-column="24" selection-end-line="95" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/depart_major/DepartMajor.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/excel/ExcelResolve.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="321">
+          <caret line="182" column="33" selection-start-line="182" selection-start-column="33" selection-end-line="182" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/LogInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-535">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/LogInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/LogInfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/LogInfoMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        <state relative-caret-position="286">
+          <caret line="15" column="38" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CourseMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Volunteer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-858" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/MajorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/VolunteerMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-320">
+          <caret line="102" column="19" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/VolunteerMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/MajorServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/MajorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="57" column="33" lean-forward="true" selection-start-line="57" selection-start-column="33" selection-end-line="57" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/CourseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/TimeUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="27" column="17" lean-forward="true" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        <state relative-caret-position="22">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty00.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="199" column="7" selection-start-line="199" selection-start-column="7" selection-end-line="199" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestString.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/TestClientUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/client/ClientUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/MajorMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -987,310 +1263,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/FileUploadController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/GradeUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/UpdateDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/excel/ReadExcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="209" column="42" lean-forward="true" selection-start-line="209" selection-start-column="42" selection-end-line="209" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/LogInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/JDK/src.zip!/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="1957" column="42" selection-start-line="1957" selection-start-column="32" selection-end-line="1957" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/OtherMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestService.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/OtherMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Other.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Major.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Student.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="18" column="36" lean-forward="true" selection-start-line="18" selection-start-column="36" selection-end-line="18" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-208">
-          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="56" column="16" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestClientUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="20" column="62" selection-start-line="20" selection-start-column="62" selection-end-line="20" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestString.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="18" column="25" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/CourseMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="113" lean-forward="true" selection-start-line="7" selection-start-column="113" selection-end-line="7" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/client/ClientUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-197">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="1144">
+          <caret line="52" column="46" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="616">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/utils/ResolveJsonResponse.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Course.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="97" column="16" selection-start-line="97" selection-start-column="16" selection-end-line="97" selection-end-column="16" />
+        <state relative-caret-position="374">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="25" lean-forward="true" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+        <state relative-caret-position="1496">
+          <caret line="72" column="38" selection-start-line="72" selection-start-column="38" selection-end-line="72" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="32" column="74" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="74" />
+        <state relative-caret-position="396">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/StudentMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/TestMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/LogInfoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/LogInfoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/LogInfoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="42" column="37" lean-forward="true" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/login.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/main.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/right.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/selall_course.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/left.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="77" column="62" selection-start-line="77" selection-start-column="51" selection-end-line="77" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty04.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2882">
-          <caret line="131" column="34" selection-start-line="131" selection-start-column="34" selection-end-line="131" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty00.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2684">
-          <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2244">
-          <caret line="102" column="19" selection-start-line="102" selection-start-column="19" selection-end-line="102" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty02.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6468">
-          <caret line="294" column="19" selection-start-line="294" selection-start-column="19" selection-end-line="294" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty03.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
+        <state relative-caret-position="858">
+          <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+        <state relative-caret-position="4092">
+          <caret line="186" column="17" selection-start-line="186" selection-start-column="17" selection-end-line="186" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="44" lean-forward="true" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        <state relative-caret-position="572">
+          <caret line="26" column="44" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/dataInput.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-254">
-          <caret line="81" column="29" lean-forward="true" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="29" />
+        <state relative-caret-position="296">
+          <caret line="38" column="45" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#987#988#0" expanded="true" />
+            <element signature="e#1047#1048#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="126" column="35" selection-start-line="126" selection-start-column="35" selection-end-line="126" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1300,7 +1344,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>pt:war</last-edited>
+          <last-edited>pt:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1313,7 +1357,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>JRebel</last-edited>
+          <last-edited>Invalid</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1353,7 +1397,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

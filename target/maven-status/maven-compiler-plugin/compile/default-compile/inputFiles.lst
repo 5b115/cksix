@@ -19,6 +19,7 @@ D:\ideaCode\pt\src\main\java\com\zut\wl\service\impl\StudentServiceImpl.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\controller\MajorController.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\service\impl\CourseServiceImpl.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\User.java
+D:\ideaCode\pt\src\main\java\com\zut\wl\controller\StudentCrossOriginController.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\controller\CourseController.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\bean\Admin.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\bean\PageInfoHelper.java
@@ -36,4 +37,6 @@ D:\ideaCode\pt\src\main\java\com\zut\wl\controller\FileUploadController.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\Major.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\utils\excel\ExcelResolve.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\Other.java
+D:\ideaCode\pt\src\main\java\com\zut\wl\utils\GradeUtil.java
+D:\ideaCode\pt\src\main\java\com\zut\wl\mapper\VolunteerMapper.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\Grade.java

@@ -1,6 +1,4 @@
 import com.zut.wl.utils.client.ClientUtil;
-import com.zut.wl.utils.ResolveJsonResponse;
-import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 
 /**
@@ -13,6 +11,7 @@ public class TestClientUtil {
         ClientUtil clientUtil = new ClientUtil();
         System.out.println(clientUtil.getAccessToken());
     }
+    /*
     @Test
     public void testGetStudentInfo(){
         ResolveJsonResponse resolveJsonResponse = new ResolveJsonResponse(new ClientUtil());
@@ -35,5 +34,5 @@ public class TestClientUtil {
             System.out.println(maxPage+"\t"+page);
         }while (maxPage!=page);
         System.out.println(page);
-    }
+    }*/
 }

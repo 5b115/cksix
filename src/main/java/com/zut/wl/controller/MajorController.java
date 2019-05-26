@@ -44,6 +44,11 @@ public class MajorController {
     @ResponseBody
     @PostMapping("/addMajorLimit")
     public List<Major> addMajorLimit(Integer[] majorId,Integer[] majorLimit){
+        for (int i = 0; i < majorId.length; i++) {
+            if (majorLimit[i] == null) {
+                majorLimit[i]=0;
+            }
+        }
         majorService.updateMajorBatch(majorId,majorLimit);
         List<Major> majors = majorService.selAllMajor();
         return majors;
