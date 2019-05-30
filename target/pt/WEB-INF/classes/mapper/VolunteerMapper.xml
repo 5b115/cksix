@@ -5,7 +5,7 @@
         insert into volunteer values
         <trim suffixOverrides=",">
             <foreach collection="list" item="v">
-                (default ,#{v.volunteerId},#{v.stuId},#{v.majorId},#{v.ranking}),
+                (default ,#{v.stuId},#{v.majorId},#{v.ranking}),
             </foreach>
         </trim>
         on duplicate key update ranking=values (ranking)

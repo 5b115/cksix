@@ -1,0 +1,58 @@
+2019-05-30 20:12:46.267 DEBUG [RMI TCP Connection(3)-127.0.0.1][SqlSessionFactoryBean.java:437] - Scanned package: 'com.zut.wl.pojo' for aliases
+2019-05-30 20:12:46.881 DEBUG [RMI TCP Connection(3)-127.0.0.1][SqlSessionFactoryBean.java:497] - Parsed configuration file: 'class path resource [mybatis.xml]'
+2019-05-30 20:12:47.058 DEBUG [RMI TCP Connection(3)-127.0.0.1][SqlSessionFactoryBean.java:529] - Parsed mapper file: 'file [D:\ideaCode\pt\target\pt\WEB-INF\classes\mapper\CourseMapper.xml]'
+2019-05-30 20:12:47.093 DEBUG [RMI TCP Connection(3)-127.0.0.1][SqlSessionFactoryBean.java:529] - Parsed mapper file: 'file [D:\ideaCode\pt\target\pt\WEB-INF\classes\mapper\GradeMapper.xml]'
+2019-05-30 20:12:47.118 DEBUG [RMI TCP Connection(3)-127.0.0.1][SqlSessionFactoryBean.java:529] - Parsed mapper file: 'file [D:\ideaCode\pt\target\pt\WEB-INF\classes\mapper\OtherMapper.xml]'
+2019-05-30 20:12:47.343 DEBUG [RMI TCP Connection(3)-127.0.0.1][SqlSessionFactoryBean.java:529] - Parsed mapper file: 'file [D:\ideaCode\pt\target\pt\WEB-INF\classes\mapper\StudentMapper.xml]'
+2019-05-30 20:12:47.354 DEBUG [RMI TCP Connection(3)-127.0.0.1][SqlSessionFactoryBean.java:529] - Parsed mapper file: 'file [D:\ideaCode\pt\target\pt\WEB-INF\classes\mapper\VolunteerMapper.xml]'
+2019-05-30 20:13:22.931 INFO [http-nio-8080-exec-7][DruidDataSource.java:1002] - {dataSource-1} inited
+2019-05-30 20:13:23.647 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:97] - Creating a new SqlSession
+2019-05-30 20:13:23.674 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:128] - Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.707 DEBUG [http-nio-8080-exec-7][SpringManagedTransaction.java:87] - JDBC Connection [com.mysql.jdbc.JDBC4Connection@3eb72881] will be managed by Spring
+2019-05-30 20:13:23.718 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select * from student where stu_id = ? 
+2019-05-30 20:13:23.793 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 201808064101(String)
+2019-05-30 20:13:23.837 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.839 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.840 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.841 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select * from volunteer where stu_id = ? 
+2019-05-30 20:13:23.842 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 201808064101(String)
+2019-05-30 20:13:23.859 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 7
+2019-05-30 20:13:23.861 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.861 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.863 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select major_name from major where major_id = ? 
+2019-05-30 20:13:23.864 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 1(Integer)
+2019-05-30 20:13:23.881 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.882 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.883 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.884 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select major_name from major where major_id = ? 
+2019-05-30 20:13:23.886 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 2(Integer)
+2019-05-30 20:13:23.902 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.903 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.903 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.904 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select major_name from major where major_id = ? 
+2019-05-30 20:13:23.904 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 3(Integer)
+2019-05-30 20:13:23.919 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.920 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.921 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.921 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select major_name from major where major_id = ? 
+2019-05-30 20:13:23.922 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 4(Integer)
+2019-05-30 20:13:23.937 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.937 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.938 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.938 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select major_name from major where major_id = ? 
+2019-05-30 20:13:23.939 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 5(Integer)
+2019-05-30 20:13:23.954 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.955 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.955 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.956 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select major_name from major where major_id = ? 
+2019-05-30 20:13:23.957 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 6(Integer)
+2019-05-30 20:13:23.973 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.974 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.974 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:163] - Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2] from current transaction
+2019-05-30 20:13:23.975 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==>  Preparing: select major_name from major where major_id = ? 
+2019-05-30 20:13:23.975 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - ==> Parameters: 7(Integer)
+2019-05-30 20:13:23.991 DEBUG [http-nio-8080-exec-7][BaseJdbcLogger.java:159] - <==      Total: 1
+2019-05-30 20:13:23.992 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:186] - Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.992 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:284] - Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.993 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:310] - Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]
+2019-05-30 20:13:23.993 DEBUG [http-nio-8080-exec-7][SqlSessionUtils.java:315] - Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@187b08e2]

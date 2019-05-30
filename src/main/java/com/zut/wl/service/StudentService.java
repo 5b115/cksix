@@ -1,6 +1,7 @@
 package com.zut.wl.service;
 
 import com.github.pagehelper.PageInfo;
+import com.zut.wl.bean.ClazzContent;
 import com.zut.wl.pojo.Student;
 
 import java.util.List;
@@ -71,4 +72,18 @@ public interface StudentService {
      * @return
      */
     Map<String,Object> selectStuWithCG(String stuId);
+
+    /**
+     * 学生端判断学生登录
+     * @param stuId 学号
+     * @param password 密码
+     * @return
+     */
+    boolean selectStudentCheck(String stuId, String password);
+
+    /**
+     * 查询班级填报情况
+     * @return
+     */
+    List<ClazzContent> selectClazzContent();
 }

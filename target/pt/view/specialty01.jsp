@@ -26,7 +26,7 @@
           }
           .span3{
               margin-bottom: 5px;
-              color: green;
+              color: #0000ff;
           }
       </style>
 
@@ -62,6 +62,7 @@
                 <tr>
                     <th>课程号</th>
                     <th>课程名</th>
+                    <th>课程性质</th>
                     <th>学分</th>
                     <th>学时</th>
                     <th class="sellAll" onclick="selectAll(this);">全选</th>
@@ -118,12 +119,19 @@
           $.each(courseList,function (index,item) {
               var courseId = $("<td></td>").append(item.courseId);
               var courseName = $("<td></td>").append(item.courseName);
+              var courseType = $("<td></td>");
+              if (item.courseType==="01"){
+                  courseType.append("必修");
+              }else{
+                  courseType.append("选修修");
+              }
               var credit = $("<td></td>").append(item.credit);
               var period = $("<td></td>").append(item.period);
               var checkBoxTd = $("<td><input name='' class='selected-course' type='checkbox' style='height:18px;width: 18px;'/></td>");
               checkBoxTd.attr("course-id",item.courseId);
               $("<tr></tr>").append(courseId)
                   .append(courseName)
+                  .append(courseType)
                   .append(credit)
                   .append(period)
                   .append(checkBoxTd)

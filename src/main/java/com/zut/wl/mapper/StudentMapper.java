@@ -103,4 +103,36 @@ public interface StudentMapper {
      */
     @Select("SELECT count(*) from student WHERE volunteer_id = 0 AND clazz like '计算机类%' AND grade_level = #{gradeLevel}")
     int selectCountUnfilled(String gradeLevel);
+
+    /**
+     * 查询学生是否存在
+     * @param stuId
+     * @return
+     */
+    @Select("SELECT COUNT(stu_id) from student where stu_id = #{stuId} LIMIT 1")
+    int selectStudentExist(String stuId);
+
+    /**
+     * 查询班级名称
+     * @return 班级名称
+     */
+    @Select("SELECT DISTINCT clazz from student where clazz LIKE '计算机%' ORDER BY clazz")
+    List<String> selectClazzName();
+
+    /**
+     * 根据班级查询已经填报的人数
+     * @param clazz 班级名称
+     * @return 人数
+     */
+    @Select("SELECT COUNT(stu_id) from student where clazz = #{clazz}  and volunteer_id != 0")
+    int selectfilledByClazz(String clazz);
+
+    /**
+     * 根据班级查询未填报的人数
+     * @param clazz 班级名称
+     * @return 人数
+     */
+    @Select("SELECT COUNT(stu_id) from student where clazz = #{clazz} and volunteer_id = 0")
+    int selectunfilledByClazz(String clazz);
+
 }

@@ -24,7 +24,7 @@
           }
           .span3{
               margin-bottom: 5px;
-              color: green;
+              color: #0000ff;
           }
       </style>
 
@@ -43,24 +43,12 @@
             <p class="span2">专业及人数</p>
         </div>
     </div>
-    <div class="row" style="padding-top: 5px;">
-        <div class="col-md-5 col-md-offset-1">
-            <ul class="list-group" id="majorlist">
-                <li class="list-group-item">
-                    <span class="badge">14</span>
-                    Cras justo odio
-                </li>
-            </ul>
-        </div>
-    </div>
+    <div class="row" id="majorList1"></div>
     <div class="row" style="margin-top: 8px;">
         <p class="span2 col-md-4">计算学分的课程</p>
+        <div class="col-md-4 span2 col-md-offset-1" id="total-credit"></div>
     </div>
     <div class="row" id="courseList">
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col-md-4 span2 col-md-offset-4" id="total-credit"></div>
     </div>
 
     <div class="row" style="margin-top: 8px;">
@@ -190,13 +178,18 @@
           }
       }
       function build_majorlist(result) {
-          $("#majorlist").empty();
-          var majorList = result;
-          $.each(majorList,function (index,item) {
-              var majorLimit = $("<span class='badge'></span>").append(item.majorLimit+"人");
-              var majorNameli = $("<li class='list-group-item'></li>").append(item.majorName).append(majorLimit);
-              $("#majorlist").append(majorNameli);
+          $("#majorlist1").empty();
+          console.log("换一个方式显示");
+          $.each(result,function (index, item) {
+              console.log(item);
+              var majorLimit2 = $("<span class='badge'></span>").append(item.majorLimit+"人");
+              console.log(majorLimit2);
+              var majorName1 = $("<span class='span1 span3 col-md-4'></span>").append(item.majorName);
+              majorName1.append(majorLimit2).appendTo("#majorlist1");
+              console.log("两种方式添加");
+              $("#majorList1").append(majorName1.append(majorLimit2));
           });
+          console.log("显示成功");
       }
       function build_course_list(result) {
           $("#courseList").empty();

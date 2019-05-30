@@ -1,13 +1,14 @@
 package com.zut.wl.controller;
 
+import com.zut.wl.bean.StudentWithVolunteer;
 import com.zut.wl.pojo.Major;
+import com.zut.wl.pojo.Volunteer;
 import com.zut.wl.service.MajorService;
 import com.zut.wl.service.StudentService;
+import com.zut.wl.service.VolunteerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,8 @@ public class StudentCrossOriginController {
     @Autowired
     private StudentService studentService;
 
+    @Autowired
+    private VolunteerService volunteerService;
 
     @ResponseBody
     @GetMapping("/getMajorsByStuId")
@@ -39,4 +42,24 @@ public class StudentCrossOriginController {
         return studentService.selectStuWithCG(stuId);
     }
 
+    @ResponseBody
+    @PostMapping("/checkStudentLogin")
+    public boolean checkStudent(@RequestParam(value = "stuId",defaultValue = "") String stuId, String password){
+        return studentService.selectStudentCheck(stuId,password);
+    }
+
+    @ResponseBody
+    @PostMapping("/fillVolunteer")
+    boolean fillVolunteer(List<Volunteer> volunteers){
+        if (volunteerService.insertVolunteer(volunteers)>0){
+            return true;
+        }else {
+            return false;
+        }
+    }
+    @ResponseBody
+    @GetMapping("/getVolunteerByStuId")
+    StudentWithVolunteer getVolunteers(String stuId){
+        return volunteerService.selectVolunteerByStuId(stuId);
+    }
 }

@@ -1,6 +1,7 @@
 package com.zut.wl.controller;
 
 import com.github.pagehelper.PageInfo;
+import com.zut.wl.bean.ClazzContent;
 import com.zut.wl.pojo.Student;
 import com.zut.wl.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,9 @@ public class StudentController {
         return studentService.selectStudentNotAllowed();
     }
 
-
-
+    @ResponseBody
+    @GetMapping("/getClazzContent")
+    public List<ClazzContent> getClazzContent(){
+        return studentService.selectClazzContent();
+    }
 }

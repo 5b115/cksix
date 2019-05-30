@@ -31,18 +31,21 @@
           .span5{
               color: red;
           }
+
       </style>
 
   </head>
 	  		
  <body>
-   	<%--<img src="/pt/images/timg.jpg" width="100%" height="100%">--%>
 <div class="container">
-    <div class="row" style="border-bottom: 1px solid #9D9D9D;">
-        <div class="col-md-12 col-md-offset-4">
-            <h2>当前专业填报情况</h2>
-        </div>
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li id="update-first" class="active"><a href="javascript:void(0);" onclick="update_click(1);"><h4>概况</h4></a></li>
+            <li id="update-second"><a href="javascript:void(0);" onclick="update_click(2);"><h4>班级概况</h4></a></li>
+            <li id="update-third"><a href="javascript:void(0);" onclick="update_click(3);"><h4>搜索</h4></a></li>
+        </ul>
     </div>
+    <div id="update-first-div"><!-- 概况start -->
     <div class="row" style="margin-top: 8px;">
         <div class="col-md-4">
             <h3 class="span2">学生填报情况</h3>
@@ -104,6 +107,93 @@
             </ul>
         </div>
     </div>
+    </div><!-- 概况end -->
+
+    <!-- 班级概况start -->
+    <div id="update-second-div" hidden="hidden">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>截止到<span class="span3" id="">2019年5月31日 16:03</span>班级填报情况</h3>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped" >
+                <thead>
+                <tr>
+                    <th>班级</th>
+                    <th>已填报</th>
+                    <th>未填报</th>
+                </tr>
+                </thead>
+                <tbody id="clazz-content">
+                <tr>
+                    <td>计算机类181</td>
+                    <td>15</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>计算机类182</td>
+                    <td>18</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>计算机类183</td>
+                    <td>0</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>计算机类184</td>
+                    <td>30</td>
+                    <td>0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div><!-- 班级概况end -->
+
+    <!-- 搜索start -->
+    <div id="update-third-div" hidden="hidden">
+        <br/>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group has-feedback">
+                    <div class="input-group">
+                        <input type="text" id="stuId-input" class="form-control"  placeholder="输入学号" >
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary " onclick="seachClick()">搜索
+                                <span class="glyphicon glyphicon-search "></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="studentInfo" hidden="hidden">
+        <div class="row">
+            <div class="col-md-3"><h4>学号：</h4></div>
+            <div class="col-md-3"><h4 id="stuId"></h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h4>姓名：</h4></div>
+            <div class="col-md-3"><h4 id="stuName"></h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h4>班级：</h4></div>
+            <div class="col-md-3"><h4 id="clazz"></h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h4>年级：</h4></div>
+            <div class="col-md-3"><h4 id="gradeLevel"></h4></div>
+        </div>
+        <div class="row">
+            <div class="col-md-3"><h4>填报情况：</h4></div>
+            <div class="col-md-3"><h4 id="volunteer"></h4></div>
+        </div>
+        </div>
+        <div class="row">
+            <div id="noStu"></div>
+        </div>
+    </div><!-- 搜索end -->
 
 
 </div>
@@ -114,6 +204,7 @@
       $(function () {
           getStudentList(1);
           setVolunteerInfo();
+          set_clazz_content();
       })
       function getStudentList(pn) {
           $.ajax({
@@ -177,6 +268,95 @@
                   }
               }
           });
+      }
+      
+      function set_clazz_content() {
+          $.ajax({
+              url:"/pt/getClazzContent",
+              data: "",
+              type:"GET",
+              success:function(result){
+                  build_clazz_content(result);
+              }
+          });
+      }
+      function build_clazz_content(result) {
+          $("#clazz-content").empty();
+          $.each(result,function (index,item) {
+              var clazzNameTd = $("<td></td>").append(item.clazzName);
+              var filledNumberTd = $("<td></td>").append(item.filledNumber);
+              var unfilledNumberTd = $("<td></td>").append(item.unfilledNumber);
+              $("<tr></tr>").append(clazzNameTd).append(filledNumberTd)
+                  .append(unfilledNumberTd)
+                  .appendTo("#clazz-content");
+          });
+      }
+
+      function update_click(index) {
+          switch (index) {
+              case 1:
+                  $("#update-first").attr("class", "active");
+                  $("#update-second").attr("class", "");
+                  $("#update-third").attr("class", "");
+                  $("#update-first-div").show();
+                  $("#update-second-div").hide();
+                  $("#update-third-div").hide();
+                  break;
+              case 2:
+                  $("#update-first").attr("class", "");
+                  $("#update-second").attr("class", "active");
+                  $("#update-third").attr("class", "");
+                  $("#update-first-div").hide();
+                  $("#update-second-div").show();
+                  $("#update-third-div").hide();
+                  break;
+              case 3:
+                  $("#update-first").attr("class", "");
+                  $("#update-second").attr("class", "");
+                  $("#update-third").attr("class", "active");
+                  $("#update-first-div").hide();
+                  $("#update-second-div").hide();
+                  $("#update-third-div").show();
+                  break;
+              default:
+                  break;
+          }
+      }
+
+      function seachClick() {
+          var stuId = $("#stuId-input").val();
+          $.ajax({
+              url:"/pt/getOneStu",
+              data: "id="+stuId,
+              type:"POST",
+              success:function(result){
+                  build_stu_content(result);
+              }
+          });
+      }
+      function build_stu_content(student) {
+          if (student==null||student==""){
+              $("#studentInfo").hide();
+              $("#noStu").empty();
+              $("#noStu").append($("<h2></h2>").append("查无此人！"));
+          }else {
+              $("#stuId").empty();
+              $("#stuId").append(student.stuId);
+              $("#stuName").empty();
+              $("#stuName").append(student.stuName);
+              $("#clazz").empty();
+              $("#clazz").append(student.clazz);
+              $("#gradeLevel").empty();
+              $("#gradeLevel").append(student.gradeLevel);
+              $("#volunteer").empty();
+              if (student.volunteerId>0){
+                  $("#volunteer").append("已填报");
+              }else {
+                  $("#volunteer").append("未填报");
+              }
+              $("#studentInfo").show();
+              $("#noStu").empty();
+          }
       }
   </script>
 </html>

@@ -2,6 +2,7 @@ package com.zut.wl.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.zut.wl.bean.ClazzContent;
 import com.zut.wl.mapper.CourseMapper;
 import com.zut.wl.mapper.GradeMapper;
 import com.zut.wl.mapper.MajorMapper;
@@ -129,5 +130,31 @@ public class StudentServiceImpl implements StudentService {
         map.put("sumGrade",GradeUtil.sumGrade(list));
         map.put("avgGrade",GradeUtil.avgGrade(list));
         return map;
+    }
+
+    @Override
+    public boolean selectStudentCheck(String stuId, String password) {
+        boolean index = false;
+        if (studentMapper.selectStudentExist(stuId)==1){
+            if (stuId.equals(password)){
+                index =  true;
+            }
+        }
+        return index;
+    }
+
+    @Override
+    public List<ClazzContent> selectClazzContent() {
+        ClazzContent clazzContent = null;
+        List<ClazzContent> clazzContentList = new ArrayList<>();
+        List<String> clazzNameList = studentMapper.selectClazzName();
+        for (String clazz : clazzNameList) {
+            clazzContent = new ClazzContent();
+            clazzContent.setFilledNumber(studentMapper.selectfilledByClazz(clazz));
+            clazzContent.setUnfilledNumber(studentMapper.selectunfilledByClazz(clazz));
+            clazzContent.setClazzName(clazz);
+            clazzContentList.add(clazzContent);
+        }
+        return clazzContentList;
     }
 }

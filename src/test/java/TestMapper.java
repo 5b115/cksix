@@ -1,5 +1,7 @@
 import com.zut.wl.mapper.*;
 import com.zut.wl.service.LogInfoService;
+import com.zut.wl.service.StudentService;
+import com.zut.wl.service.VolunteerService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +34,15 @@ public class TestMapper {
     @Autowired
     private LogInfoService logInfoService;
 
+    @Autowired
+    private StudentService studentService;
+
+    @Autowired
+    private VolunteerService volunteerService;
+
     @Test
     public void insertTest(){
-        System.out.println(100000);
+        System.out.println(volunteerService.selectVolunteerByStuId("201808064101"));
     }
 /*
     @Test
