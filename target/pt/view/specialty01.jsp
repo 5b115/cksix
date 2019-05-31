@@ -44,7 +44,7 @@
             <p class="span2">选择参与计算学分的课程：</p>
         </div>
         <div class="col-md-3 col-md-offset-3">
-            <input type="button" onclick="setCourses();" class="form-control btn btn-primary" value="确认"/>
+            <input id="btn-update" type="button" onclick="setCourses(this);" class="form-control btn btn-primary" value="确认"/>
         </div>
     </div>
     <div class="row" id="final-course" style="margin-top: 8px;">
@@ -182,7 +182,9 @@
           // }
       }
       
-      function setCourses() {
+      function setCourses(btn) {
+          $(btn).attr("disabled","disabled");
+          $(btn).val("Loading.....");
           var courseIdList = new Array();
           var coursePermissions = new Array();
           $(".selected-course").each(function () {
@@ -203,6 +205,8 @@
               type:"POST",
               success:function(result){
                   setFinal(result);
+                  $("#btn-update").val("确认");
+                  $("#btn-update").attr("disabled",false);
                   calculateAvgGpa();
               }
           });

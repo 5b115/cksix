@@ -3,10 +3,7 @@ package com.zut.wl.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zut.wl.bean.ClazzContent;
-import com.zut.wl.mapper.CourseMapper;
-import com.zut.wl.mapper.GradeMapper;
-import com.zut.wl.mapper.MajorMapper;
-import com.zut.wl.mapper.StudentMapper;
+import com.zut.wl.mapper.*;
 import com.zut.wl.pojo.Course;
 import com.zut.wl.pojo.Grade;
 import com.zut.wl.pojo.Student;
@@ -39,6 +36,9 @@ public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private GradeMapper gradeMapper;
+
+    @Autowired
+    private OtherMapper otherMapper;
 
     @Override
     public PageInfo selStudentPageInfo(int pn) {
@@ -129,6 +129,7 @@ public class StudentServiceImpl implements StudentService {
         map.put("grades",grades);
         map.put("sumGrade",GradeUtil.sumGrade(list));
         map.put("avgGrade",GradeUtil.avgGrade(list));
+        map.put("avgGpa",otherMapper.selectAvgGpaByStuId(stuId)+"");
         return map;
     }
 

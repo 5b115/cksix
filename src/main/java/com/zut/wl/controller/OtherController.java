@@ -4,6 +4,7 @@ import com.zut.wl.service.OtherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Author xiumu
@@ -14,8 +15,10 @@ public class OtherController {
     @Autowired
     private OtherService otherService;
 
+    @ResponseBody
     @GetMapping("/calculateAvgGpa")
-    public void calculateAvgGpa(){
+    public boolean calculateAvgGpa(){
         otherService.insertOther();
+        return true;
     }
 }

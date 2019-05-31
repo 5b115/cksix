@@ -7,65 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e55e89-0c0d-4c47-97ee-abfdc7190217" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/bean/ScoreAndCredit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/GradeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/OtherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/OtherServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/GradeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Grade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Other.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Other.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/ExcelResolveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/ExcelResolveServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/GradeUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/GradeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/excel/ExcelResolve.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/excel/ExcelResolve.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CourseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CourseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OtherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OtherMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/OtherMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/OtherMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestClientUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestClientUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestString.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/CourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/CourseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/StudentCrossOriginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/controller/StudentCrossOriginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/mapper/GradeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/mapper/GradeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/pojo/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/pojo/Grade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/pojo/Other.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/pojo/Other.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/service/impl/ExcelResolveServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/service/impl/ExcelResolveServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/GradeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/GradeUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ExcelResolve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/zut/wl/utils/excel/ExcelResolve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/CourseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/CourseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/GradeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/GradeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/OtherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/OtherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/CourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/CourseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/StudentCrossOriginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/controller/StudentCrossOriginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/mapper/GradeMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/mapper/GradeMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/pojo/Grade.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/pojo/Grade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/pojo/Other.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/pojo/Other.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/impl/ExcelResolveServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/service/impl/ExcelResolveServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/GradeUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/GradeUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ExcelResolve.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/com/zut/wl/utils/excel/ExcelResolve.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/mapper/CourseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/mapper/CourseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/mapper/GradeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/mapper/GradeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/classes/mapper/OtherMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/pt/WEB-INF/classes/mapper/OtherMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/pt/WEB-INF/logs/pt-log.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/2019-05-29T18-03-32_523-jvmRun1.dump" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestClientUtil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestClientUtil.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestString.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-TestString.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestClientUtil.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestClientUtil.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestMapper.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestMapper.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestString.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TestString.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestClientUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestClientUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestString.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestString.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -97,29 +43,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GradeMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml">
+      <file leaf-file-name="StudentCrossOriginController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Other.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/pojo/Other.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OtherService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/OtherService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="61">
+              <caret line="39" column="39" lean-forward="true" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1042#1043#0" expanded="true" />
+                <element signature="e#1102#1103#0" expanded="true" />
+                <element signature="e#1724#1725#0" expanded="true" />
+                <element signature="e#1793#1794#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -136,43 +71,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/CourseMapper.java">
+      <file leaf-file-name="StudentService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-110">
-              <caret line="18" column="25" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="25" />
+            <state relative-caret-position="365">
+              <caret line="73" column="38" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/CourseController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="46" column="81" selection-start-line="46" selection-start-column="81" selection-end-line="46" selection-end-column="81" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OtherController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#446#447#0" expanded="true" />
-                <element signature="e#473#474#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="specialty01.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="specialty01.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="214" column="25" lean-forward="true" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
+            <state relative-caret-position="328">
+              <caret line="210" column="56" selection-start-line="210" selection-start-column="56" selection-end-line="210" selection-end-column="56" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#td#0;n#!!top" expanded="true" />
               </folding>
@@ -180,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StudentWithScore.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithScore.java">
+      <file leaf-file-name="OtherController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="55" column="88" selection-start-line="55" selection-start-column="88" selection-end-line="55" selection-end-column="88" />
+            <state relative-caret-position="295">
+              <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -192,11 +104,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestMapper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/TestMapper.java">
+      <file leaf-file-name="StudentServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1166">
-              <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+            <state relative-caret-position="406">
+              <caret line="131" column="49" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OtherMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/OtherMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentWithScore.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithScore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClazzContent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/ClazzContent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -247,7 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/LogInfoService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/LogInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/specialty02.jsp" />
@@ -267,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/bean/ClazzContent.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/StudentMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/view/specialty04.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithVolunteer.java" />
@@ -277,7 +217,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/MajorMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/VolunteerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/VolunteerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestClientUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/utils/GradeUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestString.java" />
@@ -294,10 +233,13 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/GradeMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/OtherService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithScore.java" />
         <option value="$PROJECT_DIR$/src/test/java/TestMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/OtherMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp" />
       </list>
     </option>
   </component>
@@ -990,7 +932,7 @@
       <workItem from="1558700574334" duration="2687000" />
       <workItem from="1559004326948" duration="1237000" />
       <workItem from="1559014933394" duration="10562000" />
-      <workItem from="1559096141899" duration="47533000" />
+      <workItem from="1559096141899" duration="50773000" />
     </task>
     <servers />
   </component>
@@ -1027,7 +969,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="442216000" />
+    <option name="totallyTimeSpent" value="445456000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1039,8 +981,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="9" width="1386" height="731" extended-state="1" />
-    <editor active="true" />
+    <frame x="-8" y="9" width="1386" height="731" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50114244" side_tool="true" weight="0.3298969" />
@@ -1060,7 +1001,7 @@
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" weight="0.3282572" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.6830986" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.7605634" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.3298969" />
       <window_info anchor="bottom" id="Spring" order="1" weight="0.71912014" />
       <window_info anchor="bottom" id="Terminal" order="3" weight="0.857868" />
@@ -1092,7 +1033,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1114,20 +1055,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="173" column="22" lean-forward="true" selection-start-line="173" selection-start-column="22" selection-end-line="173" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="87" column="41" selection-start-line="87" selection-start-column="23" selection-end-line="87" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/ClazzContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1154,16 +1081,6 @@
             <element signature="e#1597#1598#0" expanded="true" />
             <element signature="e#2348#2349#0" expanded="true" />
             <element signature="e#2375#2376#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithVolunteer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1209,13 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="154" column="45" lean-forward="true" selection-start-line="154" selection-start-column="45" selection-end-line="154" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/VolunteerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1227,18 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="17" column="30" lean-forward="true" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="61" column="11" selection-start-line="61" selection-start-column="11" selection-end-line="61" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1616#1617#0" expanded="true" />
-            <element signature="e#1643#1644#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1388,13 +1286,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/OtherMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/StudentMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1465,28 +1356,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="16" column="35" lean-forward="true" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#446#447#0" expanded="true" />
-            <element signature="e#473#474#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="214" column="25" lean-forward="true" selection-start-line="214" selection-start-column="25" selection-end-line="214" selection-end-column="25" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#td#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/OtherServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -1499,8 +1368,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithScore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="55" column="88" selection-start-line="55" selection-start-column="88" selection-end-line="55" selection-end-column="88" />
+        <state relative-caret-position="229">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/StudentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="73" column="38" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/StudentWithVolunteer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1509,8 +1395,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1166">
+        <state relative-caret-position="946">
           <caret line="51" column="61" lean-forward="true" selection-start-line="51" selection-start-column="61" selection-end-line="51" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/bean/ClazzContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/service/impl/StudentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="131" column="49" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/mapper/OtherMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="16" column="45" lean-forward="true" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/StudentCrossOriginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="39" column="39" lean-forward="true" selection-start-line="39" selection-start-column="39" selection-end-line="39" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1042#1043#0" expanded="true" />
+            <element signature="e#1102#1103#0" expanded="true" />
+            <element signature="e#1724#1725#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/zut/wl/controller/OtherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/view/specialty01.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="210" column="56" selection-start-line="210" selection-start-column="56" selection-end-line="210" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

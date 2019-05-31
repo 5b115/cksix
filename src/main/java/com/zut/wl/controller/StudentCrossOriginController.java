@@ -62,4 +62,6 @@ public class StudentCrossOriginController {
     public StudentWithVolunteer getVolunteers(String stuId){
         return volunteerService.selectVolunteerByStuId(stuId);
     }
+
+
 }
