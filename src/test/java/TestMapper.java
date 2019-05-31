@@ -42,8 +42,29 @@ public class TestMapper {
 
     @Test
     public void insertTest(){
-        System.out.println(volunteerService.selectVolunteerByStuId("201808064101"));
+
+//        List<Grade> gradeList = gradeMapper.selectByStuId("201808064101");
+//        List<Double> gradeScore = new ArrayList<>();
+//        for (Grade grade : gradeList) {
+//            gradeScore.add(grade.getGradeScore());
+//            System.out.println(grade.getGradeScore());
+//        }
+//        System.out.println(GradeUtil.sumGrade(gradeScore));
+//        System.out.println(GradeUtil.avgGrade(gradeScore));
+
     }
+
+    @Test
+    public void test(){
+//        List<Grade> gradeList = gradeMapper.selectWithCourseByStuId("201808064101");
+//        StudentWithScore studentWithScore = null;
+//        Other other = null;
+//        studentWithScore = new StudentWithScore(gradeList);
+//        other = new Other();
+//        other.setAvgGpa(studentWithScore.getAvgGpa());
+//        System.out.println(other);
+    }
+
 /*
     @Test
     public void selectTest(){

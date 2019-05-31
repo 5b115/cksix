@@ -50,7 +50,7 @@ public class StudentCrossOriginController {
 
     @ResponseBody
     @PostMapping("/fillVolunteer")
-    boolean fillVolunteer(List<Volunteer> volunteers){
+    public boolean fillVolunteer(List<Volunteer> volunteers){
         if (volunteerService.insertVolunteer(volunteers)>0){
             return true;
         }else {
@@ -59,7 +59,7 @@ public class StudentCrossOriginController {
     }
     @ResponseBody
     @GetMapping("/getVolunteerByStuId")
-    StudentWithVolunteer getVolunteers(String stuId){
+    public StudentWithVolunteer getVolunteers(String stuId){
         return volunteerService.selectVolunteerByStuId(stuId);
     }
 }

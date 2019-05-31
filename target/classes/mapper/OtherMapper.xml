@@ -5,8 +5,9 @@
         insert into other values
         <trim suffixOverrides=",">
             <foreach collection="list" item="other">
-                (default ,#{other.sumGrade},#{other.avgGrade},#{other.sumGpa},#{other.avgGpa},#{other.stuId}),
+                (#{other.stuId},#{other.avgGpa}),
             </foreach>
         </trim>
+        on duplicate key update avg_gpa = values (avg_gpa)
     </insert>
 </mapper>

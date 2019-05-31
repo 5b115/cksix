@@ -34,14 +34,14 @@ public class ExcelResolve {
         students = getStudents();
         courseList = getCourses();
         gradeList = getGrades();
-        others = getOthers();
+//        others = getOthers();
     }
 
     /**
      * 获取其他成绩信息
      * @return
      */
-    public List<Other> getOthers(){
+   /* public List<Other> getOthers(){
         others = new ArrayList<>();
         Other other = null;
         for (int i = 0; i < this.excelContent.size(); i++) {
@@ -54,7 +54,7 @@ public class ExcelResolve {
             others.add(other);
         }
         return others;
-    }
+    }*/
     /**
      * 获取excel表中的成绩信息
      * @return
@@ -177,10 +177,6 @@ public class ExcelResolve {
             }
             System.out.println();
         }
-        for (int i = 0; i < others.size(); i++) {
-            System.out.print(others.get(i).getStuId()+"--"+others.get(i).getSumGrade()+"--"
-                    +others.get(i).getAvgGrade()+"--"+others.get(i).getSumGpa()+"--"+others.get(i).getAvgGrade());
-            System.out.println();
-        }
+
     }
 }

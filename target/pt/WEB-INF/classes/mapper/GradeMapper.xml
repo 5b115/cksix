@@ -10,4 +10,21 @@
         </trim>
         on duplicate key update grade_score=values (grade_score),grade_point=values (grade_point),exam_type=values (exam_type),grade_credit=values (grade_credit)
     </insert>
+    <resultMap id="gradeWithCredit" type="com.zut.wl.pojo.Grade">
+        <id column="grade_id" jdbcType="INTEGER" property="gradeId"></id>
+        <result column="stu_id" property="stuId" jdbcType="VARCHAR"></result>
+        <result column="course_id" property="courseId" jdbcType="VARCHAR"></result>
+        <result column="grade_score" property="gradeScore" jdbcType="DOUBLE"></result>
+        <result column="grade_point" property="gradePoint" jdbcType="DOUBLE"></result>
+        <result column="exam_type" property="examType" jdbcType="VARCHAR"></result>
+        <result column="grade_credit" property="gradeCredit" jdbcType="DOUBLE"></result>
+        <association property="courseCredit" javaType="java.lang.Double">
+            <result column="credit" property="courseCredit" jdbcType="VARCHAR"></result>
+        </association>
+    </resultMap>
+    <select id="selectWithCourseByStuId" resultMap="gradeWithCredit">
+         SELECT g.*,c.credit
+         FROM grade g LEFT JOIN course c on g.course_id = c.course_id
+         where g.stu_id=#{stuId} and c.permission = 1
+    </select>
 </mapper>

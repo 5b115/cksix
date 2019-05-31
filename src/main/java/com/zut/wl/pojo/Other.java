@@ -12,10 +12,6 @@ import lombok.ToString;
 @Getter
 @Setter
 public class Other {
-    private int otherId;//主键自增
-    private double sumGrade;//总成绩
-    private double avgGrade;//平均成绩
-    private double sumGpa;//总学分绩点
-    private double avgGpa;//平均学分绩点
     private String stuId;//学号
+    private double avgGpa;//平均学分绩点
 }

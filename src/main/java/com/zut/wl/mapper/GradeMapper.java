@@ -30,4 +30,11 @@ public interface GradeMapper {
      */
     @Select("select * from grade where stu_id = #{stuId}")
     List<Grade> selectByStuId(String stuId);
+
+    /**
+     * 根据学号查询已经被选中的课程成绩
+     * @param stuId
+     * @return
+     */
+    List<Grade> selectWithCourseByStuId(String stuId);
 }

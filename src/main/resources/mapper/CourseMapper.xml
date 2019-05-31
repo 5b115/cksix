@@ -10,4 +10,6 @@
         </trim>
         on duplicate key update credit=values (credit),period=values (period),course_type=values (course_type),start_year=values (start_year),clazz_type=values (clazz_type)
     </insert>
+
+
 </mapper>

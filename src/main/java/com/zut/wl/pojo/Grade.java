@@ -19,4 +19,5 @@ public class Grade {
     private Double gradePoint;//绩点
     private String examType;//重修或初修
     private Double gradeCredit;//学分
+    private Double courseCredit;
 }

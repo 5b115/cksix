@@ -1,5 +1,7 @@
 package com.zut.wl.utils;
 
+import com.zut.wl.bean.StudentWithScore;
+
 import java.util.List;
 
 /**
@@ -54,7 +56,9 @@ public class GradeUtil {
         return avgPoint;
     }
 
+    public static double avgGpa(StudentWithScore studentWithScore){
 
-
+        return 0;
+    }
 
 }

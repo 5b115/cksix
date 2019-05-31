@@ -28,7 +28,7 @@ public class ExcelResolveServiceImpl implements com.zut.wl.service.ExcelResolveS
     @Override
     public void insertData(ExcelResolve excelResolve) {
         studentMapper.insertStudentList(excelResolve.getStudents());
-        otherMapper.insertOtherList(excelResolve.getOthers());
+//        otherMapper.insertOtherList(excelResolve.getOthers());
         courseMapper.insertCourseList(excelResolve.getCourses());
         gradeMapper.insertGradeList(excelResolve.getGrades());
     }

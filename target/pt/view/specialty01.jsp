@@ -203,6 +203,17 @@
               type:"POST",
               success:function(result){
                   setFinal(result);
+                  calculateAvgGpa();
+              }
+          });
+      }
+      
+      function calculateAvgGpa() {
+          $.ajax({
+              url:"/pt/calculateAvgGpa",
+              data: "",
+              type:"GET",
+              success:function(result){
               }
           });
       }
