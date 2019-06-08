@@ -169,26 +169,31 @@
             </div>
         </div>
         <div id="studentInfo" hidden="hidden">
-        <div class="row">
-            <div class="col-md-3"><h4>学号：</h4></div>
-            <div class="col-md-3"><h4 id="stuId"></h4></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h4>姓名：</h4></div>
-            <div class="col-md-3"><h4 id="stuName"></h4></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h4>班级：</h4></div>
-            <div class="col-md-3"><h4 id="clazz"></h4></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h4>年级：</h4></div>
-            <div class="col-md-3"><h4 id="gradeLevel"></h4></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"><h4>填报情况：</h4></div>
-            <div class="col-md-3"><h4 id="volunteer"></h4></div>
-        </div>
+            <div class="row">
+                <div class="col-md-2 text-right"><h4>学号：</h4></div>
+                <div class="col-md-3"><h4 id="stuId"></h4></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 text-right"><h4>姓名：</h4></div>
+                <div class="col-md-3"><h4 id="stuName"></h4></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 text-right"><h4>班级：</h4></div>
+                <div class="col-md-3"><h4 id="clazz"></h4></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 text-right"><h4>年级：</h4></div>
+                <div class="col-md-3"><h4 id="gradeLevel"></h4></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 text-right"><h4>填报情况：</h4></div>
+                <div class="col-md-3"><h4 id="volunteer"></h4></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 text-right"><h4>班级排名：</h4></div>
+                <div class="col-md-3"><h4 id="clazzRanking"></h4></div>
+            </div>
+
         </div>
         <div class="row">
             <div id="noStu"></div>

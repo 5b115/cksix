@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/pt/bootstrap/css/bootstrap.min.css"/>
     <script src="/pt/js/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="/pt/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/pt/laydate/laydate.js"></script>
     <style type="text/css">
         .paddingtop{
             padding-top: 10px;
@@ -21,8 +22,8 @@
     <div class="row">
         <ul class="nav nav-tabs">
             <li id="update-first" class="active"><a href="javascript:void(0);" onclick="update_click(1);"><h3>一键更新</h3></a></li>
-            <li id="update-second"><a href="javascript:void(0);" onclick="update_click(2);"><h3>自定义更新</h3></a></li>
-            <li id="update-third"><a href="javascript:void(0);" onclick="update_click(3);"><h3>单项更新</h3></a></li>
+            <li id="update-second"><a class="disabled" href="javascript:void(0);" onclick="update_click(2);"><h3>自定义更新</h3></a></li>
+            <li id="update-third"><a class="disabled" href="javascript:void(0);" onclick="update_click(3);"><h3>单项更新</h3></a></li>
         </ul>
     </div>
     <div id="update-first-div">
@@ -36,9 +37,6 @@
                 <h1 id="input-title">当前最新数据为<span id="current-year"></span>级学生</h1>
             </div>
         </div>
-        <div class="row" id="data-null">
-
-        </div>
         <div class="row" id="inputFile">
             <div class="col-md-6 updateTime" hidden="hidden">
                 <h3>上次更新时间为：<span id="last-update-time"></span></h3>
@@ -48,6 +46,38 @@
                     <button disabled="disabled" type="submit" class="btn btn-primary btn-lg">一键更新数据</button>
                 </form>
             </div>
+        </div>
+    </div>
+    <div id="set-date-time">
+        <div class="row">
+            <div class=""><h3>设置填报时间</h3></div>
+        </div>
+        <div class="row" id="set-date-start">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="test1" class="col-md-2 control-label">开始时间</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="test1" placeholder="选择开始时间">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="set-date-end">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    <label for="test3" class="col-md-2 control-label">截止时间</label>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="test3" placeholder="选择结束时间">
+                    </div>
+                    <input type="button" onclick="setFillDatetime(this)" class="btn btn-primary col-md-2 " value="确定">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="set-datetime-success" hidden="hidden">
+        <div class="col-md-6">
+            <h2>填报时间设置成功</h2>
+            <h2><span style="color: blue" id="start-time">2019-6-7 17:55</span>至<span style="color: red" id="end-time">2019-6-8 17:55</span></h2>
         </div>
     </div>
     <div id="update-second-div" hidden="hidden">
@@ -109,11 +139,101 @@
 </div>
 
 </body>
+<script src="/pt/js/dayjs.min.js"></script>
+<script src="/pt/layer/layer.js"></script>
 <script type="text/javascript">
 
+
     $(function () {
+        setLayDate();
         checkIsGetData();
     })
+    
+    function setLayDate() {
+        var todayTime = dayjs().format('YYYY-MM-DD HH:mm');
+        var todayTime1 = dayjs().format('YYYY-MM-DD HH:mm:ss');
+        var startTime = laydate.render({
+            elem: '#test1',
+            type: 'datetime',
+            format: 'yyyy-MM-dd HH:mm',
+            value: todayTime,
+            min: todayTime,
+            ready: function(date){
+                console.log(todayTime);
+                var dateTime = dayjs(new Date(todayTime));
+                console.log(dateTime);
+                console.log(endTime.config.min);
+                endTime.config.min = {
+                    year: dateTime.year(),
+                    month:dateTime.month(),
+                    date: dateTime.date(),
+                    hours: dateTime.hour(),
+                    minutes: dateTime.minute()+1,
+                    seconds : dateTime.second()
+                };
+            },
+            done: function(value, date, endDate){
+                console.log(value);
+                var dateTime = dayjs(new Date(value));
+                console.log(dateTime);
+                console.log(endTime.config.min);
+                endTime.config.min = {
+                    year: dateTime.year(),
+                    month:dateTime.month(),
+                    date: dateTime.date(),
+                    hours: dateTime.hour(),
+                    minutes: dateTime.minute()+1,
+                    seconds : dateTime.second()
+                };
+            },
+            trigger: 'click'
+        });
+        var endTime = laydate.render({
+            elem: '#test3',
+            type: 'datetime',
+            format: 'yyyy-MM-dd HH:mm',
+            min: todayTime1,
+            trigger: 'click'
+        });
+
+    }
+    function checkTimeNotNull() {
+        var endTime = $("#test3").val();
+        if(endTime==null||endTime==""){
+
+            return false;
+        }
+        return true;
+    }
+    function setFillDatetime(btn) {
+        if (!checkTimeNotNull()){
+            layer.tips('日期不能为空', btn, {
+                tips: [1, '#0FA6D8'] //还可配置颜色
+            });
+            return false;
+        }
+        $(btn).addClass("disabled").val("loading......");
+        var startTime = $("#test1").val();
+        var endTime = $("#test3").val();
+        $.ajax({
+            url:"/pt/updateTime",
+            data: {
+                "startTime":startTime,
+                "endTime":endTime
+            },
+            type:"POST",
+            success:function(result){
+                setFillDatetimeSuccess(result);
+            }
+        });
+    }
+    
+    function setFillDatetimeSuccess(result) {
+        $("#set-date-time").hide();
+        $("#start-time").empty().append(result.startTime);
+        $("#end-time").empty().append(result.endTime);
+        $("#set-datetime-success").show();
+    }
 
     function checkIsGetData() {
         $.ajax({
@@ -145,6 +265,7 @@
     }
 
     function update_click(index) {
+        return false;
         switch (index){
             case 1:
                 $("#update-first").attr("class","active");

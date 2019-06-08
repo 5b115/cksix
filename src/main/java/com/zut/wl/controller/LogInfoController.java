@@ -5,7 +5,11 @@ import com.zut.wl.service.LogInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author xiumu
@@ -37,5 +41,15 @@ public class LogInfoController {
     public String departMajor(){
 
         return null;
+    }
+
+    @ResponseBody
+    @PostMapping("/updateTime")
+    public Map<String,String> updateTime(String startTime,String endTime){
+        logInfoService.updateTime(startTime,endTime);
+        Map<String,String> map = new HashMap<>();
+        map.put("startTime",startTime);
+        map.put("endTime",endTime);
+        return map;
     }
 }

@@ -19,6 +19,7 @@ public class OtherController {
     @GetMapping("/calculateAvgGpa")
     public boolean calculateAvgGpa(){
         otherService.insertOther();
+
         return true;
     }
 }

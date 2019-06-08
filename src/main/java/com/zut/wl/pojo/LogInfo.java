@@ -9,6 +9,8 @@ import lombok.Data;
 @Data
 public class LogInfo {
     private int logInfoId;
-    private String logChangeTime;
-    private String lastSemester;
+    private String logChangeTime; //数据更新时间
+    private String lastSemester; //当前学年
+    private String startTime;    //填报开始时间
+    private String endTime;      //填报截止时间
 }

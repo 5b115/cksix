@@ -47,4 +47,15 @@ public class OtherServiceImpl implements OtherService {
         }
         otherMapper.insertOtherList(otherList);
     }
+
+    @Override
+    public void updateOtherRanking() {
+        List<Other> otherList = otherMapper.selectAll();
+        for (int i = 0; i < otherList.size(); i++) {
+            System.out.println(otherList.get(i).getStuId()+"\t"+otherList.get(i).getAvgGpa());
+            otherMapper.updateGradeRanking(i+1,otherList.get(i).getStuId());
+        }
+
+
+    }
 }

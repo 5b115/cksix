@@ -25,4 +25,12 @@ public interface LogInfoService {
     void insertGrades();
 
     void insertStudentList();
+
+    /**
+     * 更新填报时间
+     * @param startTime 开始时间
+     * @param endTime 截止时间
+     * @return
+     */
+    void updateTime(String startTime, String endTime);
 }

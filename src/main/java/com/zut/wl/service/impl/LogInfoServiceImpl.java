@@ -70,6 +70,14 @@ public class LogInfoServiceImpl implements LogInfoService {
         }
     }
 
+    @Override
+    public void updateTime(String startTime, String endTime) {
+        LogInfo logInfo = logInfoMapper.selectLastLogInfo();
+        logInfo.setStartTime(startTime);
+        logInfo.setEndTime(endTime);
+        logInfoMapper.updateLogTime(logInfo);
+    }
+
     /**
      * 更新课程信息
      */

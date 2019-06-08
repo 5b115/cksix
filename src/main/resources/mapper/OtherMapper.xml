@@ -5,9 +5,30 @@
         insert into other values
         <trim suffixOverrides=",">
             <foreach collection="list" item="other">
-                (#{other.stuId},#{other.avgGpa}),
+                (#{other.stuId},#{other.avgGpa}, default, default ),
             </foreach>
         </trim>
         on duplicate key update avg_gpa = values (avg_gpa)
     </insert>
+
+    <update id="updateOtherList" parameterType="java.util.List">
+        UPDATE other set clazz_ranking = CASE stu_id
+        <foreach collection="list" item="other">
+            when #{other.stuId} then #{other.clazzRanking}
+        </foreach>
+        end ,
+        grade_ranking = CASE stu_id
+        <foreach collection="list" item="other">
+            when #{other.stuId} then #{other.gradeRanking}
+        </foreach>
+        END
+        where stu_id in (
+        <trim suffixOverrides=",">
+            <foreach collection="list" item="other">
+                #{other.stuId},
+            </foreach>
+        </trim>
+        )
+    </update>
+
 </mapper>

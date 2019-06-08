@@ -6,5 +6,13 @@ package com.zut.wl.service;
  */
 public interface OtherService {
 
+    /**
+     * 批量插入学生平均成绩
+     */
     void insertOther();
+
+    /**
+     * 批量更新学生排名
+     */
+    void updateOtherRanking();
 }

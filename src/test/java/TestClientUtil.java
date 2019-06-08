@@ -1,5 +1,3 @@
-import com.zut.wl.utils.ResolveJsonResponse;
-import com.zut.wl.utils.client.ClientUtil;
 import org.junit.Test;
 
 /**
@@ -12,13 +10,13 @@ public class TestClientUtil {
 
     }
 
-
+/*
     @Test
     public void testGetStudentInfo(){
         ResolveJsonResponse resolveJsonResponse = new ResolveJsonResponse(new ClientUtil());
         resolveJsonResponse.getCourseList("2018080641",1);
     }
- /*
+
     @Test
     public void testTimeUtils(){
         System.out.println(TimeUtils.currentTime());

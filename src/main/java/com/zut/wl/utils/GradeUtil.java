@@ -1,6 +1,6 @@
 package com.zut.wl.utils;
 
-import com.zut.wl.bean.StudentWithScore;
+import com.zut.wl.pojo.Other;
 
 import java.util.List;
 
@@ -56,9 +56,14 @@ public class GradeUtil {
         return avgPoint;
     }
 
-    public static double avgGpa(StudentWithScore studentWithScore){
 
-        return 0;
+    /**
+     * 学生按成绩排序
+     * @return
+     */
+    public static List<Other> studentSequence(){
+
+        return null;
     }
 
 }
