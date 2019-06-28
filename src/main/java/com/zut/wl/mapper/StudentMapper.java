@@ -151,4 +151,22 @@ public interface StudentMapper {
      */
     @Update("update student set volunteer_id = 1 where stu_id = #{stuId}")
     int updateStufilled(String stuId);
+
+    /**
+     * 查询此专业的学生
+     * @param majorId 专业
+     * @return
+     */
+    @Select("SELECT * from student where clazz LIKE '计算机类%' and grade_level='2018' and last_major = #{majorId}")
+    List<Student> selectStuByLastMajor(int majorId);
+
+    /**
+     * 查询填报了第ranking个志愿是此专业并且还没有被分配的学生
+     * @param ranking 志愿次序
+     * @param majorId 专业
+     * @return
+     */
+    @Select("SELECT s.* FROM volunteer v JOIN student s " +
+            "where v.stu_id = s.stu_id AND s.last_major = 0  AND v.ranking = #{param1} AND v.major_id = #{param2}")
+    List<Student> selectStuByRankingAndMajor(int ranking, int majorId);
 }

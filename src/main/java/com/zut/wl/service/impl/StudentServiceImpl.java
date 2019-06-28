@@ -176,7 +176,6 @@ public class StudentServiceImpl implements StudentService {
             if (volunteerList.size()<=major.getMajorLimit()){
                 for (Volunteer volunteer : volunteerList) {
                     studentMapper.updateStuByStuId(volunteer.getStuId(),major.getMajorId());
-                    studentMapper.updateStufilled(volunteer.getStuId());
                 }
             }else {
                 StuWithScore stuWithScore = null;
@@ -215,51 +214,54 @@ public class StudentServiceImpl implements StudentService {
         //先获取当前的专业
         List<Major> majorList = majorMapper.getMajorByStatus();
         int majorNumber = majorList.size();//获取当前专业的数量
-        for (Major major : majorList) {
-            //循环志愿次序
-            for (int i = 0; i < majorNumber; i++) {
+        //循环志愿次序
+        for (int i = 0; i < majorNumber; i++) {
+            //循环专业
+            for (Major major : majorList) {
                 //获取第i个志愿是此专业的学生
                 List<Volunteer> volunteerList = volunteerMapper.selectVolunteerByRanking(major.getMajorId(),i+1);
                 //先计算该专业还有多少人可以进入  （专业限制人数 - 已经分配到此专业的人数）
-                
-                if (true){
-                    for (Volunteer volunteer : volunteerList) {
-                        studentMapper.updateStuByStuId(volunteer.getStuId(),major.getMajorId());
-                        studentMapper.updateStufilled(volunteer.getStuId());
-                    }
-                }
-            }
-            List<Volunteer> volunteerList = volunteerMapper.selectVolunteerByMajor(major.getMajorId());
-            //如果填报人数小于专业限制人数则直接分配
-            if (volunteerList.size()<=major.getMajorLimit()){
-                for (Volunteer volunteer : volunteerList) {
-                    studentMapper.updateStuByStuId(volunteer.getStuId(),major.getMajorId());
-                    studentMapper.updateStufilled(volunteer.getStuId());
-                }
-            }else {
-                StuWithScore stuWithScore = null;
-                List<StuWithScore> stuWithScoreList = new ArrayList<>();
-                Other other = null;
-                for (int i = 0; i < volunteerList.size(); i++) {
-                    stuWithScore = new StuWithScore();
-                    stuWithScore.setStuId(volunteerList.get(i).getStuId());
-                    List<Grade> gradeList = gradeMapper.selectByStuId(volunteerList.get(i).getStuId());
-                    other = otherMapper.selectOtherByStuId(volunteerList.get(i).getStuId());
-                    stuWithScore.setAvgGpa(other.getAvgGpa());
-                    stuWithScore.setAvgme(other.getAvgme());
-                    for (Grade grade : gradeList) {
-                        if (score1Id.equals(grade.getCourseId())){
-                            stuWithScore.setScore1(grade.getGradeScore());
+                int indexLimit = major.getMajorLimit() - studentMapper.selectStuByLastMajor(major.getMajorId()).size();
+                //如果还有名额
+                if (indexLimit>0){
+                    //查询填报了第i个志愿是此专业并且还没有被分配的学生
+                    List<Student> studentList = studentMapper.selectStuByRankingAndMajor(i,major.getMajorId());
+                    //如果专业人数限制>=填报该专业的人数
+                    if (indexLimit>=studentList.size()){
+                        //直接将学生分配到该专业
+                        for (Student student : studentList) {
+                            studentMapper.updateStuByStuId(student.getStuId(),major.getMajorId());
                         }
-                        if (score2Id.equals(grade.getCourseId())){
-                            stuWithScore.setScore2(grade.getGradeScore());
+                    }else {
+                        //如果填报人数大于专业人数限制
+                        //给学生根据成绩排序
+                        StuWithScore stuWithScore = null;
+                        List<StuWithScore> stuWithScoreList = new ArrayList<>();
+                        Other other = null;
+                        for (int j = 0; j < studentList.size(); j++) {
+                            stuWithScore = new StuWithScore();
+                            List<Grade> gradeList = gradeMapper.selectByStuId(studentList.get(i).getStuId());
+                            other = otherMapper.selectOtherByStuId(studentList.get(i).getStuId());
+                            stuWithScore.setStuId(studentList.get(i).getStuId());
+                            stuWithScore.setAvgGpa(other.getAvgGpa());
+                            stuWithScore.setAvgme(other.getAvgme());
+                            for (Grade grade : gradeList) {
+                                if (score1Id.equals(grade.getCourseId())){
+                                    stuWithScore.setScore1(grade.getGradeScore());
+                                }
+                                if (score2Id.equals(grade.getCourseId())){
+                                    stuWithScore.setScore2(grade.getGradeScore());
+                                }
+                            }
+                            stuWithScoreList.add(stuWithScore);
+                        }
+                        Collections.sort(stuWithScoreList,new ComparatorSort());
+                        for (int i1 = 0; i1 < indexLimit; i1++) {
+                            studentMapper.updateStuByStuId(stuWithScoreList.get(i1).getStuId(),major.getMajorId());
                         }
                     }
-                    stuWithScoreList.add(stuWithScore);
-                }
-                Collections.sort(stuWithScoreList,new ComparatorSort());
-                for (int j = 0; j < major.getMajorLimit(); j++) {
-                    studentMapper.updateStuByStuId(stuWithScoreList.get(j).getStuId(),major.getMajorId());
+                }else {
+                    continue;
                 }
             }
         }

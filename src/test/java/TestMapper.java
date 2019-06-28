@@ -90,11 +90,11 @@ public class TestMapper {
     }
     @Test
     public void zyfl(){
-       studentService.updateAssignMajor();
+       studentService.updateAssignByVolunteer();
     }
 
     @Test
-    public void sort(){
+    public void sort() {
 
     }
 

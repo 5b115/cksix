@@ -40,7 +40,7 @@ public interface VolunteerMapper {
      * @param ranking 次序
      * @return
      */
-    @Select("select * from volunteer where major_id = #{majorId} and ranking = 1")
+    @Select("select * from volunteer where major_id = #{param1} and ranking = #{param2}")
     List<Volunteer> selectVolunteerByRanking(int majorId,int ranking);
 
 

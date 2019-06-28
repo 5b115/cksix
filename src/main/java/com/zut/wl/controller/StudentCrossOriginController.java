@@ -56,6 +56,7 @@ public class StudentCrossOriginController {
             return false;
         }
         studentService.updateStuFilled(stuId);
+
         return true;
     }
     @ResponseBody
