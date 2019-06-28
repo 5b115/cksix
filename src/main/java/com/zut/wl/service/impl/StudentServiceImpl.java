@@ -222,7 +222,7 @@ public class StudentServiceImpl implements StudentService {
                 List<Volunteer> volunteerList = volunteerMapper.selectVolunteerByRanking(major.getMajorId(),i+1);
                 //先计算该专业还有多少人可以进入  （专业限制人数 - 已经分配到此专业的人数）
                 
-                if (){
+                if (true){
                     for (Volunteer volunteer : volunteerList) {
                         studentMapper.updateStuByStuId(volunteer.getStuId(),major.getMajorId());
                         studentMapper.updateStufilled(volunteer.getStuId());
