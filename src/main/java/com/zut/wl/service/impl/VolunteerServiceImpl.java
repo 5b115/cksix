@@ -4,12 +4,14 @@ import com.zut.wl.bean.StudentWithVolunteer;
 import com.zut.wl.mapper.MajorMapper;
 import com.zut.wl.mapper.StudentMapper;
 import com.zut.wl.mapper.VolunteerMapper;
+import com.zut.wl.pojo.Major;
 import com.zut.wl.pojo.Student;
 import com.zut.wl.pojo.Volunteer;
 import com.zut.wl.service.VolunteerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,8 +33,30 @@ public class VolunteerServiceImpl implements VolunteerService {
     private MajorMapper majorMapper;
 
     @Override
-    public int insertVolunteer(List<Volunteer> volunteers) {
-        return volunteerMapper.insertVolunteerList(volunteers);
+    public int insertVolunteer(String[] volunteers,String stuId) {
+        Volunteer volunteer = null;
+        Major major = null;
+        List<Volunteer> volunteerList = new ArrayList<>();
+        for (int i = 0; i < volunteers.length; i++) {
+            volunteer = new Volunteer();
+            volunteer.setStuId(stuId);
+            major = majorMapper.selectMajorByMajorName(volunteers[i]);
+            if (major!=null){
+                volunteer.setMajorId(major.getMajorId());
+            }else {
+                continue;
+            }
+            volunteer.setRanking(i+1);
+            volunteerList.add(volunteer);
+        }
+        if (volunteerList.size()<1){
+            return -1;
+        }
+        int index = volunteerMapper.insertVolunteerList(volunteerList);
+        if (index>0){
+            return index;
+        }
+        return -1;
 
     }
 

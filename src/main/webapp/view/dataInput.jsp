@@ -159,10 +159,7 @@
             value: todayTime,
             min: todayTime,
             ready: function(date){
-                console.log(todayTime);
                 var dateTime = dayjs(new Date(todayTime));
-                console.log(dateTime);
-                console.log(endTime.config.min);
                 endTime.config.min = {
                     year: dateTime.year(),
                     month:dateTime.month(),
@@ -173,10 +170,7 @@
                 };
             },
             done: function(value, date, endDate){
-                console.log(value);
                 var dateTime = dayjs(new Date(value));
-                console.log(dateTime);
-                console.log(endTime.config.min);
                 endTime.config.min = {
                     year: dateTime.year(),
                     month:dateTime.month(),
@@ -200,21 +194,34 @@
     function checkTimeNotNull() {
         var endTime = $("#test3").val();
         if(endTime==null||endTime==""){
-
             return false;
         }
         return true;
     }
     function setFillDatetime(btn) {
+        var startTime = $("#test1").val();
+        console.log("开始时间："+startTime);
+        var endTime = $("#test3").val();
+        console.log("结束时间："+startTime);
+        var startTimeDayjs = dayjs(new Date(startTime));
+        var endTimeDayjs = dayjs(new Date(endTime));
+        var index = endTimeDayjs.isAfter(startTimeDayjs);
+        console.log("判断结束时间是否大于开始时间"+index);
+        var index1 = endTimeDayjs.isSame(startTimeDayjs);
+        console.log("判断结束时间是否等于开始时间"+index1);
         if (!checkTimeNotNull()){
             layer.tips('日期不能为空', btn, {
                 tips: [1, '#0FA6D8'] //还可配置颜色
             });
             return false;
+        }else if (!index) {
+            layer.tips('截止日期不合法！', btn, {
+                tips: [1, '#0FA6D8'] //还可配置颜色
+            });
+            return false;
         }
         $(btn).addClass("disabled").val("loading......");
-        var startTime = $("#test1").val();
-        var endTime = $("#test3").val();
+
         $.ajax({
             url:"/pt/updateTime",
             data: {

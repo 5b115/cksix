@@ -86,4 +86,22 @@ public interface StudentService {
      * @return
      */
     List<ClazzContent> selectClazzContent();
+
+    /**
+     * 更新学生填报志愿的情况
+     * @param stuId 学号
+     */
+    void updateStuFilled(String stuId);
+
+
+    /**
+     * 分流专业,按照第一志愿分流
+     */
+    void updateAssignMajor();
+
+    /**
+     * 志愿优先专业分流
+     */
+    void updateAssignByVolunteer();
+
 }

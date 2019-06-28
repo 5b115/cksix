@@ -37,4 +37,14 @@ public interface GradeMapper {
      * @return
      */
     List<Grade> selectWithCourseByStuId(String stuId);
+
+    /**
+     * 通过学号和课程号来查询成绩
+     * @param stuId 学号
+     * @param CourseId 课程
+     * @return
+     */
+    @Select("SELECT grade_score from grade where stu_id = #{param1} and course_id = #{param2}")
+    Double selectScoreByStuAndCourse(String stuId,String CourseId);
+
 }

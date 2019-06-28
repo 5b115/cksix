@@ -20,11 +20,11 @@ public interface OtherMapper {
     void updateOtherList(List<Other> otherList);
 
     /**
-     * 查询所有学生的平均成绩并排序(从大到下)
+     * 通过年级查询所有学生的平均成绩并排序(从大到下)
      * @return
      */
-    @Select("select * from other order by avg_gpa desc")
-    List<Other> selectAll();
+    @Select("select * from other where grade = #{grade} order by avg_gpa desc")
+    List<Other> selectAllByGrade(String grade);
 
     /**
      * 更新学生的年级排名
@@ -42,6 +42,28 @@ public interface OtherMapper {
     @Update("update other set clazz_ranking=#{param1} where stu_id=#{param2}")
     void updateClazzRanking(int ranking,String stuId);
 
-    
+    /**
+     * 查询重复的成绩
+     * @param grade 当前学年
+     * @return
+     */
+    @Select("SELECT DISTINCT o1.avg_gpa FROM other o1,other o2 WHERE o1.grade=#{grade} and o1.stu_id != o2.stu_id and o1.avg_gpa = o2.avg_gpa")
+    List<Double> selectRepeatAvgGpa(String grade);
 
+    /**
+     * 根据平均成绩查找当前学年的学生
+     * @param grade 学年
+     * @param avgGpa 平均成绩
+     * @return
+     */
+    @Select("select * from other where grade = #{param1} and avg_gpa = #{param2}")
+    List<Other> selectOtherByAvgGpa(String grade,Double avgGpa);
+
+    /**
+     * 通过学号查询成绩
+     * @param stuId 学号
+     * @return
+     */
+    @Select("select * from other where stu_id = #{stuId}")
+    Other selectOtherByStuId(String stuId);
 }

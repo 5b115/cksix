@@ -1,9 +1,6 @@
 package com.zut.wl.service;
 
 import com.zut.wl.bean.StudentWithVolunteer;
-import com.zut.wl.pojo.Volunteer;
-
-import java.util.List;
 
 /**
  * @Author xiumu
@@ -15,7 +12,7 @@ public interface VolunteerService {
      * 填报志愿
      * @param volunteers
      */
-    int insertVolunteer(List<Volunteer> volunteers);
+    int insertVolunteer(String[] volunteers,String stuId);
 
     /**
      * 查询学生的志愿信息

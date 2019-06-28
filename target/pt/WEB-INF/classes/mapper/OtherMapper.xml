@@ -5,10 +5,10 @@
         insert into other values
         <trim suffixOverrides=",">
             <foreach collection="list" item="other">
-                (#{other.stuId},#{other.avgGpa}, default, default ),
+                (#{other.stuId},#{other.avgGpa}, default, default,#{other.grade},#{other.avgme} ),
             </foreach>
         </trim>
-        on duplicate key update avg_gpa = values (avg_gpa)
+        on duplicate key update avg_gpa = values (avg_gpa),grade = values (grade),avgme=values (avgme)
     </insert>
 
     <update id="updateOtherList" parameterType="java.util.List">

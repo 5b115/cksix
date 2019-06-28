@@ -2,7 +2,6 @@ package com.zut.wl.controller;
 
 import com.zut.wl.bean.StudentWithVolunteer;
 import com.zut.wl.pojo.Major;
-import com.zut.wl.pojo.Volunteer;
 import com.zut.wl.service.MajorService;
 import com.zut.wl.service.StudentService;
 import com.zut.wl.service.VolunteerService;
@@ -50,12 +49,14 @@ public class StudentCrossOriginController {
 
     @ResponseBody
     @PostMapping("/fillVolunteer")
-    public boolean fillVolunteer(List<Volunteer> volunteers){
-        if (volunteerService.insertVolunteer(volunteers)>0){
-            return true;
-        }else {
+    public boolean fillVolunteer(String[] volunteers,String stuId){
+        int index = 0;
+        index = volunteerService.insertVolunteer(volunteers, stuId);
+        if (index<1){
             return false;
         }
+        studentService.updateStuFilled(stuId);
+        return true;
     }
     @ResponseBody
     @GetMapping("/getVolunteerByStuId")

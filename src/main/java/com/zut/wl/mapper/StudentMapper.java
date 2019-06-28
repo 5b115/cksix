@@ -2,6 +2,7 @@ package com.zut.wl.mapper;
 
 import com.zut.wl.pojo.Student;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -53,6 +54,14 @@ public interface StudentMapper {
      * @param student
      */
     void updateStudentByStuId(Student student);
+
+    /**
+     * 更新学生最终专业
+     * @param stuId 学号
+     * @param majorId 专业id
+     */
+    @Update("update student set last_major = #{param2} where stu_id = #{param1}")
+    void updateStuByStuId(String stuId,int majorId);
 
     /**
      * 查询所有学生，携带最终专业
@@ -135,4 +144,11 @@ public interface StudentMapper {
     @Select("SELECT COUNT(stu_id) from student where clazz = #{clazz} and volunteer_id = 0")
     int selectunfilledByClazz(String clazz);
 
+    /**
+     * 更新学生填报志愿情况
+     * @param stuId 学号
+     * @return
+     */
+    @Update("update student set volunteer_id = 1 where stu_id = #{stuId}")
+    int updateStufilled(String stuId);
 }

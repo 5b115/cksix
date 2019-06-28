@@ -25,4 +25,23 @@ public interface VolunteerMapper {
      */
     @Select("select * from volunteer where stu_id = #{stuId}")
     List<Volunteer> selectVolunteerByStuId(String stuId);
+
+    /**
+     * 获取第一志愿为此专业的学生
+     * @param majorId 此专业id
+     * @return
+     */
+    @Select("select * from volunteer where major_id = #{majorId} and ranking = 1")
+    List<Volunteer> selectVolunteerByMajor(int majorId);
+
+    /**
+     * 根据专业id以及志愿次序来查询
+     * @param majorId 专业
+     * @param ranking 次序
+     * @return
+     */
+    @Select("select * from volunteer where major_id = #{majorId} and ranking = 1")
+    List<Volunteer> selectVolunteerByRanking(int majorId,int ranking);
+
+
 }

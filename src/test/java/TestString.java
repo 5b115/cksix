@@ -1,6 +1,9 @@
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @Author xiumu
@@ -10,14 +13,26 @@ public class TestString {
 
     @Test
     public void testSub(){
-        StringBuffer stuId = new StringBuffer("201808064122");
-        stuId.setCharAt(8,'0');
-        System.out.println(stuId.toString().substring(0,10));
+        List<Integer> ranking = new ArrayList();
+        ranking.add(1);
+        ranking.add(2);
+        ranking.add(3);
+        ranking.add(4);
+        ranking.add(5);
+        ranking.add(6);
+        Collections.shuffle(ranking);
+        for (Object o : ranking) {
+            System.out.println(o);
+        }
+
     }
 
     @Test
     public void testBigDecimal(){
         BigDecimal a = new BigDecimal(5);
-        System.out.println(a.divide(new BigDecimal(2)).doubleValue());
+        BigDecimal math = new BigDecimal(28.55);
+        BigDecimal english = new BigDecimal(39.5);
+        double d = 0;
+        System.out.println(a.add(math).add(english).doubleValue());
     }
 }

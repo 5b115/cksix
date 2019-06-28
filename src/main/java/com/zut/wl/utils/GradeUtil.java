@@ -1,7 +1,6 @@
 package com.zut.wl.utils;
 
-import com.zut.wl.pojo.Other;
-
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -56,14 +55,17 @@ public class GradeUtil {
         return avgPoint;
     }
 
-
     /**
-     * 学生按成绩排序
+     * 计算数学和英语的总成绩
      * @return
      */
-    public static List<Other> studentSequence(){
-
-        return null;
+    public static double avgMathAndEnglish(double mathScore,double englishScore,Double mathScore2,Double engLishScore2){
+        if (mathScore2==null){
+            mathScore2 = 0.00;
+        }
+        if (engLishScore2==null){
+            engLishScore2=0.00;
+        }
+        return new BigDecimal(mathScore).add(new BigDecimal(englishScore)).add(new BigDecimal(mathScore2)).add(new BigDecimal(engLishScore2)).doubleValue();
     }
-
 }

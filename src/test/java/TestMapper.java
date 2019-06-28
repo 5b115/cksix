@@ -1,5 +1,8 @@
 import com.zut.wl.mapper.*;
+import com.zut.wl.pojo.Student;
+import com.zut.wl.pojo.Volunteer;
 import com.zut.wl.service.LogInfoService;
+import com.zut.wl.service.OtherService;
 import com.zut.wl.service.StudentService;
 import com.zut.wl.service.VolunteerService;
 import org.junit.Test;
@@ -7,6 +10,10 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @Author xiumu
@@ -43,16 +50,55 @@ public class TestMapper {
     @Autowired
     private OtherMapper otherMapper;
 
+    @Autowired
+    private OtherService otherService;
+
+    @Autowired
+    private VolunteerMapper volunteerMapper;
+
     @Test
     public void insertTest(){
-
+        otherService.updateOtherRanking();
     }
 
     @Test
     public void test(){
+        //模拟学生报考  随机产生
+        Volunteer volunteer = null;
+        List<Volunteer> volunteerList = null;
+        List<Integer> ranking = new ArrayList<>();
+        ranking.add(1);
+        ranking.add(2);
+        ranking.add(3);
+        ranking.add(4);
+        ranking.add(5);
+        ranking.add(6);
+        List<Student> studentList = studentMapper.selectStudentByClazz("2018");
+        for (int i = 0; i < studentList.size(); i++) {
+            Collections.shuffle(ranking);
+            volunteerList = new ArrayList<>();
+            for (int j = 0; j < 6; j++) {
+                volunteer = new Volunteer();
+                volunteer.setStuId(studentList.get(i).getStuId());
+                volunteer.setMajorId(ranking.get(j));
+                volunteer.setRanking(j+1);
+                volunteerList.add(volunteer);
+            }
+            volunteerMapper.insertVolunteerList(volunteerList);
+            studentMapper.updateStufilled(studentList.get(i).getStuId());
+        }
+    }
+    @Test
+    public void zyfl(){
+       studentService.updateAssignMajor();
+    }
 
+    @Test
+    public void sort(){
 
     }
+
+
 
 /*
     @Test
@@ -113,4 +159,6 @@ public class TestMapper {
     public void testLogInfoService(){
         //logInfoService.insertGrades();
     }*/
+
+
 }

@@ -12,7 +12,12 @@ public interface OtherService {
     void insertOther();
 
     /**
-     * 批量更新学生排名
+     * 批量更新学生排名(按默认方式)
      */
     void updateOtherRanking();
+
+    /**
+     * 更新平均学分一样的学生的排名
+     */
+    void updateOtherRepeat();
 }

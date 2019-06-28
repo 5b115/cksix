@@ -12,10 +12,15 @@ import java.util.List;
  */
 
 public class StudentWithScore {
+    //学号
     private String stuId;
+    //姓名
     private String stuName;
+    //各科成绩和学分
     private List<ScoreAndCredit> scoreAndCreditList = new ArrayList<>();
+    //平均学分绩点
     private double avgGpa;
+    //总学分
     private BigDecimal sumCredit = new BigDecimal(0);
 
     public String getStuId() {
@@ -42,6 +47,10 @@ public class StudentWithScore {
         this.scoreAndCreditList = scoreAndCreditList;
     }
 
+    /**
+     * 计算平均学分绩点
+     * @return
+     */
     public double getAvgGpa() {
         BigDecimal sumGpa = new BigDecimal(0);
         for (int i = 0; i < scoreAndCreditList.size(); i++) {
@@ -51,6 +60,10 @@ public class StudentWithScore {
         return avgGpa;
     }
 
+    /**
+     * 获取总学分
+     * @return
+     */
     public BigDecimal getSumCredit() {
         for (ScoreAndCredit scoreAndCredit : scoreAndCreditList) {
             sumCredit = sumCredit.add(new BigDecimal(scoreAndCredit.getCourseCredit()));
@@ -58,6 +71,10 @@ public class StudentWithScore {
         return sumCredit;
     }
 
+    /**
+     * 构造计算学生平均学分绩点的对象
+     * @param gradeList
+     */
     public StudentWithScore(List<Grade> gradeList) {
         ScoreAndCredit scoreAndCredit = null;
         for (Grade grade : gradeList) {
