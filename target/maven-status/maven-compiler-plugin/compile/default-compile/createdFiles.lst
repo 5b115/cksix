@@ -2,6 +2,8 @@ com\zut\wl\controller\StudentCrossOriginController.class
 com\zut\wl\service\CourseService.class
 com\zut\wl\mapper\CourseMapper.class
 com\zut\wl\service\impl\VolunteerServiceImpl.class
+com\zut\wl\utils\sort\ComparatorSort.class
+com\zut\wl\utils\sort\SortComparator.class
 com\zut\wl\bean\StudentWithScore.class
 com\zut\wl\mapper\StudentMapper.class
 com\zut\wl\service\impl\MajorServiceImpl.class
@@ -37,6 +39,7 @@ com\zut\wl\pojo\Volunteer.class
 com\zut\wl\service\ExcelResolveService.class
 com\zut\wl\mapper\LogInfoMapper.class
 com\zut\wl\bean\ScoreAndCredit.class
+com\zut\wl\bean\StuWithScore.class
 com\zut\wl\utils\excel\ReadExcel.class
 com\zut\wl\utils\GradeUtil.class
 com\zut\wl\pojo\LogInfo.class

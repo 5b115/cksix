@@ -56,13 +56,18 @@ public class StudentCrossOriginController {
             return false;
         }
         studentService.updateStuFilled(stuId);
-
         return true;
     }
     @ResponseBody
     @GetMapping("/getVolunteerByStuId")
     public StudentWithVolunteer getVolunteers(String stuId){
         return volunteerService.selectVolunteerByStuId(stuId);
+    }
+
+    @ResponseBody
+    @GetMapping("/getStuLastMajor")
+    public Map<String,Object> getStuLastMajor(String stuId){
+        return studentService.selectStuLastMajor(stuId);
     }
 
 

@@ -120,4 +120,10 @@ public interface StudentService {
      */
     PageInfo selectStuByMajorPage(String majorName,int pn);
 
+    /**
+     * 查询学生的最终专业
+     * @param stuId
+     * @return
+     */
+    Map<String,Object> selectStuLastMajor(String stuId);
 }

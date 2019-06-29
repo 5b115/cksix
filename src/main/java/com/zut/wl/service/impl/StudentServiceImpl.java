@@ -282,4 +282,15 @@ public class StudentServiceImpl implements StudentService {
         PageInfo studentList = new PageInfo(students);
         return studentList;
     }
+
+    @Override
+    public Map<String, Object> selectStuLastMajor(String stuId) {
+        Map<String,Object> map = new HashMap<>();
+        Student student = studentMapper.selectOneById(stuId);
+        map.put("stuId",student.getStuId());
+        map.put("stuName",student.getStuName());
+        String majorName = majorMapper.selectMajorByMajorId(student.getLastMajor());
+        map.put("lastMajorName",majorName);
+        return map;
+    }
 }

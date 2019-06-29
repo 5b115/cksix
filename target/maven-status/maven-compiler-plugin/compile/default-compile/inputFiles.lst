@@ -3,14 +3,17 @@ D:\ideaCode\pt\src\main\java\com\zut\wl\mapper\StudentMapper.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\service\CourseService.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\Student.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\service\impl\LogInfoServiceImpl.java
+D:\ideaCode\pt\src\main\java\com\zut\wl\utils\sort\ComparatorSort.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\service\GradeService.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\service\impl\MajorServiceImpl.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\mapper\GradeMapper.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\User.java
+D:\ideaCode\pt\src\main\java\com\zut\wl\utils\sort\SortComparator.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\bean\StudentWithVolunteer.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\bean\ClazzContent.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\service\impl\ExcelResolveServiceImpl.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\controller\StudentController.java
+D:\ideaCode\pt\src\main\java\com\zut\wl\bean\StuWithScore.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\Major.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\utils\excel\ExcelResolve.java
 D:\ideaCode\pt\src\main\java\com\zut\wl\pojo\Other.java
