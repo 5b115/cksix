@@ -97,11 +97,27 @@ public interface StudentService {
     /**
      * 分流专业,按照第一志愿分流
      */
+    @Deprecated
     void updateAssignMajor();
 
     /**
      * 志愿优先专业分流
      */
     void updateAssignByVolunteer();
+
+    /**
+     * 查询分配到该专业的所有学生
+     * @param majorName 专业名字
+     * @return
+     */
+    List<Student> selectStuByMajor(String majorName);
+
+    /**
+     * 分页查询分配到该专业的所有学生
+     * @param majorName 专业名字
+     * @param pn 页数
+     * @return
+     */
+    PageInfo selectStuByMajorPage(String majorName,int pn);
 
 }

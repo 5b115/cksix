@@ -246,11 +246,11 @@ public class StudentServiceImpl implements StudentService {
                             stuWithScore.setAvgGpa(other.getAvgGpa());
                             stuWithScore.setAvgme(other.getAvgme());
                             for (Grade grade : gradeList) {
-                                if (score1Id.equals(grade.getCourseId())){
-                                    stuWithScore.setScore1(grade.getGradeScore());
-                                }
                                 if (score2Id.equals(grade.getCourseId())){
                                     stuWithScore.setScore2(grade.getGradeScore());
+                                }
+                                if (score1Id.equals(grade.getCourseId())){
+                                    stuWithScore.setScore1(grade.getGradeScore());
                                 }
                             }
                             stuWithScoreList.add(stuWithScore);
@@ -265,5 +265,21 @@ public class StudentServiceImpl implements StudentService {
                 }
             }
         }
+    }
+
+    @Override
+    public List<Student> selectStuByMajor(String majorName) {
+        int majorId = majorMapper.selectMajorByMajorName(majorName).getMajorId();
+        List<Student> studentList = studentMapper.selectStuByLastMajor(majorId);
+        return studentList;
+    }
+
+    @Override
+    public PageInfo selectStuByMajorPage(String majorName, int pn) {
+        int majorId = majorMapper.selectMajorByMajorName(majorName).getMajorId();
+        PageHelper.startPage(pn,10);
+        List<Student> students = studentMapper.selectStuByLastMajor(majorId);
+        PageInfo studentList = new PageInfo(students);
+        return studentList;
     }
 }

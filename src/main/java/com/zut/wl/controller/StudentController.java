@@ -6,10 +6,7 @@ import com.zut.wl.pojo.Student;
 import com.zut.wl.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -78,4 +75,21 @@ public class StudentController {
     public List<ClazzContent> getClazzContent(){
         return studentService.selectClazzContent();
     }
+
+
+    @ResponseBody
+    @PostMapping("/getStuByMajor")
+    public List<Student> getStuByMajor(String majorName){
+        List<Student> studentList = studentService.selectStuByMajor(majorName);
+        return studentList;
+    }
+    @ResponseBody
+    @PostMapping("/getStuByMajorPage")
+    public PageInfo getStuByMajorPage(String majorName, @RequestParam(value="pn",defaultValue = "1")int pn){
+        PageInfo studentList = studentService.selectStuByMajorPage(majorName,pn);
+        return studentList;
+    }
 }
+
+
+

@@ -200,15 +200,11 @@
     }
     function setFillDatetime(btn) {
         var startTime = $("#test1").val();
-        console.log("开始时间："+startTime);
         var endTime = $("#test3").val();
-        console.log("结束时间："+startTime);
         var startTimeDayjs = dayjs(new Date(startTime));
         var endTimeDayjs = dayjs(new Date(endTime));
         var index = endTimeDayjs.isAfter(startTimeDayjs);
-        console.log("判断结束时间是否大于开始时间"+index);
         var index1 = endTimeDayjs.isSame(startTimeDayjs);
-        console.log("判断结束时间是否等于开始时间"+index1);
         if (!checkTimeNotNull()){
             layer.tips('日期不能为空', btn, {
                 tips: [1, '#0FA6D8'] //还可配置颜色
