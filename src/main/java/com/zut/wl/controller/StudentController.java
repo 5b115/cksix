@@ -89,6 +89,13 @@ public class StudentController {
         PageInfo studentList = studentService.selectStuByMajorPage(majorName,pn);
         return studentList;
     }
+
+    @ResponseBody
+    @GetMapping("/departMajor")
+    public boolean departMajor(){
+        studentService.updateAssignByVolunteer();
+        return true;
+    }
 }
 
 

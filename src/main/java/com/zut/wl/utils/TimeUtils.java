@@ -1,6 +1,9 @@
 package com.zut.wl.utils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @Author xiumu
@@ -32,4 +35,25 @@ public class TimeUtils {
         Calendar today = Calendar.getInstance();
         return (today.get(Calendar.YEAR)-1)+"";
     }
+
+    /**
+     * 比较日期t1是否在当前日期之后
+     * @param t1
+     * @return
+     */
+    public static boolean checkT1AfterT2(String t1){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date = null;
+        try {
+            date = dateFormat.parse(t1);
+        } catch (ParseException e) {
+            return false;
+        }
+        Date today = new Date();
+        if (date!=null){
+            return date.after(today);
+        }
+        return false;
+    }
+
 }

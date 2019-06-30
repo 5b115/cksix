@@ -2,6 +2,7 @@ package com.zut.wl.controller;
 
 import com.zut.wl.pojo.LogInfo;
 import com.zut.wl.service.LogInfoService;
+import com.zut.wl.utils.TimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,17 @@ public class LogInfoController {
     @GetMapping("/getLog")
     public LogInfo getLastLog(){
         return logInfoService.selectLastLogInfo();
+    }
+
+    @ResponseBody
+    @GetMapping("/getLogInfo")
+    public Map<String,Object> getLogInfo(){
+        Map<String,Object> map = new HashMap<>();
+        String endTime = logInfoService.selectLastLogInfo().getEndTime();
+        boolean isdepart = TimeUtils.checkT1AfterT2(endTime);
+        map.put("endTime",endTime);
+        map.put("isdepart",isdepart);
+        return map;
     }
 
     @GetMapping("/updateData")

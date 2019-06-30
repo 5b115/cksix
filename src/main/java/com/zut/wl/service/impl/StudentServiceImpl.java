@@ -240,19 +240,20 @@ public class StudentServiceImpl implements StudentService {
                         Other other = null;
                         for (int j = 0; j < studentList.size(); j++) {
                             stuWithScore = new StuWithScore();
-                            List<Grade> gradeList = gradeMapper.selectByStuId(studentList.get(i).getStuId());
-                            other = otherMapper.selectOtherByStuId(studentList.get(i).getStuId());
-                            stuWithScore.setStuId(studentList.get(i).getStuId());
+                            other = otherMapper.selectOtherByStuId(studentList.get(j).getStuId());
+                            stuWithScore.setStuId(studentList.get(j).getStuId());
                             stuWithScore.setAvgGpa(other.getAvgGpa());
                             stuWithScore.setAvgme(other.getAvgme());
-                            for (Grade grade : gradeList) {
-                                if (score2Id.equals(grade.getCourseId())){
-                                    stuWithScore.setScore2(grade.getGradeScore());
-                                }
-                                if (score1Id.equals(grade.getCourseId())){
-                                    stuWithScore.setScore1(grade.getGradeScore());
-                                }
+                            Double score1 = gradeMapper.selectScoreByStuAndCourse(studentList.get(j).getStuId(),score1Id);
+                            if (score1 == null){
+                                score1 = 0.00;
                             }
+                            stuWithScore.setScore1(score1);
+                            Double score2 = gradeMapper.selectScoreByStuAndCourse(studentList.get(j).getStuId(),score2Id);
+                            if (score2 == null){
+                                score2 = 0.00;
+                            }
+                            stuWithScore.setScore2(score2);
                             stuWithScoreList.add(stuWithScore);
                         }
                         Collections.sort(stuWithScoreList,new ComparatorSort());
@@ -276,11 +277,14 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public PageInfo selectStuByMajorPage(String majorName, int pn) {
-        int majorId = majorMapper.selectMajorByMajorName(majorName).getMajorId();
-        PageHelper.startPage(pn,10);
-        List<Student> students = studentMapper.selectStuByLastMajor(majorId);
-        PageInfo studentList = new PageInfo(students);
-        return studentList;
+        if(studentMapper.selectStuHasLastMajor().size()>0){
+            int majorId = majorMapper.selectMajorByMajorName(majorName).getMajorId();
+            PageHelper.startPage(pn,10);
+            List<Student> students = studentMapper.selectStuByLastMajor(majorId);
+            PageInfo studentList = new PageInfo(students);
+            return studentList;
+        }
+        return null;
     }
 
     @Override

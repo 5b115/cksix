@@ -1,4 +1,5 @@
 import com.zut.wl.mapper.*;
+import com.zut.wl.pojo.Student;
 import com.zut.wl.pojo.Volunteer;
 import com.zut.wl.service.LogInfoService;
 import com.zut.wl.service.OtherService;
@@ -11,6 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -71,7 +73,7 @@ public class TestMapper {
         ranking.add(4);
         ranking.add(5);
         ranking.add(6);
-       /* List<Student> studentList = studentMapper.selectStudentByClazz("2018");
+        List<Student> studentList = studentMapper.selectStudentByClazz("2018");
         for (int i = 0; i < studentList.size(); i++) {
             Collections.shuffle(ranking);
             volunteerList = new ArrayList<>();
@@ -84,11 +86,11 @@ public class TestMapper {
             }
             volunteerMapper.insertVolunteerList(volunteerList);
             studentMapper.updateStufilled(studentList.get(i).getStuId());
-        }*/
+        }
     }
     @Test
     public void zyfl(){
-
+        studentService.updateAssignByVolunteer();
     }
 
     @Test

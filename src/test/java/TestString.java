@@ -1,3 +1,4 @@
+import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -34,5 +35,12 @@ public class TestString {
         BigDecimal english = new BigDecimal(39.5);
         double d = 0;
         System.out.println(a.add(math).add(english).doubleValue());
+    }
+
+    @Test
+    public void testTimeUtils(){
+        String endTime = "2019-06-30 10:50";
+        boolean index = TimeUtils.checkT1AfterT2(endTime);
+        System.out.println(index);
     }
 }

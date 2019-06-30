@@ -9,6 +9,7 @@ import java.util.Comparator;
  * @Author xiumu
  * @Date 2019/6/27 9:14
  */
+@Deprecated
 public class SortComparator implements Comparator<Other> {
 
     //平均学分绩点

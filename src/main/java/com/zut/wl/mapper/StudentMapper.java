@@ -169,4 +169,11 @@ public interface StudentMapper {
     @Select("SELECT s.* FROM volunteer v JOIN student s " +
             "where v.stu_id = s.stu_id AND s.last_major = 0  AND v.ranking = #{param1} AND v.major_id = #{param2}")
     List<Student> selectStuByRankingAndMajor(int ranking, int majorId);
+
+    /**
+     * 查询已经分流专业的学生
+     * @return
+     */
+    @Select("SELECT * from student where clazz LIKE '计算机类%' and grade_level='2018' and last_major != 0")
+    List<Student> selectStuHasLastMajor();
 }

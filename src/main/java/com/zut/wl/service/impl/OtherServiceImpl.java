@@ -1,5 +1,6 @@
 package com.zut.wl.service.impl;
 
+import com.zut.wl.bean.StuWithScore;
 import com.zut.wl.bean.StudentWithScore;
 import com.zut.wl.mapper.GradeMapper;
 import com.zut.wl.mapper.LogInfoMapper;
@@ -11,10 +12,12 @@ import com.zut.wl.pojo.Student;
 import com.zut.wl.service.OtherService;
 import com.zut.wl.utils.GradeUtil;
 import com.zut.wl.utils.TimeUtils;
+import com.zut.wl.utils.sort.ComparatorSort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -70,12 +73,35 @@ public class OtherServiceImpl implements OtherService {
 
     @Override
     public void updateOtherRanking() {
+        String score1Id = "DB0801146";
+        String score2Id = "DB0801220";
         String grade = logInfoMapper.selectLastLogInfo().getLastSemester();
         List<Other> otherList = otherMapper.selectAllByGrade(grade);
-        for (int i = 0; i < otherList.size(); i++) {
-            otherMapper.updateGradeRanking(i+1,otherList.get(i).getStuId());
+        List<Student> studentList = studentMapper.selectStudentByClazz(TimeUtils.currentGrade());
+        StuWithScore stuWithScore = null;
+        Other other = null;
+        List<StuWithScore> stuWithScoreList = new ArrayList<>();
+        for (int i = 0; i < studentList.size(); i++) {
+            stuWithScore = new StuWithScore();
+            stuWithScore.setStuId(studentList.get(i).getStuId());
+            other = otherMapper.selectOtherByStuId(studentList.get(i).getStuId());
+            stuWithScore.setAvgGpa(other.getAvgGpa());
+            stuWithScore.setAvgme(other.getAvgme());
+            Double score1 = gradeMapper.selectScoreByStuAndCourse(otherList.get(i).getStuId(),score1Id);
+            if (score1 == null){
+                score1 = 0.00;
+            }
+            stuWithScore.setScore1(score1);
+            Double score2 = gradeMapper.selectScoreByStuAndCourse(otherList.get(i).getStuId(),score2Id);
+            if (score2 == null){
+                score2 = 0.00;
+            }
+            stuWithScore.setScore2(score2); stuWithScoreList.add(stuWithScore);
         }
-
+        Collections.sort(stuWithScoreList,new ComparatorSort());
+        for (int i = 0; i < stuWithScoreList.size(); i++) {
+            otherMapper.updateGradeRanking(i+1,stuWithScoreList.get(i).getStuId());
+        }
     }
 
     @Override

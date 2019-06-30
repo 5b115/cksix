@@ -20,12 +20,15 @@
           color: #808080;
           padding-top: 8px;
       }
+      .paddingdiv{
+          padding-top: 12px;
+      }
       .span2{
           font-size: 22px;
           font-weight: bold;
       }
       .span3{
-          color: blue;
+          font-size: 22px;
       }
       .span4{
           color: lightgreen;
@@ -40,12 +43,31 @@
 	  		
  <body>
 <div class="container">
-    <div id="update-first-div"><!-- 概况start -->
-    <div class="row" style="margin-top: 8px;">
+    <div class="row">
         <div class="col-md-4">
             <h3 class="span2">分流结果</h3>
         </div>
+        <div class="col-md-8 paddingdiv">
+            <div class="row">
+                <button id="btn-depart" onclick="btn_depart(this)" class="btn btn-primary col-md-3 col-md-offset-8">开始分流</button>
+            </div>
+        </div>
     </div>
+    <div id="depart-before" hidden="hidden">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="span3">填报截止时间为<span id="filled-deadtime" class="text-primary">2019-06-30 00:00</span>,填报结束后开始分流</p>
+            </div>
+        </div>
+    </div>
+    <div id="depart-before1" hidden="hidden">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="span3">还没有开始分流</p>
+            </div>
+        </div>
+    </div>
+    <div id="depart-major-content">
     <div class="row">
         <div class="col-md-1">
             <p class="span1">专业：</p>
@@ -126,11 +148,39 @@
       var majorName = $("#majorList").val();
       $(function () {
           getMajorList();
-          // getStuByMajorName(majorName);
-          getStuByMajorNamePage(majorName,1);
+          checkTime();
       })
 
-
+      function checkTime() {
+          $.ajax({
+              url:"/pt/getLogInfo",
+              data: "",
+              type:"GET",
+              success:function(result){
+                  build_depart(result);
+              }
+          });
+      }
+      function build_depart(result){
+          if (result.isdepart==true){
+              build_depart_content(result.endTime);
+          }else {
+              getStuByMajorNamePage(majorName,1);
+          }
+      }
+      
+      function build_depart_content(endTime) {
+          $("#depart-major-content").hide();
+          $("#depart-before").show();
+          $("#filled-deadtime").empty().append(endTime);
+          $("#btn-depart").addClass("disabled");
+      }
+      function build_depart_before() {
+          $("#depart-major-content").hide();
+          $("#depart-before").hide();
+          $("#depart-before1").show();
+      }
+      
       function getMajorList() {
           $.ajax({
               url:"/pt/getMajorList",
@@ -138,7 +188,6 @@
               type:"GET",
               success:function(result){
                   build_major(result);
-
               }
           });
       }
@@ -155,17 +204,6 @@
           // getStuByMajorName(majorName);
           getStuByMajorNamePage(majorName,1)
       }
-      
-      function getStuByMajorName(majorName) {
-          $.ajax({
-              url:"/pt/getStuByMajor",
-              data: "majorName="+majorName,
-              type:"POST",
-              success:function(result){
-                  build_stu_table1(result);
-              }
-          });
-      }
 
       function getStuByMajorNamePage(majorName,pn) {
           $.ajax({
@@ -173,40 +211,24 @@
               data: "majorName="+majorName+"&pn="+pn,
               type:"POST",
               success:function(result){
-                  build_stu_table(result);
-                  //2、解析并显示分页信息
-                  build_stu_info(result);
-              }
-          });
-      }
-      
-      function build_stu_table1(result) {
-          $("#stu-table").empty();
-          $.each(result,function (index,item) {
-              var stuId = $("<td></td>").append(item.stuId);
-              var stuName = $("<td></td>").append(item.stuName);
-              var gradeLevelTd = $("<td></td>").append(item.gradeLevel);
-              var clazzTd = $("<td></td>").append(item.clazz);
-              $("<tr></tr>").append(stuId).append(stuName)
-                  .append(gradeLevelTd).append(clazzTd)
-                  .appendTo("#stu-table");
-          });
-      }
+                  if (result==null||result==""){
+                      console.log("没有有返回值");
+                      build_depart_before();
+                  }else {
+                      console.log("有返回值");
+                      build_stu_table(result);
+                      //2、解析并显示分页信息
+                      build_stu_info(result);
 
-      function getStudentList(pn) {
-          $.ajax({
-              url:"/pt/getStuNotFilled",
-              data: "pn="+pn,
-              type:"GET",
-              success:function(result){
-                  build_stu_table(result);
-                  //2、解析并显示分页信息
-                  build_stu_info(result);
+                  }
               }
           });
       }
 
       function build_stu_table(result) {
+          $("#depart-major-content").show();
+          $("#depart-before").hide();
+          $("#depart-before1").hide();
           $("#stu-table").empty();
           var stuList = result.list;
           pages = result.pages;
@@ -250,17 +272,17 @@
           }
       }
 
-      function setVolunteerInfo() {
+      function btn_depart(btn) {
+          $(btn).addClass("disabled").val("loading......");
           $.ajax({
-              url:"/pt/getVolunteerInfo",
+              url:"/pt/departMajor",
               data: "",
               type:"GET",
               success:function(result){
-                  if (result != null || result!=""){
-                      $("#currentTime").html(result.currentTime);
-                      $("#stuFilledNumber").html(result.filledNumber);
-                      $("#notFilledNumber").html(result.unfilledNumber);
-                  }
+                  console.log("分流结束");
+                  checkTime();
+                  console.log("显示结果");
+                  $("#btn-depart").removeClass("disabled");
               }
           });
       }
