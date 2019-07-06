@@ -20,4 +20,12 @@ public interface VolunteerService {
      * @return
      */
     StudentWithVolunteer selectVolunteerByStuId(String stuId);
+
+    /**
+     * 验证填报的志愿是否重复，是否超过填报日期
+     * @param volunteers
+     * @return
+     */
+    boolean checkVolunteers(String[] volunteers);
+
 }

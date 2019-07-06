@@ -50,6 +50,9 @@ public class StudentCrossOriginController {
     @ResponseBody
     @PostMapping("/fillVolunteer")
     public boolean fillVolunteer(String[] volunteers,String stuId){
+        if (volunteerService.checkVolunteers(volunteers)){
+            return false;
+        }
         int index = 0;
         index = volunteerService.insertVolunteer(volunteers, stuId);
         if (index<1){

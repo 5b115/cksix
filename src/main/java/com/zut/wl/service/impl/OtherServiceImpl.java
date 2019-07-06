@@ -40,6 +40,11 @@ public class OtherServiceImpl implements OtherService {
     private LogInfoMapper logInfoMapper;
 
     @Override
+    public Other selectOtherByStuId(String id) {
+        return otherMapper.selectOtherByStuId(id);
+    }
+
+    @Override
     public void insertOther() {
         StudentWithScore studentWithScore = null;
         Other other = null;

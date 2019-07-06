@@ -13,7 +13,7 @@
 
 <div class="welinfo" align="center">
     <span style="position: absolute;left: 430px"></span>
-    <b style="font-size: 20px"><span style="color: black;">你好，欢迎使用信息管理系统</span></b>
+    <b style="font-size: 20px"><span style="color: black;">你好，欢迎使用专业分流管理系统</span></b>
  </div>
 <br/>
 <br/>	<br/><br/><br/>

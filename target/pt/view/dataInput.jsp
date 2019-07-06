@@ -34,12 +34,12 @@
         </div>
         <div class="row" id="data-not-null">
             <div class="page-header">
-                <h1 id="input-title">当前最新数据为<span id="current-year"></span>级学生</h1>
+                <h1 id="input-title">当前最新数据为<span class="text-primary" id="current-year"></span>级学生</h1>
             </div>
         </div>
         <div class="row" id="inputFile">
             <div class="col-md-6 updateTime" hidden="hidden">
-                <h3>上次更新时间为：<span id="last-update-time"></span></h3>
+                <h3>上次更新时间为：<span class="text-primary" id="last-update-time"></span></h3>
             </div>
             <div class="col-md-4 col-md-offset-2" >
                 <form action="/pt/updateData" method="get" onsubmit="return changePage();">
@@ -50,7 +50,10 @@
     </div>
     <div id="set-date-time">
         <div class="row">
-            <div class=""><h3>设置填报时间</h3></div>
+            <div class="col-md-12"><h2>设置填报时间</h2></div>
+            <div class="col-md-12" id="set-datetime-success">
+                <h2>上次设置结果<span style="color: blue" id="start-time">2019-6-7 17:55</span>至<span style="color: blue" id="end-time">2019-6-8 17:55</span></h2>
+            </div>
         </div>
         <div class="row" id="set-date-start">
             <div class="form-horizontal">
@@ -72,12 +75,6 @@
                     <input type="button" onclick="setFillDatetime(this)" class="btn btn-primary col-md-2 " value="确定">
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="row" id="set-datetime-success" hidden="hidden">
-        <div class="col-md-6">
-            <h2>填报时间设置成功</h2>
-            <h2><span style="color: blue" id="start-time">2019-6-7 17:55</span>至<span style="color: red" id="end-time">2019-6-8 17:55</span></h2>
         </div>
     </div>
     <div id="update-second-div" hidden="hidden">
@@ -227,15 +224,14 @@
             type:"POST",
             success:function(result){
                 setFillDatetimeSuccess(result);
+                $(btn).removeClass("disabled").val("确定");
             }
         });
     }
     
     function setFillDatetimeSuccess(result) {
-        $("#set-date-time").hide();
         $("#start-time").empty().append(result.startTime);
         $("#end-time").empty().append(result.endTime);
-        $("#set-datetime-success").show();
     }
 
     function checkIsGetData() {
@@ -258,6 +254,8 @@
             $(".updateTime").show();
             $("#last-update-time").append(result.logChangeTime);
             $("#last-update-time1").append(result.logChangeTime);
+            $("#start-time").empty().append(result.startTime);
+            $("#end-time").empty().append(result.endTime);
         }
     }
 

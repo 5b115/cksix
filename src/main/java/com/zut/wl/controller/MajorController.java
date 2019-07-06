@@ -2,6 +2,7 @@ package com.zut.wl.controller;
 
 import com.zut.wl.pojo.Major;
 import com.zut.wl.service.MajorService;
+import com.zut.wl.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,9 @@ public class MajorController {
 
     @Autowired
     private MajorService majorService;
+
+    @Autowired
+    private StudentService studentService;
 
     @ResponseBody
     @GetMapping("/getMajorList")
@@ -50,6 +54,7 @@ public class MajorController {
             }
         }
         majorService.updateMajorBatch(majorId,majorLimit);
+        studentService.updateLastMajor();
         List<Major> majors = majorService.selAllMajor();
         return majors;
     }

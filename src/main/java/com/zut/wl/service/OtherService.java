@@ -1,10 +1,19 @@
 package com.zut.wl.service;
 
+import com.zut.wl.pojo.Other;
+
 /**
  * @Author xiumu
  * @Date 2019/5/31 16:10
  */
 public interface OtherService {
+
+    /**
+     * 根据学号查询other
+     * @param id 学号
+     * @return
+     */
+    Other selectOtherByStuId(String id);
 
     /**
      * 批量插入学生平均成绩

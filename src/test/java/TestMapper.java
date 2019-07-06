@@ -12,7 +12,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -74,28 +73,29 @@ public class TestMapper {
         ranking.add(5);
         ranking.add(6);
         List<Student> studentList = studentMapper.selectStudentByClazz("2018");
-        for (int i = 0; i < studentList.size(); i++) {
-            Collections.shuffle(ranking);
-            volunteerList = new ArrayList<>();
-            for (int j = 0; j < 6; j++) {
-                volunteer = new Volunteer();
-                volunteer.setStuId(studentList.get(i).getStuId());
-                volunteer.setMajorId(ranking.get(j));
-                volunteer.setRanking(j+1);
-                volunteerList.add(volunteer);
-            }
-            volunteerMapper.insertVolunteerList(volunteerList);
-            studentMapper.updateStufilled(studentList.get(i).getStuId());
-        }
+//        for (int i = 0; i < studentList.size(); i++) {
+//            Collections.shuffle(ranking);
+//            volunteerList = new ArrayList<>();
+//            for (int j = 0; j < 6; j++) {
+//                volunteer = new Volunteer();
+//                volunteer.setStuId(studentList.get(i).getStuId());
+//                volunteer.setMajorId(ranking.get(j));
+//                volunteer.setRanking(j+1);
+//                volunteerList.add(volunteer);
+//            }
+//            volunteerMapper.insertVolunteerList(volunteerList);
+//            studentMapper.updateStufilled(studentList.get(i).getStuId());
+//        }
     }
     @Test
     public void zyfl(){
-        studentService.updateAssignByVolunteer();
+       // studentService.updateAssignByVolunteer();
     }
 
     @Test
     public void sort() {
-
+        String[] volunteers = {"软件工程","计算机科学与技术","人工智能","物联网","网络工程","信息安全"};
+//        System.out.println(volunteerService.checkVolunteers(volunteers));
     }
 
 

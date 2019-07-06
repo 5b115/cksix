@@ -1,10 +1,7 @@
 import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @Author xiumu
@@ -30,11 +27,16 @@ public class TestString {
 
     @Test
     public void testBigDecimal(){
-        BigDecimal a = new BigDecimal(5);
-        BigDecimal math = new BigDecimal(28.55);
-        BigDecimal english = new BigDecimal(39.5);
-        double d = 0;
-        System.out.println(a.add(math).add(english).doubleValue());
+        String[] volunteers = {"软件工程","物联网","人工智能","物联网","网络工程","信息安全"};
+
+        Set<String> volunteerSet = new HashSet<>();
+        for (String volunteer : volunteers) {
+            volunteerSet.add(volunteer);
+        }
+        if (volunteers.length==volunteerSet.size()){
+            System.out.println(true);
+        }else
+            System.out.println(false);
     }
 
     @Test

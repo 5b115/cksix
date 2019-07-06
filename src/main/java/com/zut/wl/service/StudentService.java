@@ -126,4 +126,9 @@ public interface StudentService {
      * @return
      */
     Map<String,Object> selectStuLastMajor(String stuId);
+
+    /**
+     * 将分好的专业归零
+     */
+    void updateLastMajor();
 }

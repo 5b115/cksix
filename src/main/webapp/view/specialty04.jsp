@@ -13,6 +13,7 @@
       <link rel="stylesheet" href="/pt/bootstrap/css/bootstrap.min.css"/>
       <script src="/pt/js/jquery-3.3.1.min.js" type="text/javascript"></script>
       <script src="/pt/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+      <script src="/pt/layer/layer.js"></script>
       <style type="text/css">
           .span1{
               font-size: 20px;
@@ -102,8 +103,8 @@
         <div class="col-md-6" id="page_stu_info"></div>
         <div class="col-md-4 col-md-offset-2">
             <ul class="pagination">
-                <li id="pageUp" onclick="pageUp()"><a href="javascript:void(0);">&laquo;上一页</a></li>
-                <li  id="pageDown" onclick="pageDown()"><a href="javascript:void(0);">下一页&raquo;</a></li>
+                <li id="pageUp" onclick="pageUp(this)"><a href="javascript:void(0);">&laquo;上一页</a></li>
+                <li  id="pageDown" onclick="pageDown(this)"><a href="javascript:void(0);">下一页&raquo;</a></li>
             </ul>
         </div>
     </div>
@@ -190,8 +191,12 @@
                 <div class="col-md-3"><h4 id="volunteer"></h4></div>
             </div>
             <div class="row">
-                <div class="col-md-2 text-right"><h4>班级排名：</h4></div>
-                <div class="col-md-3"><h4 id="clazzRanking"></h4></div>
+                <div class="col-md-2 text-right"><h4>年级排名：</h4></div>
+                <div class="col-md-3"><h4 id="gradeRanking"></h4></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 text-right"><h4>分流情况：</h4></div>
+                <div class="col-md-3"><h4 id="lastMajor"></h4></div>
             </div>
 
         </div>
@@ -245,16 +250,20 @@
               result.pages+"页,总共"+
               result.total+"学生");
       }
-      function pageUp() {
+      function pageUp(btn) {
           if (pageNum<=1){
-              alert("这是第一页");
+              layer.tips('这是第一页', btn, {
+                  tips: [1, '#0FA6D8'] //还可配置颜色
+              });
           }else {
               getStudentList(pageNum-1);
           }
       }
-      function pageDown() {
+      function pageDown(btn) {
           if (pageNum>=pages){
-              alert("这是最后一页");
+              layer.tips('这是最后一页', btn, {
+                  tips: [1, '#0FA6D8'] //还可配置颜色
+              });
           }else {
               getStudentList(pageNum+1);
           }
@@ -339,7 +348,8 @@
               }
           });
       }
-      function build_stu_content(student) {
+      function build_stu_content(result) {
+          var student = result.student;
           if (student==null||student==""){
               $("#studentInfo").hide();
               $("#noStu").empty();
@@ -359,6 +369,10 @@
               }else {
                   $("#volunteer").append("未填报");
               }
+              $("#gradeRanking").empty();
+              $("#gradeRanking").append(result.gradeRanking);
+              $("#lastMajor").empty();
+              $("#lastMajor").append(result.lastMajor);
               $("#studentInfo").show();
               $("#noStu").empty();
           }

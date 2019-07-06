@@ -206,16 +206,15 @@
       }
 
       function getStuByMajorNamePage(majorName,pn) {
+
           $.ajax({
               url:"/pt/getStuByMajorPage",
               data: "majorName="+majorName+"&pn="+pn,
               type:"POST",
               success:function(result){
                   if (result==null||result==""){
-                      console.log("没有有返回值");
                       build_depart_before();
                   }else {
-                      console.log("有返回值");
                       build_stu_table(result);
                       //2、解析并显示分页信息
                       build_stu_info(result);
@@ -274,15 +273,15 @@
 
       function btn_depart(btn) {
           $(btn).addClass("disabled").val("loading......");
+          var index = layer.load(0, {time: 30*1000});
           $.ajax({
               url:"/pt/departMajor",
               data: "",
               type:"GET",
               success:function(result){
-                  console.log("分流结束");
                   checkTime();
-                  console.log("显示结果");
                   $("#btn-depart").removeClass("disabled");
+                  layer.close(index);
               }
           });
       }

@@ -2,12 +2,18 @@ package com.zut.wl.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.zut.wl.bean.ClazzContent;
+import com.zut.wl.pojo.Other;
 import com.zut.wl.pojo.Student;
+import com.zut.wl.service.OtherService;
 import com.zut.wl.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +23,11 @@ import java.util.Map;
  */
 @Controller
 public class StudentController {
+
+
+    @Autowired
+    private OtherService otherService;
+
     @Autowired
     private StudentService studentService;
 
@@ -47,8 +58,23 @@ public class StudentController {
 
     @ResponseBody
     @PostMapping("/getOneStu")
-    public Student getOneStudent(String id){
-        return studentService.selectStudentById(id);
+    public Map<String,Object> getOneStudent(String id){
+        Map<String,Object> map = new HashMap<>();
+        Student student = studentService.selectStudentById(id);
+        int gradeRanking = 0;
+        Other other = otherService.selectOtherByStuId(id);
+        if (other!=null){
+            gradeRanking = other.getGradeRanking();
+        }
+        Map studentInfo = studentService.selectStuLastMajor(id);
+        String lastMajor = null;
+        if (studentInfo!=null){
+            lastMajor = (String) studentInfo.get("lastMajorName");
+        }
+        map.put("student",student);
+        map.put("gradeRanking",gradeRanking);
+        map.put("lastMajor",lastMajor);
+        return map;
     }
 
     @PostMapping("/updateStuMajor")

@@ -45,7 +45,7 @@
                      </div>
                      <div class="row">
                          <div class="col-md-4 col-md-offset-1">
-                             <input type="text" name="majorName" id="name" placeholder="名称">
+                             <input class="form-control" type="text" name="majorName" id="name" placeholder="名称">
                          </div>
                      </div>
                  </div>
@@ -101,12 +101,12 @@
 		</table>
     </div>
     <div class="row">
-        <div class="col-md-4 col-md-offset-6">
-            <input type="button" onclick="setMajorLimit();" class="form-control btn btn-primary" value="确认"/>
+        <div class="col-md-3 col-md-offset-8">
+            <input type="button" onclick="setMajorLimit(this);" class="form-control btn btn-primary" value="确认"/>
         </div>
     </div>
     <div class="row">
-        <h3>专业人数设置结果</h3>
+        <h2>专业人数设置结果</h2>
         <div>
             <dl class="dl-horizontal" id="major_info">
                 <dt>专业</dt>
@@ -116,6 +116,7 @@
     </div>
 </div>
  </body>
+  <script src="/pt/layer/layer.js"></script>
   <script type="text/javascript">
       $(function () {
           getMajorList();
@@ -136,8 +137,6 @@
               success:function(result){
                   //1、解析并显示专业信息
                   build_major_table(result);
-                  //2、解析并显示分页信息
-                  //build_Course_info(result);
               }
           });
       }
@@ -145,7 +144,7 @@
           $("#major_table_body").empty();
           $.each(result,function (index,item) {
               var majorNameTd = $("<td></td>").append(item.majorName);
-              var checkBoxTd = $("<td><input class='col-md-4 majorLimit' type='number' name='sum' placeholder='人数'/></td>");
+              var checkBoxTd = $("<td><input class='col-md-4 majorLimit' type='number' name='sum' onkeyup='checkIsInteger(this)' placeholder='人数'/></td>");
               var buttonTd = $("<button type='button' class='btn btn-danger btn-sm btn-delete'><span class='glyphicon glyphicon-trash'></span>删除</button>")
               buttonTd.attr("major-id",item.majorId);
               checkBoxTd.attr("major-id",item.majorId);
@@ -173,7 +172,9 @@
           });
           getMajorList();
       });
-      function setMajorLimit() {
+      function setMajorLimit(btn) {
+          $(btn).attr("disabled","disabled");
+          $(btn).val("Loading.....");
           var majorId = new Array();
           var majorLimit = new Array();
           $(".majorLimit").each(function () {
@@ -185,9 +186,15 @@
               data: "majorId="+majorId+"&majorLimit="+majorLimit,
               type:"POST",
               success:function(result){
+                  $(btn).attr("disabled",false);
+                  $(btn).val("确定");
                   build_major_info(result);
+                  layer.tips('设置成功', btn, {
+                      tips: [1, '#0FA6D8'] //还可配置颜色
+                  });
               }
           });
+
       }
       
       function build_major_info(result) {
@@ -198,6 +205,8 @@
             $("#major_info").append(majorNameDt).append(majorLimitDd);
           })
       }
-
+      function checkIsInteger(num) {
+          $(num).val($(num).val().replace('.',''));
+      }
   </script>
 </html>

@@ -176,4 +176,10 @@ public interface StudentMapper {
      */
     @Select("SELECT * from student where clazz LIKE '计算机类%' and grade_level='2018' and last_major != 0")
     List<Student> selectStuHasLastMajor();
+
+    /**
+     * 将分配好的专业归零
+     */
+    @Select("UPDATE student SET last_major = 0 WHERE clazz LIKE '计算机%'")
+    void updateLastMajor();
 }

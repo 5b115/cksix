@@ -7,14 +7,13 @@ import com.zut.wl.mapper.VolunteerMapper;
 import com.zut.wl.pojo.Major;
 import com.zut.wl.pojo.Student;
 import com.zut.wl.pojo.Volunteer;
+import com.zut.wl.service.LogInfoService;
 import com.zut.wl.service.VolunteerService;
+import com.zut.wl.utils.TimeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Author xiumu
@@ -31,6 +30,9 @@ public class VolunteerServiceImpl implements VolunteerService {
 
     @Autowired
     private MajorMapper majorMapper;
+
+    @Autowired
+    private LogInfoService logInfoService;
 
     @Override
     public int insertVolunteer(String[] volunteers,String stuId) {
@@ -74,5 +76,22 @@ public class VolunteerServiceImpl implements VolunteerService {
         }
         studentWithVolunteer.setVolunteerMap(map);
         return studentWithVolunteer;
+    }
+
+    @Override
+    public boolean checkVolunteers(String[] volunteers) {
+
+        String endTime = logInfoService.selectLastLogInfo().getEndTime();
+        if (TimeUtils.checkT1AfterT2(endTime)) {
+            return false;
+        }
+        Set<String> volunteerSet = new HashSet<>();
+        for (String volunteer : volunteers) {
+            volunteerSet.add(volunteer);
+        }
+        if (volunteers.length==volunteerSet.size()){
+            return false;
+        }
+        return true;
     }
 }

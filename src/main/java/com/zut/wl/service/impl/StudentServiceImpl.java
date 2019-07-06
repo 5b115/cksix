@@ -61,7 +61,8 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student selectStudentById(String id) {
-        return studentMapper.selectOneById(id);
+        Student student = studentMapper.selectOneById(id);
+        return student;
     }
 
     @Override
@@ -291,10 +292,18 @@ public class StudentServiceImpl implements StudentService {
     public Map<String, Object> selectStuLastMajor(String stuId) {
         Map<String,Object> map = new HashMap<>();
         Student student = studentMapper.selectOneById(stuId);
+        if (student==null){
+            return null;
+        }
         map.put("stuId",student.getStuId());
         map.put("stuName",student.getStuName());
         String majorName = majorMapper.selectMajorByMajorId(student.getLastMajor());
         map.put("lastMajorName",majorName);
         return map;
+    }
+
+    @Override
+    public void updateLastMajor() {
+        studentMapper.updateLastMajor();
     }
 }

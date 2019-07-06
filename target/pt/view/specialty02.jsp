@@ -130,35 +130,13 @@
     </div>
     <div class="row">
         <table class="table table-striped" >
-            <h3 class="text-center text-primary">转专业的学生</h3>
-            <thead>
-            <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>班级</th>
-                <th>选课权限</th>
-                <th>最终专业</th>
-                <th>设置</th>
-            </tr>
-            </thead>
-            <tbody id="stu-not-major">
-            <tr>
-                <td>201608040122</td>
-                <td>朽木</td>
-                <td>181</td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row">
-        <table class="table table-striped" >
             <h3 class="text-center text-primary">留级的学生</h3>
             <thead>
             <tr>
                 <th>学号</th>
                 <th>姓名</th>
                 <th>班级</th>
-                <th>选课权限</th>
+                <th>填报权限</th>
                 <th>最终专业</th>
                 <th>设置</th>
             </tr>
