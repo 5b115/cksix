@@ -52,34 +52,6 @@
     </div>
 
     <div class="row" style="margin-top: 8px;">
-        <p class="span2 col-md-5">已经指定专业的学生</p>
-    </div>
-    <div class="row" >
-        <table class="table table-striped majorStuTable" >
-            <thead>
-            <tr>
-                <th>学号</th>
-                <th>姓名</th>
-                <th>年级</th>
-                <th>班级</th>
-                <th>专业</th>
-            </tr>
-            </thead>
-            <tbody id="stu-major-table">
-            <tr>
-                <td>201608040122</td>
-                <td>朽木</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td>201608040122</td>
-                <td>朽木</td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="row" style="margin-top: 8px;">
         <p class="span2 col-md-5">取消填报资格的学生</p>
     </div>
     <div class="row">
@@ -90,6 +62,7 @@
                 <th>姓名</th>
                 <th>年级</th>
                 <th>班级</th>
+                <th>分配的专业</th>
             </tr>
             </thead>
             <tbody id="stu-not-allowed">
@@ -97,10 +70,12 @@
                 <td>201608040122</td>
                 <td>亚索</td>
                 <td></td>
+                <td></td>
             </tr>
             <tr>
                 <td>201608040122</td>
                 <td>亚索</td>
+                <td></td>
                 <td></td>
             </tr>
             </tbody>
@@ -124,7 +99,6 @@
       $(function () {
           getMajorList();
           getCourseList();
-          getStuMajor();
           getStuNotAllowed();
       })
       function getCourseList() {
@@ -147,38 +121,31 @@
               }
           });
       }
-      function getStuMajor() {
-          $.ajax({
-              url:"/pt/getMajorStu",
-              data: "",
-              type:"GET",
-              success:function(result){
-                  build_stu_Major(result);
-              }
-          });
-      }
-      
-      function build_stu_Major(result) {
+      function build_stu_not_allowed(result) {
           if (result==null||result==""){
-              $(".majorStuTable").empty();
-              $(".majorStuTable").append($("<h2></h2>").append("还没有已经指定专业的学生"));
+              $("#stu-not-allowed").empty();
+              $("#stu-not-allowed").append($("<h2></h2>").append("还没有取消填报资格的学生"));
           }else {
-              $("#stu-major-table").empty();
+              $("#stu-not-allowed").empty();
               $.each(result,function (index,item) {
                   var stuIdTd = $("<td></td>").append(item.stuId);
                   var stuNameTd = $("<td></td>").append(item.stuName);
                   var gradeLevelTd = $("<td></td>").append(item.gradeLevel);
                   var clazzTd = $("<td></td>").append(item.clazz);
-                  var majorTd = $("<td></td>").append(item.major.majorName);
+                  var majorTd = $("<td></td>");
+                  if (item.major == null) {
+                      majorTd.append("无");
+                  }else {
+                      majorTd.append(item.major.majorName);
+                  }
                   $("<tr></tr>").append(stuIdTd).append(stuNameTd)
                       .append(gradeLevelTd).append(clazzTd).append(majorTd)
-                      .appendTo("#stu-major-table");
+                      .appendTo("#stu-not-allowed");
               });
           }
       }
       function build_majorlist(result) {
           $("#majorlist1").empty();
-          console.log("换一个方式显示");
           $.each(result,function (index, item) {
               console.log(item);
               var majorLimit2 = $("<span class='badge'></span>").append(item.majorLimit+"人");
@@ -212,24 +179,6 @@
                   build_stu_not_allowed(result);
               }
           });
-      }
-
-      function build_stu_not_allowed(result) {
-          if (result==null||result==""){
-              $(".stuNotAllowed").empty();
-              $(".stuNotAllowed").append($("<h2></h2>").append("还没有取消填报资格的学生"));
-          }else {
-              $("#stu-not-allowed").empty();
-              $.each(result,function (index,item) {
-                  var stuIdTd = $("<td></td>").append(item.stuId);
-                  var stuNameTd = $("<td></td>").append(item.stuName);
-                  var gradeLevelTd = $("<td></td>").append(item.gradeLevel);
-                  var clazzTd = $("<td></td>").append(item.clazz);
-                  $("<tr></tr>").append(stuIdTd).append(stuNameTd)
-                      .append(gradeLevelTd).append(clazzTd)
-                      .appendTo("#stu-not-allowed");
-              });
-          }
       }
 
   </script>

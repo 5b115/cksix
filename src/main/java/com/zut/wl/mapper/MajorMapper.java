@@ -43,7 +43,7 @@ public interface MajorMapper {
      * @param majorName 专业名字
      * @return
      */
-    @Select("select * from major where major_name = #{majorName}")
+    @Select("select * from major where major_name = #{majorName} and major_status = 1")
     Major selectMajorByMajorName(String majorName);
 
     /**
@@ -53,4 +53,12 @@ public interface MajorMapper {
      */
     @Select("select major_name from major where major_id = #{majorId}")
     String selectMajorByMajorId(int majorId);
+
+    /**
+     * 根据id获取专业
+     * @param majorId
+     * @return
+     */
+    @Select("select * from major where major_id = #{majorId}")
+    Major selectByMajorId(int majorId);
 }

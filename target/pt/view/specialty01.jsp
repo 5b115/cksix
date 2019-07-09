@@ -24,6 +24,9 @@
           .sellAll{
               cursor: hand;
           }
+          .spanmargin{
+              margin-left: 5px;
+          }
           .span3{
               margin-bottom: 5px;
               color: #0000ff;
@@ -241,7 +244,7 @@
           $.each(result,function (index,item) {
               reditSum = reditSum+item.credit;
               var courseInfoSpan = $("<span class='span1 span3'></span>").append(item.courseName)
-                  .append($("<span class='badge'></span>").append(item.credit+"学分"));
+                  .append($("<span class='badge spanmargin'></span>").append(item.credit+"学分"));
               $("<div class='col-md-4'></div>").append(courseInfoSpan).appendTo($("#final-course"));
           });
           $("#final-credit").append("总共选择了"+result.length+"门课程，"+"总学分为"+reditSum);

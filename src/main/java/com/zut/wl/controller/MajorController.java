@@ -34,6 +34,7 @@ public class MajorController {
 
     @PostMapping("/addMajor")
     public String addOneMajor(String majorName){
+        //添加专业
         majorService.insertOneMajor(majorName);
         return "specialty00";
     }

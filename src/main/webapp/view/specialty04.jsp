@@ -60,7 +60,7 @@
         </div>
         <div class="col-md-12">
             <h3 class="span1">还未填报的学生</h3>
-            <table class="table table-striped" >
+            <table class="table table-striped" id="stu_table_info">
                 <thead>
                 <tr>
                     <th>学号</th>
@@ -99,7 +99,7 @@
         </div>
 
     </div>
-    <div class="row">
+    <div class="row" id="stu_page_info">
         <div class="col-md-6" id="page_stu_info"></div>
         <div class="col-md-4 col-md-offset-2">
             <ul class="pagination">
@@ -222,9 +222,15 @@
               data: "pn="+pn,
               type:"GET",
               success:function(result){
-                  build_stu_table(result);
-                  //2、解析并显示分页信息
-                  build_stu_info(result);
+                  if (result.total==0) {
+                      $("#stu_table_info").empty();
+                      $("#stu_page_info").empty();
+                      $("#stu_table_info").append($("<h3>所有学生已经填报完毕</h3>"));
+                  }else {
+                      build_stu_table(result);
+                      //2、解析并显示分页信息
+                      build_stu_info(result);
+                  }
               }
           });
       }
@@ -366,13 +372,18 @@
               $("#volunteer").empty();
               if (student.volunteerId>0){
                   $("#volunteer").append("已填报");
+
               }else {
                   $("#volunteer").append("未填报");
               }
               $("#gradeRanking").empty();
               $("#gradeRanking").append(result.gradeRanking);
               $("#lastMajor").empty();
-              $("#lastMajor").append(result.lastMajor);
+              if(result.lastMajor==null){
+                  $("#lastMajor").append("无");
+              }else {
+                  $("#lastMajor").append(result.lastMajor);
+              }
               $("#studentInfo").show();
               $("#noStu").empty();
           }

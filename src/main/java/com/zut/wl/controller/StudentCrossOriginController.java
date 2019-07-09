@@ -53,6 +53,9 @@ public class StudentCrossOriginController {
         if (volunteerService.checkVolunteers(volunteers)){
             return false;
         }
+        if (stuId==null||stuId==""){
+            return false;
+        }
         int index = 0;
         index = volunteerService.insertVolunteer(volunteers, stuId);
         if (index<1){

@@ -71,9 +71,8 @@ public class StudentServiceImpl implements StudentService {
         student.setStuId(stuId);
         if(majorName!=null&&majorName!=""){
             student.setLastMajor(majorMapper.selectMajorByMajorName(majorName).getMajorId());
-            student.setAllowed(allowed);
+            student.setAllowed(0);
         }else {
-            System.out.println(majorName);
             student.setLastMajor(0);
             student.setAllowed(allowed);
         }
@@ -97,7 +96,16 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> selectStudentNotAllowed() {
-        return studentMapper.selectStudentNoPermission();
+        //查询没有填报资格的学生
+        List<Student> studentList = studentMapper.selectStudentNoPermission();
+        //循环遍历学生有没有分配专业
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getLastMajor() != 0){
+                Major major = majorMapper.selectByMajorId(studentList.get(i).getLastMajor());
+                studentList.get(i).setMajor(major);
+            }
+        }
+        return studentList;
     }
 
     @Override

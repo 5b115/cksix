@@ -126,11 +126,16 @@
     -->
     <div class="row">
         <div class="col-md-4">
+            <div class="input-group">
+                <input type="text" id="stu_id" name="stuId" onkeyup="checkIsInteger(this)" class="form-control" aria-label="..." placeholder="按学号搜索...">
+                <div class="input-group-btn">
+                    <button class="btn btn-primary" onclick="getStuByStuId(this);">搜索</button>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
         <table class="table table-striped" >
-            <h3 class="text-center text-primary">留级的学生</h3>
             <thead>
             <tr>
                 <th>学号</th>
@@ -157,12 +162,12 @@
     </div>
 </div>
  </body>
+  <script src="/pt/layer/layer.js"></script>
   <script type="text/javascript">
       var today = new Date();
       $(function () {
           $(".grade-level").html((today.getFullYear()-1)+"级异常学生的处理");
           getRepeatStudent();
-          getStuNotMajor();
           edit_btn_click();
       })
       function getRepeatStudent() {
@@ -173,21 +178,6 @@
               success:function(result){
                   //1、解析并显示留级学生信息
                   build_stu_repeat(result);
-                  //2、解析并显示分页信息
-                  build_stu_info(result);
-              }
-          });
-      }
-      function getStuNotMajor() {
-          $.ajax({
-              url:"/pt/getStuNotMajor",
-              data: "",
-              type:"GET",
-              success:function(result){
-                  //1、解析并显示留级学生信息
-                  build_stu_not_major(result);
-                  //2、解析并显示分页信息
-                  build_stu_info(result);
               }
           });
       }
@@ -221,42 +211,7 @@
                   .appendTo("#stu-repeat");
           });
       }
-      function build_stu_not_major(result) {
-          $("#stu-not-major").empty();
-          var stuList = result;
-          $.each(stuList,function (index,item) {
-              var stuId = $("<td></td>").append(item.stuId);
-              var stuName = $("<td></td>").append(item.stuName);
-              var clazz = $("<td></td>").append(item.clazz);
-              var permission = $("<td></td>").append("");
-              var finalMajor = $("<td></td>").append("");
-              if (item.allowed==0){
-                  permission.append("无");
-              }else {
-                  permission.append("有");
-              }
-              if (item.major!=null){
-                  finalMajor.append(item.major.majorName);
-              }else {
-                  finalMajor.append("未分配");
-              }
-              var buttonTd = $("<button type='button' class='edit-btn btn btn-primary btn-sm'><span class='glyphicon glyphicon-pencil'></span>编辑</button>");
-              buttonTd.attr("stu-id",item.stuId);
-              $("<tr></tr>").append(stuId)
-                  .append(stuName)
-                  .append(clazz)
-                  .append(permission)
-                  .append(finalMajor)
-                  .append(buttonTd)
-                  .appendTo("#stu-not-major");
-          });
-      }
-      function build_stu_info(result) {
-          $("#page_stu_info").empty();
-          $("#page_stu_info").append("当前是第"+result.pageNum+"页,总"+
-              result.pages+"页,总共"+
-              result.total+"学生");
-      }
+
       
       function edit_btn_click() {
           $(document).on("click",".edit-btn",function () {
@@ -294,16 +249,62 @@
               type:"POST",
               success:function(result){
                   $("#edit-body").empty();
-                  var stuIdTd = $("<td></td>").append(result.stuId);
-                  var stuNameTd = $("<td></td>").append(result.stuName);
-                  var gradeLevelTd = $("<td></td>").append(result.gradeLevel);
-                  var clazzTd = $("<td></td>").append(result.clazz);
+                  var stuIdTd = $("<td></td>").append(result.student.stuId);
+                  var stuNameTd = $("<td></td>").append(result.student.stuName);
+                  var gradeLevelTd = $("<td></td>").append(result.student.gradeLevel);
+                  var clazzTd = $("<td></td>").append(result.student.clazz);
                   $("<tr></tr>").append(stuIdTd).append(stuNameTd)
                       .append(gradeLevelTd).append(clazzTd)
                       .appendTo("#edit-body");
               }
           });
       }
-
+      function checkIsInteger(num) {
+          $(num).val($(num).val().replace(/\D/g,''));
+          $(num).val($(num).val().replace('.',''));
+      }
+      
+      function getStuByStuId(btn) {
+          var id = $("#stu_id").val();
+          $(btn).attr("disabled",true);
+          var index = layer.load(0, {time: 30*1000});
+          $.ajax({
+              url:"/pt/getOneStu",
+              data: "id="+id,
+              type:"POST",
+              success:function(result){
+                 build_one_stu(result.student);
+                 layer.close(index);
+                  $(btn).attr("disabled",false);
+              }
+          });
+      }
+      function build_one_stu(item) {
+          $("#stu-repeat").empty();
+          var stuId = $("<td></td>").append(item.stuId);
+          var stuName = $("<td></td>").append(item.stuName);
+          var clazz = $("<td></td>").append(item.clazz);
+          var permission = $("<td></td>").append("");
+          var finalMajor = $("<td></td>").append("");
+          if (item.allowed==0){
+              permission.append("无");
+          }else {
+              permission.append("有");
+          }
+          if (item.major!=null){
+              finalMajor.append(item.major.majorName);
+          }else {
+              finalMajor.append("未分配");
+          }
+          var buttonTd = $("<button type='button' class='edit-btn btn btn-primary btn-sm'><span class='glyphicon glyphicon-pencil'></span>编辑</button>");
+          buttonTd.attr("stu-id",item.stuId);
+          $("<tr></tr>").append(stuId)
+              .append(stuName)
+              .append(clazz)
+              .append(permission)
+              .append(finalMajor)
+              .append(buttonTd)
+              .appendTo("#stu-repeat");
+      }
   </script>
 </html>

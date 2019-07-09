@@ -15,8 +15,11 @@
       <script src="/pt/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
       <style type="text/css">
-          .span1{
-              font-size: 18px;
+          .span1size{
+              font-size: 20px;
+          }
+          .span1color{
+              color: blue;
           }
           .span2{
               font-size: 22px;
@@ -107,12 +110,9 @@
     </div>
     <div class="row">
         <h2>专业人数设置结果</h2>
-        <div>
-            <dl class="dl-horizontal" id="major_info">
-                <dt>专业</dt>
-                <dd>人数</dd>
-            </dl>
-        </div>
+    </div>
+    <div class="row" id="major_info_list">
+
     </div>
 </div>
  </body>
@@ -198,11 +198,12 @@
       }
       
       function build_major_info(result) {
-          $("#major_info").empty();
+          $("#major_info_list").empty();
           $.each(result,function (index,item) {
-            var majorNameDt = $("<dt></dt>").append(item.majorName);
-            var majorLimitDd = $("<dd></dd>").append(item.majorLimit+"人");
-            $("#major_info").append(majorNameDt).append(majorLimitDd);
+              var majorLimitSpan = $("<span class='span1color'></span>").append(item.majorLimit+"人");
+              var majorNameh3 = $("<h3></h3>").append(item.majorName).append(majorLimitSpan);
+              var majorNameDiv = $("<div class='col-md-4'></div>").append(majorNameh3);
+              $("#major_info_list").append(majorNameDiv);
           })
       }
       function checkIsInteger(num) {

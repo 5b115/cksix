@@ -2,8 +2,7 @@ package com.zut.wl.bean;
 
 import lombok.Data;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /**
  * @Author xiumu
@@ -13,5 +12,5 @@ import java.util.Map;
 public class StudentWithVolunteer {
     private String stuId;
     private String stuName;
-    private Map<String,String> volunteerMap = new HashMap<>();
+    private List<String> volunteers;
 }

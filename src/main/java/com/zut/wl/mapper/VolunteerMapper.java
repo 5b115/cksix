@@ -23,7 +23,7 @@ public interface VolunteerMapper {
      * @param stuId 学号
      * @return
      */
-    @Select("select * from volunteer where stu_id = #{stuId}")
+    @Select("select * from volunteer where stu_id = #{stuId} ORDER BY ranking")
     List<Volunteer> selectVolunteerByStuId(String stuId);
 
     /**

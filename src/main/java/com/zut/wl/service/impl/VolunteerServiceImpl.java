@@ -20,7 +20,8 @@ import java.util.*;
  * @Date 2019/5/30 16:59
  */
 @Service
-public class VolunteerServiceImpl implements VolunteerService {
+public class VolunteerServiceImpl implements VolunteerService
+{
 
     @Autowired
     private VolunteerMapper volunteerMapper;
@@ -64,17 +65,18 @@ public class VolunteerServiceImpl implements VolunteerService {
 
     @Override
     public StudentWithVolunteer selectVolunteerByStuId(String stuId) {
+        //构建包含学生以及志愿信息的对象
         StudentWithVolunteer studentWithVolunteer = new StudentWithVolunteer();
+        //获取学生信息
         Student student = studentMapper.selectOneById(stuId);
         studentWithVolunteer.setStuId(student.getStuId());
         studentWithVolunteer.setStuName(student.getStuName());
         List<Volunteer> volunteerList = volunteerMapper.selectVolunteerByStuId(stuId);
-        Map<String,String> map = new HashMap<>();
+        List<String> volunteers = new ArrayList<>();
         for (int i = 0; i < volunteerList.size(); i++) {
-            map.put("majorName"+i,majorMapper.selectMajorByMajorId(volunteerList.get(i).getMajorId()));
-            map.put("ranking"+i,volunteerList.get(i).getRanking()+"");
+            volunteers.add(majorMapper.selectMajorByMajorId(volunteerList.get(i).getMajorId()));
         }
-        studentWithVolunteer.setVolunteerMap(map);
+        studentWithVolunteer.setVolunteers(volunteers);
         return studentWithVolunteer;
     }
 
@@ -93,5 +95,10 @@ public class VolunteerServiceImpl implements VolunteerService {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public List<Volunteer> selectVolunteersBystuId(String stuId) {
+        return volunteerMapper.selectVolunteerByStuId(stuId);
     }
 }

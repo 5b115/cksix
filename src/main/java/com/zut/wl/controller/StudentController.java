@@ -4,8 +4,10 @@ import com.github.pagehelper.PageInfo;
 import com.zut.wl.bean.ClazzContent;
 import com.zut.wl.pojo.Other;
 import com.zut.wl.pojo.Student;
+import com.zut.wl.pojo.Volunteer;
 import com.zut.wl.service.OtherService;
 import com.zut.wl.service.StudentService;
+import com.zut.wl.service.VolunteerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +32,9 @@ public class StudentController {
 
     @Autowired
     private StudentService studentService;
+
+    @Autowired
+    private VolunteerService volunteerService;
 
     @ResponseBody
     @GetMapping("/getStuNotFilled")
@@ -71,9 +76,11 @@ public class StudentController {
         if (studentInfo!=null){
             lastMajor = (String) studentInfo.get("lastMajorName");
         }
+        List<Volunteer> volunteerList = volunteerService.selectVolunteersBystuId(id);
         map.put("student",student);
         map.put("gradeRanking",gradeRanking);
         map.put("lastMajor",lastMajor);
+        map.put("vollunteers",volunteerList);
         return map;
     }
 
@@ -122,6 +129,37 @@ public class StudentController {
         studentService.updateAssignByVolunteer();
         return true;
     }
+
+    @PostMapping("/studentLogin")
+    public String checkStudent(@RequestParam(value = "stuId",defaultValue = "") String stuId,
+                               String password,Map map){
+        boolean flag = studentService.selectStudentCheck(stuId,password);
+        if (flag){
+            map.put("stuId",stuId);
+            return "stuMain";
+        }
+        map.put("msg","学号或密码错误！");
+        return "stuLogin";
+    }
+
+
+    @GetMapping("/stuLogin")
+    public String toStuLogin(){
+        return "stuLogin";
+    }
+
+    @GetMapping("/stuMain")
+    public String toStuMain(String stuId,Map map){
+        map.put("stuId",stuId);
+        return "stuMain";
+    }
+
+    @GetMapping("/stufilled")
+    public String toStufilled(String stuId,Map map){
+        map.put("stuId",stuId);
+        return "stufilled";
+    }
+
 }
 
 
