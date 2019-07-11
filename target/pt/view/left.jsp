@@ -75,7 +75,8 @@ $(function(){
 			</div>
 			<ul class="menuson">
 				<li><cite></cite><a href="/pt/view/specialty03.jsp" target="rightFrame">分流设置结果</a><i></i></li>
-				<li><cite></cite><a href="/pt/view/specialty04.jsp" target="rightFrame">志愿填报情况</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/specialty04.jsp" target="rightFrame">学生填报概况</a><i></i></li>
+				<li><cite></cite><a href="/pt/view/specialty04_1.jsp" target="rightFrame">志愿填报详情</a><i></i></li>
 				<li><cite></cite><a href="/pt/view/specialty05.jsp" target="rightFrame">分流结果</a><i></i></li>
 			</ul>
 		</dd>

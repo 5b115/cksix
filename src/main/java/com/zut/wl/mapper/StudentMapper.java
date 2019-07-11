@@ -153,6 +153,16 @@ public interface StudentMapper {
     int updateStufilled(String stuId);
 
     /**
+     * 将学生填报志愿情况设为未填报
+     * @param stuId 学号
+     * @return
+     */
+    @Update("update student set volunteer_id = 0 where stu_id = #{stuId}")
+    int updateStuNotfilled(String stuId);
+
+
+
+    /**
      * 查询此专业的学生
      * @param majorId 专业
      * @return
@@ -171,6 +181,16 @@ public interface StudentMapper {
     List<Student> selectStuByRankingAndMajor(int ranking, int majorId);
 
     /**
+     * 查询填报了第ranking个志愿是此专业的学生
+     * @param ranking 志愿次序
+     * @param majorId 专业
+     * @return
+     */
+    @Select("SELECT s.* FROM volunteer v JOIN student s " +
+            "where v.stu_id = s.stu_id  AND v.ranking = #{param1} AND v.major_id = #{param2}")
+    List<Student> selectStuByRankingAndMajor1(int ranking, int majorId);
+
+    /**
      * 查询已经分流专业的学生
      * @return
      */
@@ -180,6 +200,19 @@ public interface StudentMapper {
     /**
      * 将分配好的专业归零
      */
-    @Select("UPDATE student SET last_major = 0 WHERE clazz LIKE '计算机%'")
+    @Update("UPDATE student SET last_major = 0 WHERE clazz LIKE '计算机%'")
     void updateLastMajor();
+
+    /**
+     * 将填报归零
+     */
+    @Update("UPDATE student SET volunteer_id = 0 WHERE clazz LIKE '计算机%'")
+    void updatevolunteerId();
+
+    /**
+     * 查询所有已经填报完成的学生
+     * @return
+     */
+    @Select("select * from student where clazz LIKE '计算机类%' and volunteer_id = 1")
+    List<Student> selectStudentNotFilled();
 }

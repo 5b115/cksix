@@ -18,7 +18,7 @@ public class Student {
     private int otherGrade;//其他成绩
     private int volunteerId;//是否填报志愿
     private int lastMajor; //最终专业
-    private int stuStatus;//是否已经填报
+    private int stuStatus;//是否已经填报(弃用，用volunteerId)
     private String gradeLevel;//年级
     private String clazz;//班级
     private int allowed;//是否允许填报志愿

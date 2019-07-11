@@ -62,9 +62,9 @@ public class ResolveJsonResponse {
      * 获取课程信息，需要传入开课班级(学号的前十位)
      * @param clazzType 开课班级
      */
-    public void getCourseList(String clazzType ,int page){
+    public void getCourseList(String clazzType ,int page,String courseType){
         clazzType = clazzType.substring(0,10);
-        String url = "http://10.10.31.140:5009/open_api/customization/view_bravo/full?access_token="+clientUtil.getAccessToken()+"&BJDM="+clazzType+"&KCLBDM=01"+"&KKXN="+TimeUtils.currentGrade()+"&page="+page;
+        String url = "http://10.10.31.140:5009/open_api/customization/view_bravo/full?access_token="+clientUtil.getAccessToken()+"&BJDM="+clazzType+"&KCLBDM="+courseType+"&KKXN="+TimeUtils.currentGrade()+"&page="+page;
         String stringEntity = clientUtil.executeGet(url);
         try {
             jsonNode = objectMapper.readValue(stringEntity,JsonNode.class);

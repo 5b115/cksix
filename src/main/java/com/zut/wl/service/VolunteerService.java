@@ -38,4 +38,13 @@ public interface VolunteerService {
      */
     List<Volunteer> selectVolunteersBystuId(String stuId);
 
+    /**
+     * 模拟学生报考
+     */
+    void insertVolunteerVirtual();
+
+    /**
+     * 清除模拟报考的数据
+     */
+    void deleteVolunteerVirtual();
 }

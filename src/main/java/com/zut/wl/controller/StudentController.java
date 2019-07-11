@@ -42,6 +42,12 @@ public class StudentController {
         PageInfo studentPageInfo = studentService.selStudentPageInfo(pn);
         return studentPageInfo;
     }
+    @ResponseBody
+    @GetMapping("/getStuFilled")
+    public PageInfo getStudentFilled(@RequestParam(value="pn",defaultValue = "1") int pn){
+        PageInfo studentPageInfo = studentService.selStudentfilled(pn);
+        return studentPageInfo;
+    }
 
     @ResponseBody
     @GetMapping("/getVolunteerInfo")

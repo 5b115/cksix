@@ -81,14 +81,12 @@
                 <option>信息安全</option>
             </select>
         </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary" onclick="downloadExcel(this)">导出Excel表</button>
+        </div>
     </div>
 
     <div class="row">
-       <%-- <div class="col-md-12">
-            <h3>当前应有<span class="span3" id="idealNumber">240</span>个学生参与分流，实际有<span class="span4" id="realNumber">232</span>个学生参与，
-                <span class="span5" id="notFilledNumber">8</span>个学生未填报</h3>
-        </div>--%>
-
            <div class="col-md-12">
             <table class="table table-striped" >
                 <thead>
@@ -146,6 +144,7 @@
       var pageNum = 1;
       var pages = 1;
       var majorName = $("#majorList").val();
+      var isdepart = false;
       $(function () {
           getMajorList();
           checkTime();
@@ -157,12 +156,13 @@
               data: "",
               type:"GET",
               success:function(result){
+                  isdepart = result.isdepart;
                   build_depart(result);
               }
           });
       }
       function build_depart(result){
-          if (result.isdepart==true){
+          if (result.isdepart==false){
               build_depart_content(result.endTime);
           }else {
               getStuByMajorNamePage(majorName,1);
@@ -201,7 +201,6 @@
 
       function getStudentByMajor(opt) {
           majorName = $(opt).val();
-          // getStuByMajorName(majorName);
           getStuByMajorNamePage(majorName,1)
       }
 
@@ -255,7 +254,6 @@
                   tips: [1, '#0FA6D8'] //还可配置颜色
               });
           }else {
-              // getStudentList(pageNum-1);
               getStuByMajorNamePage(majorName,pageNum-1);
           }
       }
@@ -273,7 +271,7 @@
 
       function btn_depart(btn) {
           $(btn).addClass("disabled").val("loading......");
-          var index = layer.load(0, {time: 30*1000});
+          var index = layer.load(0, {time: 60*1000});
           $.ajax({
               url:"/pt/departMajor",
               data: "",
@@ -285,6 +283,10 @@
               }
           });
       }
-
+      function downloadExcel(btn) {
+          $(btn).attr("disabled",true);
+          window.location.href = "/pt/downloadExcel";
+          $(btn).attr("disabled",false);
+      }
   </script>
 </html>

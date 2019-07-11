@@ -37,21 +37,50 @@ public class TimeUtils {
     }
 
     /**
-     * 比较日期t1是否在当前日期之后
-     * @param t1
+     * 比较日期是否在开始与结束范围之内
+     * @param startTime 开始时间
+     * @param endTime 结束时间
      * @return
      */
-    public static boolean checkT1AfterT2(String t1){
+    public static boolean checkT1AfterT2(String startTime,String endTime){
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        Date date = null;
+        Date dateStart = null;
+        Date dateEnd = null;
         try {
-            date = dateFormat.parse(t1);
+            dateStart = dateFormat.parse(startTime);
+            dateEnd = dateFormat.parse(endTime);
         } catch (ParseException e) {
             return false;
         }
         Date today = new Date();
-        if (date!=null){
-            return date.after(today);
+        if (dateStart != null && dateEnd != null){
+            if (dateStart.before(today)&&dateEnd.after(today)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    /**
+     * 比较日期是否在结束结束时间之后
+     * @param startTime 开始时间
+     * @param endTime 结束时间
+     * @return
+     */
+    public static boolean checkTodyaAfterEndTime(String startTime,String endTime){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date dateEnd = null;
+        try {
+            dateEnd = dateFormat.parse(endTime);
+        } catch (ParseException e) {
+            return false;
+        }
+        Date today = new Date();
+        if (dateEnd != null){
+            if (today.after(dateEnd)){
+                return true;
+            }
         }
         return false;
     }

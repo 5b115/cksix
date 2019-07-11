@@ -1,6 +1,7 @@
 package com.zut.wl.mapper;
 
 import com.zut.wl.pojo.Volunteer;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -44,4 +45,9 @@ public interface VolunteerMapper {
     List<Volunteer> selectVolunteerByRanking(int majorId,int ranking);
 
 
+    /**
+     * 清除模拟报考数据
+     */
+    @Delete("truncate table volunteer")
+    void deleteVirtualFilled();
 }

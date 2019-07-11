@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zut.wl.bean.ClazzContent;
 import com.zut.wl.bean.StuWithScore;
+import com.zut.wl.bean.VolunteerInfo;
 import com.zut.wl.mapper.*;
 import com.zut.wl.pojo.*;
 import com.zut.wl.service.StudentService;
@@ -72,9 +73,11 @@ public class StudentServiceImpl implements StudentService {
         if(majorName!=null&&majorName!=""){
             student.setLastMajor(majorMapper.selectMajorByMajorName(majorName).getMajorId());
             student.setAllowed(0);
+            studentMapper.updateStufilled(stuId);
         }else {
             student.setLastMajor(0);
             student.setAllowed(allowed);
+            studentMapper.updateStuNotfilled(stuId);
         }
         studentMapper.updateStudentByStuId(student);
     }
@@ -120,7 +123,9 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Map<String, Object> selectStuWithCG(String stuId) {
         Map<String,Object> map = new HashMap<>();
+        //查询学生
         Student student = studentMapper.selectOneById(stuId);
+        //填入学生信息
         map.put("student" ,student);
         List<Double> list = new ArrayList<>();
         List<Grade> gradeList = gradeMapper.selectByStuId(stuId);
@@ -139,6 +144,7 @@ public class StudentServiceImpl implements StudentService {
         map.put("sumGrade",GradeUtil.sumGrade(list));
         map.put("avgGrade",GradeUtil.avgGrade(list));
         map.put("avgGpa",otherMapper.selectAvgGpaByStuId(stuId)+"");
+        map.put("gradeRanking",otherMapper.selectOtherByStuId(stuId).getGradeRanking());
         return map;
     }
 
@@ -227,14 +233,12 @@ public class StudentServiceImpl implements StudentService {
         for (int i = 0; i < majorNumber; i++) {
             //循环专业
             for (Major major : majorList) {
-                //获取第i个志愿是此专业的学生
-                List<Volunteer> volunteerList = volunteerMapper.selectVolunteerByRanking(major.getMajorId(),i+1);
                 //先计算该专业还有多少人可以进入  （专业限制人数 - 已经分配到此专业的人数）
                 int indexLimit = major.getMajorLimit() - studentMapper.selectStuByLastMajor(major.getMajorId()).size();
                 //如果还有名额
                 if (indexLimit>0){
                     //查询填报了第i个志愿是此专业并且还没有被分配的学生
-                    List<Student> studentList = studentMapper.selectStuByRankingAndMajor(i,major.getMajorId());
+                    List<Student> studentList = studentMapper.selectStuByRankingAndMajor(i+1,major.getMajorId());
                     //如果专业人数限制>=填报该专业的人数
                     if (indexLimit>=studentList.size()){
                         //直接将学生分配到该专业
@@ -270,8 +274,6 @@ public class StudentServiceImpl implements StudentService {
                             studentMapper.updateStuByStuId(stuWithScoreList.get(i1).getStuId(),major.getMajorId());
                         }
                     }
-                }else {
-                    continue;
                 }
             }
         }
@@ -313,5 +315,59 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void updateLastMajor() {
         studentMapper.updateLastMajor();
+    }
+
+    @Override
+    public List<VolunteerInfo> getVolunteerInfoList() {
+        VolunteerInfo volunteerInfo = null;
+        List<VolunteerInfo> volunteerInfoList = new ArrayList<>();
+        //获取所有的专业
+        List<Major> majorList = majorMapper.getMajorByStatus();
+        //遍历每一个专业
+        for (Major major : majorList) {
+            //创建volunteerInfo设置专业名字已经招生人数
+            volunteerInfo = new VolunteerInfo();
+            volunteerInfo.setMajorName(major.getMajorName());
+            volunteerInfo.setMajorLimit(major.getMajorLimit());
+            //获取第一志愿填报该专业的学生
+            List<Student> studentList = studentMapper.selectStuByRankingAndMajor1(1,major.getMajorId());
+
+            //如果没有学生第一志愿填报该专业
+            if (studentList.size()==0){
+                volunteerInfo.setAvgGpa(0);
+                //设置填报该志愿的人数
+                volunteerInfo.setFirstFilledNumber(studentList.size());
+                volunteerInfoList.add(volunteerInfo);
+                continue;
+            }
+
+            //创建平均成绩list存放每个学生的平均学分成绩
+            List<Double> avgGpaList = new ArrayList<>();
+            Double avgGpa = null;
+            //获取每个学生的平均学分绩点放入list中
+            for (Student student : studentList) {
+                avgGpa = otherMapper.selectAvgGpaByStuId(student.getStuId());
+                avgGpaList.add(avgGpa);
+            }
+            //计算该志愿学生的平均学分绩点
+            volunteerInfo.setAvgGpa(GradeUtil.avgGradeByBigDecimal(avgGpaList));
+            //设置填报该志愿的人数
+            volunteerInfo.setFirstFilledNumber(studentList.size());
+            volunteerInfoList.add(volunteerInfo);
+        }
+        return volunteerInfoList;
+    }
+
+    @Override
+    public PageInfo selStudentfilled(int pn) {
+        PageHelper.startPage(pn,10);
+        List<Student> students = studentMapper.selectStudentNotFilled();
+        PageInfo studentPageInfo = new PageInfo(students);
+        return studentPageInfo;
+    }
+
+    @Override
+    public void updateStuVolunteer() {
+        studentMapper.updatevolunteerId();
     }
 }

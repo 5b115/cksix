@@ -2,6 +2,7 @@ package com.zut.wl.service;
 
 import com.github.pagehelper.PageInfo;
 import com.zut.wl.bean.ClazzContent;
+import com.zut.wl.bean.VolunteerInfo;
 import com.zut.wl.pojo.Student;
 
 import java.util.List;
@@ -131,4 +132,22 @@ public interface StudentService {
      * 将分好的专业归零
      */
     void updateLastMajor();
+
+    /**
+     * 获取专业填报情况，招生人数，填报人数，平均学分绩点
+     * @return
+     */
+    List<VolunteerInfo> getVolunteerInfoList();
+
+    /**
+     * 分页查询没有填报的学生
+     * @param pn 页数
+     * @return
+     */
+    PageInfo selStudentfilled(int pn);
+
+    /**
+     * 将学生的volunteerId填报情况归零
+     */
+    void updateStuVolunteer();
 }

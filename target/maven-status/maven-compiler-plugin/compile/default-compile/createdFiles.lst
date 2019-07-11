@@ -24,8 +24,10 @@ com\zut\wl\controller\UserController.class
 com\zut\wl\mapper\OtherMapper.class
 com\zut\wl\service\MajorService.class
 com\zut\wl\bean\StudentWithVolunteer.class
+com\zut\wl\utils\excel\CreateExcel.class
 com\zut\wl\pojo\User.class
 com\zut\wl\service\impl\CourseServiceImpl.class
+com\zut\wl\bean\VolunteerInfo.class
 com\zut\wl\bean\PageInfoHelper.class
 com\zut\wl\service\impl\StudentServiceImpl.class
 com\zut\wl\service\impl\UpdateDataServiceImpl.class
@@ -45,6 +47,7 @@ com\zut\wl\utils\GradeUtil.class
 com\zut\wl\pojo\LogInfo.class
 com\zut\wl\service\impl\OtherServiceImpl.class
 com\zut\wl\service\VolunteerService.class
+com\zut\wl\bean\ResultExcelEntity.class
 com\zut\wl\mapper\MajorMapper.class
 com\zut\wl\service\GradeService.class
 com\zut\wl\pojo\Student.class

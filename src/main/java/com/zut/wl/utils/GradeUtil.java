@@ -33,6 +33,21 @@ public class GradeUtil {
     }
 
     /**
+     * 计算平均成绩
+     * @param list 各科成绩
+     * @return 平均成绩
+     */
+    public static double avgGradeByBigDecimal(List<Double> list){
+        BigDecimal avg = new BigDecimal(0);
+        for (int i = 0; i < list.size(); i++) {
+            BigDecimal grade = new BigDecimal(list.get(i));
+            avg = avg.add(grade);
+        }
+        avg = avg.divide(new BigDecimal(list.size()),3,BigDecimal.ROUND_HALF_EVEN);
+        return avg.doubleValue();
+    }
+
+    /**
      * 计算总绩点
      * @param list 各科绩点
      * @return 总绩点

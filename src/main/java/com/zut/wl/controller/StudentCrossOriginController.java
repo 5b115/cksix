@@ -1,6 +1,7 @@
 package com.zut.wl.controller;
 
 import com.zut.wl.bean.StudentWithVolunteer;
+import com.zut.wl.bean.VolunteerInfo;
 import com.zut.wl.pojo.Major;
 import com.zut.wl.service.MajorService;
 import com.zut.wl.service.StudentService;
@@ -75,6 +76,14 @@ public class StudentCrossOriginController {
     public Map<String,Object> getStuLastMajor(String stuId){
         return studentService.selectStuLastMajor(stuId);
     }
+
+    @ResponseBody
+    @GetMapping("/getVolunteerInfoList")
+    public List<VolunteerInfo> getVolunteerInfo(){
+        List<VolunteerInfo> volunteerInfoList = studentService.getVolunteerInfoList();
+        return volunteerInfoList;
+    }
+
 
 
 }

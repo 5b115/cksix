@@ -34,7 +34,8 @@ public class LogInfoController {
     public Map<String,Object> getLogInfo(){
         Map<String,Object> map = new HashMap<>();
         String endTime = logInfoService.selectLastLogInfo().getEndTime();
-        boolean isdepart = TimeUtils.checkT1AfterT2(endTime);
+        String startTime = logInfoService.selectLastLogInfo().getStartTime();
+        boolean isdepart = TimeUtils.checkTodyaAfterEndTime(startTime,endTime);
         map.put("endTime",endTime);
         map.put("isdepart",isdepart);
         return map;

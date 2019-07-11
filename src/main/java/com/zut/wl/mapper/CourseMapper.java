@@ -18,7 +18,7 @@ public interface CourseMapper {
      */
     void insertCourseList(List<Course> courseList);
 
-    @Select("select * from Course")
+    @Select("select * from Course where course_type = '01' ")
     List<Course> selectAllCourse();
 
     /**

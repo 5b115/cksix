@@ -88,11 +88,14 @@ public class LogInfoServiceImpl implements LogInfoService {
         StringBuffer clazzTypeBuffer = new StringBuffer(clazzType);
         clazzTypeBuffer.setCharAt(8,'0');
         clazzType = clazzTypeBuffer.toString();
-        jsonResponse.getCourseList(clazzType,1);
-        int maxPage = jsonResponse.getMaxPage();
-        for (int i = 0; i < maxPage; i++) {
-            jsonResponse.getCourseList(clazzType,i+1);
-            courseMapper.insertCourseList(jsonResponse.getCourses());
+        String[] courseTypes = {"01","02","03"};
+        for (String courseType : courseTypes) {
+            jsonResponse.getCourseList(clazzType,1,courseType);
+            int maxPage = jsonResponse.getMaxPage();
+            for (int i = 0; i < maxPage; i++) {
+                jsonResponse.getCourseList(clazzType,i+1,courseType);
+                courseMapper.insertCourseList(jsonResponse.getCourses());
+            }
         }
     }
 

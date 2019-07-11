@@ -19,13 +19,13 @@
 <body>
 
 <div class="container">
-    <div class="row">
-        <ul class="nav nav-tabs">
-            <li id="update-first" class="active"><a href="javascript:void(0);" onclick="update_click(1);"><h3>一键更新</h3></a></li>
-            <li id="update-second"><a class="disabled" href="javascript:void(0);" onclick="update_click(2);"><h3>自定义更新</h3></a></li>
-            <li id="update-third"><a class="disabled" href="javascript:void(0);" onclick="update_click(3);"><h3>单项更新</h3></a></li>
-        </ul>
-    </div>
+    <%--<div class="row">--%>
+        <%--<ul class="nav nav-tabs">--%>
+            <%--<li id="update-first" class="active"><a href="javascript:void(0);" onclick="update_click(1);"><h3>一键更新</h3></a></li>--%>
+            <%--<li id="update-second"><a class="disabled" href="javascript:void(0);" onclick="update_click(2);"><h3>自定义更新</h3></a></li>--%>
+            <%--<li id="update-third"><a class="disabled" href="javascript:void(0);" onclick="update_click(3);"><h3>单项更新</h3></a></li>--%>
+        <%--</ul>--%>
+    <%--</div>--%>
     <div id="update-first-div">
         <div class="row">
             <div class="col-md-12">

@@ -20,8 +20,7 @@ import java.util.*;
  * @Date 2019/5/30 16:59
  */
 @Service
-public class VolunteerServiceImpl implements VolunteerService
-{
+public class VolunteerServiceImpl implements VolunteerService {
 
     @Autowired
     private VolunteerMapper volunteerMapper;
@@ -84,8 +83,9 @@ public class VolunteerServiceImpl implements VolunteerService
     public boolean checkVolunteers(String[] volunteers) {
 
         String endTime = logInfoService.selectLastLogInfo().getEndTime();
-        if (TimeUtils.checkT1AfterT2(endTime)) {
-            return false;
+        String startTime = logInfoService.selectLastLogInfo().getStartTime();
+        if (!TimeUtils.checkT1AfterT2(startTime,endTime)) {
+            return true;
         }
         Set<String> volunteerSet = new HashSet<>();
         for (String volunteer : volunteers) {
@@ -100,5 +100,38 @@ public class VolunteerServiceImpl implements VolunteerService
     @Override
     public List<Volunteer> selectVolunteersBystuId(String stuId) {
         return volunteerMapper.selectVolunteerByStuId(stuId);
+    }
+
+    @Override
+    public void insertVolunteerVirtual() {
+        //模拟学生报考  随机产生
+        Volunteer volunteer = null;
+        List<Volunteer> volunteerList = null;
+        List<Integer> ranking = new ArrayList<>();
+        ranking.add(1);
+        ranking.add(2);
+        ranking.add(3);
+        ranking.add(4);
+        ranking.add(5);
+        ranking.add(6);
+        List<Student> studentList = studentMapper.selectStudentByClazz("2018");
+        for (int i = 0; i < studentList.size(); i++) {
+            Collections.shuffle(ranking);
+            volunteerList = new ArrayList<>();
+            for (int j = 0; j < 6; j++) {
+                volunteer = new Volunteer();
+                volunteer.setStuId(studentList.get(i).getStuId());
+                volunteer.setMajorId(ranking.get(j));
+                volunteer.setRanking(j+1);
+                volunteerList.add(volunteer);
+            }
+            volunteerMapper.insertVolunteerList(volunteerList);
+            studentMapper.updateStufilled(studentList.get(i).getStuId());
+        }
+    }
+
+    @Override
+    public void deleteVolunteerVirtual() {
+        volunteerMapper.deleteVirtualFilled();
     }
 }

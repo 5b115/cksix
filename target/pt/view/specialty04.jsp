@@ -59,7 +59,14 @@
                 还有<span class="span5" id="notFilledNumber">8</span>个学生未填报</h3>
         </div>
         <div class="col-md-12">
-            <h3 class="span1">还未填报的学生</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <select class="form-control" id="stuStatus" onchange="changeSelect(1);">
+                        <option>未填报</option>
+                        <option>已填报</option>
+                    </select>
+                </div>
+            </div>
             <table class="table table-striped" id="stu_table_info">
                 <thead>
                 <tr>
@@ -67,6 +74,8 @@
                     <th>姓名</th>
                     <th>年级</th>
                     <th>班级</th>
+                    <th>填报权限</th>
+                    <th>填报情况</th>
                 </tr>
                 </thead>
                 <tbody id="stu-table">
@@ -75,24 +84,32 @@
                     <td>朽木</td>
                     <td>2016</td>
                     <td>软件161</td>
+                    <td>允许</td>
+                    <td class="text-success">已填报</td>
                 </tr>
                 <tr>
                     <td>201608040122</td>
                     <td>朽木</td>
                     <td>2016</td>
                     <td>软件161</td>
+                    <td>允许</td>
+                    <td class="text-success">已填报</td>
                 </tr>
                 <tr>
                     <td>201608040122</td>
                     <td>朽木</td>
                     <td>2016</td>
                     <td>软件161</td>
+                    <td>允许</td>
+                    <td class="text-success">已填报</td>
                 </tr>
                 <tr>
                     <td>201608040122</td>
                     <td>朽木</td>
                     <td>2016</td>
                     <td>软件161</td>
+                    <td>允许</td>
+                    <td class="text-success">已填报</td>
                 </tr>
                 </tbody>
             </table>
@@ -212,21 +229,54 @@
       var pageNum = 1;
       var pages = 1;
       $(function () {
-          getStudentList(1);
+          getStuNotFilled(1);
           setVolunteerInfo();
           set_clazz_content();
       })
-      function getStudentList(pn) {
+      
+      function changeSelect(pn) {
+          var stuStatus = $("#stuStatus").val();
+          console.log(stuStatus);
+          if ("未填报"==stuStatus){
+              getStuNotFilled(pn);
+          }else {
+              getStudentFilled(pn);
+          }
+      }
+      function getStudentFilled(pn) {
+          $.ajax({
+              url:"/pt/getStuFilled",
+              data: "pn="+pn,
+              type:"GET",
+              success:function(result){
+                  if (result.total==0) {
+                      console.log("没有人填报，清空stu-table");
+                      $("#stu-table").empty();
+                      $("#stu_page_info").hide();
+                      $("#stu-table").append($("<h3>还没有学生填报</h3>"));
+                  }else {
+                      $("#stu_page_info").show();
+                      build_stu_table(result);
+                      //2、解析并显示分页信息
+                      build_stu_info(result);
+                  }
+              }
+          });
+      }
+      
+      function getStuNotFilled(pn) {
           $.ajax({
               url:"/pt/getStuNotFilled",
               data: "pn="+pn,
               type:"GET",
               success:function(result){
                   if (result.total==0) {
-                      $("#stu_table_info").empty();
-                      $("#stu_page_info").empty();
-                      $("#stu_table_info").append($("<h3>所有学生已经填报完毕</h3>"));
+                      $("#stu-table").empty();
+                      $("#stu_page_info").hide();
+                      $("#stu-table").append($("<h3>所有学生已经填报完毕</h3>"));
                   }else {
+                      console.log("进入构建未填报的学生函数");
+                      $("#stu_page_info").show();
                       build_stu_table(result);
                       //2、解析并显示分页信息
                       build_stu_info(result);
@@ -240,15 +290,31 @@
           var stuList = result.list;
           pages = result.pages;
           pageNum = result.pageNum;
+          console.log("开始构建未填报的学生");
           $.each(stuList,function (index,item) {
               var stuId = $("<td></td>").append(item.stuId);
               var stuName = $("<td></td>").append(item.stuName);
               var gradeLevelTd = $("<td></td>").append(item.gradeLevel);
               var clazzTd = $("<td></td>").append(item.clazz);
+              var allowedTd = $("<td></td>");
+              if (item.allowed == 1) {
+                  allowedTd.append("允许");
+              }else {
+                  allowedTd.append("不允许").addClass("text-danger");
+              }
+              var volunteerTd = $("<td></td>");
+              if(item.volunteerId==0){
+                  volunteerTd.append("未填报").addClass("text-danger");
+              }else {
+                  volunteerTd.append("已填报").addClass("text-success");
+              }
               $("<tr></tr>").append(stuId).append(stuName)
                   .append(gradeLevelTd).append(clazzTd)
+                  .append(allowedTd).append(volunteerTd)
                   .appendTo("#stu-table");
+              console.log("构建当中");
           });
+          console.log("构建结束");
       }
       function build_stu_info(result) {
           $("#page_stu_info").empty();
@@ -262,7 +328,7 @@
                   tips: [1, '#0FA6D8'] //还可配置颜色
               });
           }else {
-              getStudentList(pageNum-1);
+              changeSelect(pageNum-1);
           }
       }
       function pageDown(btn) {
@@ -271,7 +337,7 @@
                   tips: [1, '#0FA6D8'] //还可配置颜色
               });
           }else {
-              getStudentList(pageNum+1);
+              changeSelect(pageNum+1);
           }
       }
 

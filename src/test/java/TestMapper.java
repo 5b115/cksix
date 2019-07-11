@@ -1,18 +1,14 @@
 import com.zut.wl.mapper.*;
-import com.zut.wl.pojo.Student;
-import com.zut.wl.pojo.Volunteer;
 import com.zut.wl.service.LogInfoService;
 import com.zut.wl.service.OtherService;
 import com.zut.wl.service.StudentService;
 import com.zut.wl.service.VolunteerService;
+import com.zut.wl.utils.TimeUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @Author xiumu
@@ -57,45 +53,24 @@ public class TestMapper {
 
     @Test
     public void insertTest(){
-        otherService.updateOtherRanking();
+//        otherService.updateOtherRanking();
     }
 
     @Test
     public void test(){
-        //模拟学生报考  随机产生
-        Volunteer volunteer = null;
-        List<Volunteer> volunteerList = null;
-        List<Integer> ranking = new ArrayList<>();
-        ranking.add(1);
-        ranking.add(2);
-        ranking.add(3);
-        ranking.add(4);
-        ranking.add(5);
-        ranking.add(6);
-        List<Student> studentList = studentMapper.selectStudentByClazz("2018");
-//        for (int i = 0; i < studentList.size(); i++) {
-//            Collections.shuffle(ranking);
-//            volunteerList = new ArrayList<>();
-//            for (int j = 0; j < 6; j++) {
-//                volunteer = new Volunteer();
-//                volunteer.setStuId(studentList.get(i).getStuId());
-//                volunteer.setMajorId(ranking.get(j));
-//                volunteer.setRanking(j+1);
-//                volunteerList.add(volunteer);
-//            }
-//            volunteerMapper.insertVolunteerList(volunteerList);
-//            studentMapper.updateStufilled(studentList.get(i).getStuId());
-//        }
+
     }
     @Test
     public void zyfl(){
-       // studentService.updateAssignByVolunteer();
+        studentService.updateAssignByVolunteer();
     }
 
     @Test
     public void sort() {
         String[] volunteers = {"软件工程","计算机科学与技术","人工智能","物联网","网络工程","信息安全"};
-//        System.out.println(volunteerService.checkVolunteers(volunteers));
+        String endTime = logInfoService.selectLastLogInfo().getEndTime();
+        String startTime = logInfoService.selectLastLogInfo().getStartTime();
+        System.out.println(TimeUtils.checkT1AfterT2(startTime,endTime));
     }
 
 
@@ -159,6 +134,9 @@ public class TestMapper {
     public void testLogInfoService(){
         //logInfoService.insertGrades();
     }*/
-
+    @Test
+    public void testLogInfoService(){
+//        logInfoService.insertCourses();
+    }
 
 }

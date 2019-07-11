@@ -1,4 +1,4 @@
-import com.zut.wl.utils.TimeUtils;
+import com.zut.wl.utils.GradeUtil;
 import org.junit.Test;
 
 import java.util.*;
@@ -41,8 +41,18 @@ public class TestString {
 
     @Test
     public void testTimeUtils(){
-        String endTime = "2019-06-30 10:50";
-        boolean index = TimeUtils.checkT1AfterT2(endTime);
-        System.out.println(index);
+        List<Double> list = new ArrayList<>();
+        list.add(40.10);
+        list.add(41.20);
+        list.add(42.30);
+        list.add(43.40);
+        list.add(44.50);
+        list.add(45.60);
+        list.add(46.70);
+        list.add(47.80);
+        list.add(48.90);
+        list.add(49.00);
+        System.out.println(GradeUtil.avgGradeByBigDecimal(list));
+        System.out.println(GradeUtil.avgGrade(list));
     }
 }
